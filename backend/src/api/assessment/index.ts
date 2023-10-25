@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/assessment`,
+    require('./assessmentCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/assessment/:id`,
+    require('./assessmentUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/assessment/import`,
+    require('./assessmentImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/assessment`,
+    require('./assessmentDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/assessment/autocomplete`,
+    require('./assessmentAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/assessment`,
+    require('./assessmentList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/assessment/:id`,
+    require('./assessmentFind').default,
+  );
+};

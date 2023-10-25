@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/sub-question`,
+    require('./subQuestionCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/sub-question/:id`,
+    require('./subQuestionUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/sub-question/import`,
+    require('./subQuestionImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/sub-question`,
+    require('./subQuestionDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/sub-question/autocomplete`,
+    require('./subQuestionAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/sub-question`,
+    require('./subQuestionList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/sub-question/:id`,
+    require('./subQuestionFind').default,
+  );
+};
