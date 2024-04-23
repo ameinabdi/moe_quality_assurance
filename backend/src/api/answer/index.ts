@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/answer`,
+    require('./answerCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/answer/:id`,
+    require('./answerUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/answer/import`,
+    require('./answerImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/answer`,
+    require('./answerDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/answer/autocomplete`,
+    require('./answerAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/answer`,
+    require('./answerList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/answer/:id`,
+    require('./answerFind').default,
+  );
+};

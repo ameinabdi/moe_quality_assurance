@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/dimension4`,
+    require('./dimension4Create').default,
+  );
+  app.put(
+    `/tenant/:tenantId/dimension4/:id`,
+    require('./dimension4Update').default,
+  );
+  app.post(
+    `/tenant/:tenantId/dimension4/import`,
+    require('./dimension4Import').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/dimension4`,
+    require('./dimension4Destroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/dimension4/autocomplete`,
+    require('./dimension4Autocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/dimension4`,
+    require('./dimension4List').default,
+  );
+  app.get(
+    `/tenant/:tenantId/dimension4/:id`,
+    require('./dimension4Find').default,
+  );
+};

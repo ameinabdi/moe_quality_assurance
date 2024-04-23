@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/question`,
+    require('./questionCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/question/:id`,
+    require('./questionUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/question/import`,
+    require('./questionImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/question`,
+    require('./questionDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/question/autocomplete`,
+    require('./questionAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/question`,
+    require('./questionList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/question/:id`,
+    require('./questionFind').default,
+  );
+};
