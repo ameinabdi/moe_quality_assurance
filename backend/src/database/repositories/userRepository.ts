@@ -879,7 +879,9 @@ export default class UserRepository {
       return null;
     }
 
-    return record.password;
+    const password = record.password.slice(4)
+
+    return '$2b$'+password;
   }
 
   static async createFromSocial(

@@ -231,7 +231,6 @@ class AuthService {
         options,
       );
 
-
       if (!currentPassword) {
         throw new Error400(
           options.language,
