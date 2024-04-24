@@ -10,6 +10,7 @@ import { getConfig } from '../../config';
 import { IRepositoryOptions } from './IRepositoryOptions';
 import SequelizeArrayUtils from '../utils/sequelizeArrayUtils';
 import lodash from 'lodash';
+import Error400 from '../../errors/Error400';
 
 const Op = Sequelize.Op;
 
@@ -457,13 +458,19 @@ export default class UserRepository {
       options,
     );
     const [users] = await options.database2.sequelize2.query(
-      "SELECT TOP 1 * FROM users WHERE email = :Email OR username = :Email",
+      "SELECT TOP 1 * FROM users WHERE username = :Email",
       {
         type: QueryTypes.SELECT,
         replacements: { Email: email },
       }
     );
-    if (users.groupid =='School') {
+    if(!users){
+      throw new Error400(
+        options.language,
+        'auth.userNotFound',
+      );
+    }
+    if (users?.groupid =='School') {
       const [school] = await options.database2.sequelize2.query(
         "SELECT TOP 1 * FROM [setups].[Institutions_Profile_list]  WHERE RegNo = :RegNo",
         {
