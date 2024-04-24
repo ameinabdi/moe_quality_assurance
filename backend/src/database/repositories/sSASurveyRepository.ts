@@ -589,6 +589,32 @@ class SSASurveyRepository {
     );
   }
 
+  static async check(id, options: IRepositoryOptions) {
+    const transaction = SequelizeRepository.getTransaction(
+      options,
+    );
+    
+    const currentUser = SequelizeRepository.getCurrentUser(
+      options,
+    );
+
+     
+    const record = await options.database.sSASurvey.findOne(
+      {
+        where: {
+          createdById:currentUser?.id,
+        },
+        transaction,
+      },
+    );
+
+    if (!record) {
+      return null
+    }
+
+    return this._fillWithRelationsAndFiles(record, options);
+  }
+  
   static async findById(id, options: IRepositoryOptions) {
     const transaction = SequelizeRepository.getTransaction(
       options,
@@ -775,7 +801,7 @@ class SSASurveyRepository {
         ),
       );
     }
-    else if(currentUser?.groupid == 'State'){
+    else if(currentUser?.groupid === 'State'){
       whereAnd.push(
         SequelizeFilterUtils.ilikeIncludes(
           'sSASurvey',

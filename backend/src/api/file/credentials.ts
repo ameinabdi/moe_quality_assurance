@@ -11,7 +11,7 @@ export default async (req, res) => {
     const filename = req.query.filename;
     const storageId = req.query.storageId;
 
-    if (!req.currentUser || !req.currentUser.ID) {
+    if (!req.currentUser || !req.currentUser.id) {
       throw new Error403();
     }
 

@@ -47,6 +47,20 @@ const sSASurveyFormActions = {
       getHistory().push('/s-s-a-survey');
     }
   },
+  doCheck: () => async (dispatch) => {
+    try {
+      const response = await SSASurveyService.check();
+      if(response){
+        Message.error(
+          'you can only create one survey',
+        );
+        getHistory().push('/s-s-a-survey');
+      }
+    } catch (error) {
+      Errors.handle(error);
+      getHistory().push('/s-s-a-survey');
+    }
+  },
 
   doCreate: (values) => async (dispatch) => {
     try {

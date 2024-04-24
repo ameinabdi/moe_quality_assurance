@@ -21,6 +21,8 @@ const SSASurveyToolbar = (props) => {
     selectors.selectSelectedKeys,
   );
   const loading = useSelector(selectors.selectLoading);
+  const rows = useSelector(selectors.selectRows);
+
   const destroyLoading = useSelector(
     destroySelectors.selectLoading,
   );
@@ -109,7 +111,7 @@ const SSASurveyToolbar = (props) => {
 
   return (
     <Toolbar>
-      {hasPermissionToCreate && (
+      {hasPermissionToCreate && rows?.length ===0 &&(
         <Link to="/s-s-a-survey/new">
           <Button type="primary" icon={<PlusOutlined rev={undefined}  />}>
             {i18n('common.new')}

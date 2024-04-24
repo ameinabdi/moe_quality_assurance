@@ -301,6 +301,100 @@ export default class UserRepository {
     return passwordResetToken;
   }
 
+  static async addtoDBUser(
+    id,
+    data,
+    options: IRepositoryOptions,
+  ) {
+    const currentUser = SequelizeRepository.getCurrentUser(
+      options,
+    );
+
+    const transaction = SequelizeRepository.getTransaction(
+      options,
+    );
+
+    const user = await options.database.user.findByPk(id, {
+      transaction,
+    });
+    if(user){
+      await user.update(
+        {
+          id: data.ID || undefined,
+          email: data.email,
+          password: data.password,
+          firstName: data.fullname || null,
+          fullName:data.fullname || null,
+          groupid:data.groupid || null,
+          districts:data.districts || null,
+          location:data.location || null,
+          userpic:data.userpic || null,
+          school:data.school || null,
+          phoneNumber: data.phone || null,
+          updatedById: currentUser.id,
+        },
+        { transaction },
+      );
+  
+      
+      await AuditLogRepository.log(
+        {
+          entityName: 'user',
+          entityId: user.id,
+          action: AuditLogRepository.UPDATE,
+          values: {
+            ...user.get({ plain: true }),
+            avatars: data.avatars,
+            roles: data.roles,
+          },
+        },
+        options,
+      );
+      return this.findById(user.id, options);
+
+    }else{
+      const user = await options.database.user.create(
+        {
+          id: data.ID || undefined,
+          email: data.email,
+          password: data.password,
+          firstName: data.fullname || null,
+          fullName:data.fullname || null,
+          groupid:data.groupid || null,
+          districts:data.districts || null,
+          location:data.location || null,
+          userpic:data.userpic || null,
+          school:data.school || null,
+          phoneNumber: data.phone || null,
+          importHash: data.importHash || null,
+          createdById: currentUser.id,
+          updatedById: currentUser.id,
+        },
+        { transaction },
+      );
+  
+      
+      await AuditLogRepository.log(
+        {
+          entityName: 'user',
+          entityId: user.id,
+          action: AuditLogRepository.CREATE,
+          values: {
+            ...user.get({ plain: true }),
+            avatars: data.avatars,
+          },
+        },
+        options,
+      );
+  
+      return this.findById(user.id, {
+        ...options,
+        bypassPermissionValidation: true,
+      });
+
+    }
+  }
+
   static async update(
     id,
     data,
@@ -369,6 +463,16 @@ export default class UserRepository {
         replacements: { Email: email },
       }
     );
+    if (users.groupid =='School') {
+      const [school] = await options.database2.sequelize2.query(
+        "SELECT TOP 1 * FROM [setups].[Institutions_Profile_list]  WHERE RegNo = :RegNo",
+        {
+          type: QueryTypes.SELECT,
+          replacements: { RegNo: users?.districts },
+        }
+      );
+      return {...users,school}
+    }
 
     return users
   }
@@ -611,30 +715,16 @@ export default class UserRepository {
     const transaction = SequelizeRepository.getTransaction(
       options,
     );
-
  
-    const [record] = await options.database2.sequelize2.query(
-      "SELECT TOP 1 * FROM users WHERE ID = :ID",
-      {
-        type: QueryTypes.SELECT,
-        replacements: { ID: id },
-      }
-    );
+    let record = await options.database.user.findByPk(id, {
+      transaction,
+    });
 
     if (!record) {
       throw new Error404();
     }
 
-    if (record.groupid =='School') {
-      const [school] = await options.database2.sequelize2.query(
-        "SELECT TOP 1 * FROM [setups].[Institutions_Profile_list]  WHERE RegNo = :RegNo",
-        {
-          type: QueryTypes.SELECT,
-          replacements: { RegNo: record?.districts },
-        }
-      );
-      return {...record,school}
-    }
+   
 
     return record;
   }

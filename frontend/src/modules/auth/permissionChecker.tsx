@@ -122,7 +122,7 @@ export default class PermissionChecker {
   get isAuthenticated() {
     return (
       Boolean(this.currentUser) &&
-      Boolean(this.currentUser.ID)
+      Boolean(this.currentUser.id)
     );
   }
 

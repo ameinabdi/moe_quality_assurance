@@ -119,7 +119,13 @@ export default class SSASurveyService {
       this.options,
     );
   }
-
+  async check(args) {
+    return SSASurveyRepository.check(
+      args,
+      this.options,
+    );
+  }
+  
   async findAndCountAll(args) {
     return SSASurveyRepository.findAndCountAll(
       args,

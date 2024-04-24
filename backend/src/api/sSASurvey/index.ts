@@ -27,4 +27,8 @@ export default (app) => {
     `/tenant/:tenantId/s-s-a-survey/:id`,
     require('./sSASurveyFind').default,
   );
+  app.get(
+    `/tenant/:tenantId/s-s-a-survey-check`,
+    require('./sSASurveyCheck').default,
+  );
 };

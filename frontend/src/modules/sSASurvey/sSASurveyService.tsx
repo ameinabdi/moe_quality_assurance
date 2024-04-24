@@ -75,7 +75,18 @@ export default class SSASurveyService {
 
     return response.data;
   }
+  static async check() {
+ 
+    const tenantId = AuthCurrentTenant.get();
 
+    const response = await authAxios.get(
+      `/tenant/${tenantId}/s-s-a-survey-check`,
+      {
+      },
+    );
+
+    return response.data;
+  }
   static async list(filter, orderBy, limit, offset) {
     const params = {
       filter,

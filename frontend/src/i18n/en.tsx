@@ -132,25 +132,25 @@ const en = {
     },
 
   sSASurvey: {
-      name: 'sSASurvey',
-      label: 'SSASurveys',
-      menu: 'SSASurveys',
+      name: 'SSA Tool',
+      label: 'SSA Tools',
+      menu: 'SSA Tools',
       exporterFileName: 'sSASurvey_export',
       list: {
-        menu: 'SSASurveys',
-        title: 'SSASurveys',
+        menu: 'SSA Tools',
+        title: 'SSA Tools',
       },
       create: {
-        success: 'SSASurvey successfully saved',
+        success: 'SSA Tool successfully saved',
       },
       update: {
-        success: 'SSASurvey successfully saved',
+        success: 'SSA Tool successfully saved',
       },
       destroy: {
-        success: 'SSASurvey successfully deleted',
+        success: 'SSA Tool successfully deleted',
       },
       destroyAll: {
-        success: 'SSASurvey(s) successfully deleted',
+        success: 'SSA Tool(s) successfully deleted',
       },
       edit: {
         title: 'SCHOOL SELF-ASSESSMENT TOOL'
@@ -165,7 +165,7 @@ const en = {
         'guidelines': 'Guidelines',
         'school': 'School ',
         'schoolinfo': 'School Information',
-
+        'total':'Total',
         'dimension1': 'Dimension 1',
         'dimension2': 'Dimension 2',
         'dimension3': 'Dimension 3',
@@ -229,10 +229,10 @@ const en = {
 
       },
       view: {
-        title: 'View SSASurvey',
+        title: 'View SSA Tool',
       },
       importer: {
-        title: 'Import SSASurveys',
+        title: 'Import SSA Tools',
         fileName: 'sSASurvey_import_template',
         hint:
           'Files/Images columns must be the URLs of the files separated by space.',

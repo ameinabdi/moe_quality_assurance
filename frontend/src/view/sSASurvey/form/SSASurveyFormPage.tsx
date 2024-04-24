@@ -16,7 +16,6 @@ const SSASurveyFormPage = (props) => {
   const [dispatched, setDispatched] = useState(false);
   const dispatch = useAppDispatch();
   const match = useParams();
-
   const initLoading = useSelector(
     selectors.selectInitLoading,
   );
@@ -32,6 +31,7 @@ const SSASurveyFormPage = (props) => {
 
   useEffect(() => {
     dispatch(actions.doInit(match.id));
+    dispatch(actions.doCheck());
     setDispatched(true);
   }, [dispatch, match.id]);
 

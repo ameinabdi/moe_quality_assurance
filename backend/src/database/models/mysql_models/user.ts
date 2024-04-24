@@ -92,6 +92,20 @@ export default function (sequelize, DataTypes) {
           len: [0, 255],
         },
       },
+      groupid: {
+        type: DataTypes.TEXT,
+      },
+      districts: {
+        type: DataTypes.TEXT,
+      },
+      location: {
+        type: DataTypes.TEXT,
+      },
+      userpic: {
+        type: DataTypes.JSON,
+        allowNull: true
+      },
+      school: { type: DataTypes.JSON, allowNull: true },
       jwtTokenInvalidBefore: {
         type: DataTypes.DATE,
       },

@@ -169,7 +169,7 @@ const so = {
           'dimension5': 'Dimension5',
           'schoolStamp': 'Shaanbada Dugsiga',
           'schoolinfo': 'Warbixinta Dugsiga',
-
+          'total':'Total',
           'No':'Tirada',
           'DIMENSIONS':'Halbeegyada',
           'Indicators':'Titlmaameyaasha',

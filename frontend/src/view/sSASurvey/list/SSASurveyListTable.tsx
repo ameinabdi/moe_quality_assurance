@@ -120,6 +120,12 @@ const SSASurveyListTable = (props) => {
         dataIndex: '',
         render: (value) =>(parseFloat(value?.dimension5?.dimension5Rate).toFixed(0)+" %")
       },
+      {
+        title: i18n('entities.sSASurvey.fields.total')+" (100 %)",
+        sorter: true,
+        dataIndex: '',
+        render: (value) =>((parseFloat(value?.dimension1?.dimension1Rate)+parseFloat(value?.dimension2?.dimension2Rate)+parseFloat(value?.dimension3?.dimension3Rate)+parseFloat(value?.dimension4?.dimension4Rate)+parseFloat(value?.dimension5?.dimension5Rate)).toFixed(0)+" %")
+      },
       
       {
         title: i18n('entities.sSASurvey.fields.finalizedDate'),

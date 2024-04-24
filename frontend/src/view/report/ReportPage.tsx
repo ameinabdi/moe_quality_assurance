@@ -127,6 +127,117 @@ const ReportPage = (props) => {
       </Card>
       </Col>
      </Row>
+     <br/><br/><br/>
+     <Row>
+      <Col span={12}>
+        <Card title="AVARAGE STATE">
+          <Column 
+          {...{
+            data:rows?.avarageState || [],
+            xField: 'state',
+            yField: 'avarage',
+            label: {
+              // 可手动配置 label 数据标签位置
+              position: 'middle',
+              // 'top', 'bottom', 'middle',
+              // 配置样式
+              style: {
+                fill: '#FFFFFF',
+                opacity: 0.6,
+              },
+            },
+            xAxis: {
+              label: {
+                autoHide: true,
+                autoRotate: false,
+              },
+            },
+            meta: {
+              type: {
+                alias: 'Date',
+              },
+              sales: {
+                alias: 'Orders',
+              },
+            },
+          }} />
+        </Card>
+      </Col>
+      <Col span={12}>
+      <Card>
+      <Card title="AVARAGE Region">
+          <Column 
+          {...{
+            data:rows?.avarageRegion || [],
+            xField: 'region',
+            yField: 'avarage',
+            label: {
+              // 可手动配置 label 数据标签位置
+              position: 'middle',
+              // 'top', 'bottom', 'middle',
+              // 配置样式
+              style: {
+                fill: '#FFFFFF',
+                opacity: 0.6,
+              },
+            },
+            xAxis: {
+              label: {
+                autoHide: true,
+                autoRotate: false,
+              },
+            },
+            meta: {
+              type: {
+                alias: 'Date',
+              },
+              sales: {
+                alias: 'Orders',
+              },
+            },
+          }} />
+        </Card>
+      </Card>
+      </Col>
+     </Row>
+     <br/><br/><br/>
+
+     <Row>
+      <Col span={24}>
+        <Card>
+          <Column 
+          {...{
+            data:rows?.avarageDistrict || [],
+            xField: 'district',
+            yField: 'avarage',
+            label: {
+              // 可手动配置 label 数据标签位置
+              position: 'middle',
+              // 'top', 'bottom', 'middle',
+              // 配置样式
+              style: {
+                fill: '#FFFFFF',
+                opacity: 0.6,
+              },
+            },
+            xAxis: {
+              label: {
+                autoHide: true,
+                autoRotate: false,
+              },
+            },
+            meta: {
+              type: {
+                alias: 'Date',
+              },
+              sales: {
+                alias: 'Orders',
+              },
+            },
+          }} />
+        </Card>
+      </Col>
+     </Row>
      
     </ContentWrapperTransaparent>
     </>
