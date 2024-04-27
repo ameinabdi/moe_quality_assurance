@@ -31,6 +31,9 @@ export default function (sequelize) {
       district: {
         type: DataTypes.TEXT,
       },
+      region: {
+        type: DataTypes.TEXT,
+      },
       state: {
         type: DataTypes.TEXT,
       },

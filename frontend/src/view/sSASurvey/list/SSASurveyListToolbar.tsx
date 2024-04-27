@@ -111,7 +111,7 @@ const SSASurveyToolbar = (props) => {
 
   return (
     <Toolbar>
-      {hasPermissionToCreate && rows?.length ===0 &&(
+      {hasPermissionToCreate  &&(
         <Link to="/s-s-a-survey/new">
           <Button type="primary" icon={<PlusOutlined rev={undefined}  />}>
             {i18n('common.new')}

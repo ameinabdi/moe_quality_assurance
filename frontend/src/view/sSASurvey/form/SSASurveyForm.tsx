@@ -1,4 +1,4 @@
-import { Button, Row, Col, Table, Card, Typography, Steps} from 'antd';
+import { Button, Row, Col, Table, Card, Typography, Steps, Progress} from 'antd';
 import { useForm, FormProvider } from 'react-hook-form';
 import React, { useState } from 'react';
 import { i18n } from 'src/i18n';
@@ -3500,7 +3500,13 @@ const SSASurveyForm = (props) => {
         required={false}
         layout={formItemLayout}
       />),
-      rating:totaldimension1.toFixed(0)+" %",
+      rating:<Progress strokeLinecap="butt"
+      //@ts-ignore
+      strokeColor={parseFloat(totaldimension1 || 0) < 7.5 ? '#ff4d4f' : undefined}
+      //@ts-ignore
+      format={(percent) => `${parseFloat(totaldimension1 || 0).toFixed(0)} / ${15} %`} 
+      //@ts-ignore
+      percent={(parseFloat(totaldimension1 || 0).toFixed(0)/15)*100} size={[300, 20]} />,
       solution:(<TextAreaFormItem
         name="dimension1Solution"
         required={false}
@@ -3514,7 +3520,13 @@ const SSASurveyForm = (props) => {
         required={false}
         layout={formItemLayout}
       />),
-      rating:totaldimension2.toFixed(0)+" %",
+      rating:(<Progress strokeLinecap="butt"
+      //@ts-ignore
+      strokeColor={parseFloat(totaldimension2 || 0) < 5 ? '#ff4d4f' : undefined}
+      //@ts-ignore
+      format={(percent) => `${parseFloat(totaldimension2 || 0).toFixed(0)} / ${10} %`} 
+      //@ts-ignore
+      percent={(parseFloat(totaldimension2 || 0).toFixed(0)/10)*100} size={[300, 20]} />),
       solution:(<TextAreaFormItem
         name="dimension2Solution"
         required={false}
@@ -3528,7 +3540,13 @@ const SSASurveyForm = (props) => {
         required={false}
         layout={formItemLayout}
       />),
-      rating:totaldimension3.toFixed(0)+" %",
+      rating:(<Progress strokeLinecap="butt"
+      //@ts-ignore
+      strokeColor={parseFloat(totaldimension3 || 0) < 15 ? '#ff4d4f' : undefined}
+      //@ts-ignore
+      format={(percent) => `${parseFloat(totaldimension3 || 0).toFixed(0)} / ${30} %`} 
+      //@ts-ignore
+      percent={(parseFloat(totaldimension3 || 0).toFixed(0)/30)*100} size={[300, 20]} />),
       solution:(<TextAreaFormItem
         name="dimension3Solution"
         required={false}
@@ -3542,7 +3560,13 @@ const SSASurveyForm = (props) => {
         required={false}
         layout={formItemLayout}
       />),
-      rating:totaldimension4.toFixed(0)+" %",
+      rating:(<Progress strokeLinecap="butt"
+      //@ts-ignore
+      strokeColor={parseFloat(totaldimension4 || 0) < 7.5 ? '#ff4d4f' : undefined}
+      //@ts-ignore
+      format={(percent) => `${parseFloat(totaldimension4 || 0).toFixed(0)} / ${15} %`} 
+      //@ts-ignore
+      percent={(parseFloat(totaldimension4 || 0).toFixed(0)/15)*100} size={[300, 20]} />),
       solution:(<TextAreaFormItem
         name="dimension4Solution"
         required={false}
@@ -3556,7 +3580,13 @@ const SSASurveyForm = (props) => {
         required={false}
         layout={formItemLayout}
       />),
-      rating:totaldimension5.toFixed(0)+" %",
+      rating:(<Progress strokeLinecap="butt"
+      //@ts-ignore
+      strokeColor={parseFloat(totaldimension5 || 0) < 15 ? '#ff4d4f' : undefined}
+      //@ts-ignore
+      format={(percent) => `${parseFloat(totaldimension5 || 0).toFixed(0)} / ${30} %`} 
+      //@ts-ignore
+      percent={(parseFloat(totaldimension5 || 0).toFixed(0)/30)*100} size={[300, 20]} />),
       solution:(<TextAreaFormItem
         name="dimension5Solution"
         required={false}

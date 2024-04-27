@@ -31,7 +31,6 @@ const SSASurveyFormPage = (props) => {
 
   useEffect(() => {
     dispatch(actions.doInit(match.id));
-    dispatch(actions.doCheck());
     setDispatched(true);
   }, [dispatch, match.id]);
 

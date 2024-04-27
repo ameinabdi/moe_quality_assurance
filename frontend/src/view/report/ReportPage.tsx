@@ -1,12 +1,9 @@
-import { Card, Col, Row ,Statistic} from 'antd';
+import { Card, Col, Row } from 'antd';
 import React, { useEffect } from 'react';
 import { i18n } from 'src/i18n';
 import selectors from 'src/modules/report/ssaReport/ssaReportSelectors';
 import Spinner from '../shared/Spinner';
 import { useSelector } from 'react-redux';
-import { 
-  AppstoreOutlined,
- } from '@ant-design/icons';
  import { Column,Pie } from '@ant-design/plots';
  import ContentWrapperTransaparent from 'src/view/layout/styles/ContentWrapperTransaparent';
  import Breadcrumb from 'src/view/shared/Breadcrumb';
@@ -25,18 +22,6 @@ const ReportPage = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
-  const sixColumnsResponsiveProps = {
-    xs: 24,
-    sm: 24,
-    md: 4,
-    lg: 4,
-    xl: 4,
-    style: {
-      marginBottom: 24,
-    },
-  };
-  
  
   if(loading){
     return <Spinner />
@@ -71,20 +56,6 @@ const ReportPage = (props) => {
       ]}
     />
     <ContentWrapperTransaparent>
-      <Row gutter={16}>
-      {rows?.state?.map((state)=>(
-        <Col {...sixColumnsResponsiveProps}>
-        <Card bordered={false}>
-          <Statistic
-            title={state.state}
-            value={state?.total}
-            prefix={<AppstoreOutlined rev={undefined} />}
-          />
-        </Card>
-        </Col>
-      ))}
-     
-     </Row>
      <Row>
       <Col span={18}>
         <Card>
@@ -164,7 +135,6 @@ const ReportPage = (props) => {
         </Card>
       </Col>
       <Col span={12}>
-      <Card>
       <Card title="AVARAGE Region">
           <Column 
           {...{
@@ -197,7 +167,6 @@ const ReportPage = (props) => {
             },
           }} />
         </Card>
-      </Card>
       </Col>
      </Row>
      <br/><br/><br/>

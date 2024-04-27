@@ -17,6 +17,10 @@ const TableWrapper = styled.div`
   .ant-table .table-actions button {
     margin-left: 8px;
   }
+  .custom-progress-text .ant-progress-text {
+    font-size: 12px; /* Set the desired font size here */
+    color: #000; /* Optional: change the text color if needed */
+  }
 `;
 
 export default TableWrapper;

@@ -1,4 +1,4 @@
-import { Table, Popconfirm, Dropdown,Button } from 'antd';
+import { Table, Popconfirm, Dropdown,Button, Progress } from 'antd';
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/sSASurvey/list/sSASurveyListActions';
 import destroyActions from 'src/modules/sSASurvey/destroy/sSASurveyDestroyActions';
@@ -84,6 +84,7 @@ const SSASurveyListTable = (props) => {
         dataIndex: '',
         render: (value) => (value?.school?.schoolType)
       },
+      
       {
         title: i18n('entities.school.fields.schoolPhone'),
         sorter: true,
@@ -91,40 +92,69 @@ const SSASurveyListTable = (props) => {
         render: (value) =>(value?.school?.schoolPhone)
       },
       {
+        title: 'state',
+        sorter: true,
+        dataIndex: 'state',
+      },
+      {
+        title: 'region',
+        sorter: true,
+        dataIndex: 'region',
+      },
+      {
+        title: 'district',
+        sorter: true,
+        dataIndex: 'district',
+      },
+      {
         title: i18n('entities.sSASurvey.fields.dimension1')+" (15 %)",
         sorter: true,
         dataIndex: '',
-        render: (value) =>(parseFloat(value?.dimension1?.dimension1Rate).toFixed(0)+" %")
+        render: (value) =>(parseFloat(value?.dimension1?.dimension1Rate || 0).toFixed(0)+" %")
       },
       {
         title: i18n('entities.sSASurvey.fields.dimension2')+" (10 %)",
         sorter: true,
         dataIndex: '',
-        render: (value) =>(parseFloat(value?.dimension2?.dimension2Rate).toFixed(0)+" %")
+        render: (value) =>(parseFloat(value?.dimension2?.dimension2Rate || 0).toFixed(0)+" %")
       },
       {
         title: i18n('entities.sSASurvey.fields.dimension3')+" (30 %)",
         sorter: true,
         dataIndex: '',
-        render: (value) =>(parseFloat(value?.dimension3?.dimension3Rate).toFixed(0)+" %")
+        render: (value) =>(parseFloat(value?.dimension3?.dimension3Rate || 0).toFixed(0)+" %")
       },
       {
         title: i18n('entities.sSASurvey.fields.dimension4')+" (15 %)",
         sorter: true,
         dataIndex: '',
-        render: (value) =>(parseFloat(value?.dimension4?.dimension4Rate).toFixed(0)+" %")
+        render: (value) =>(parseFloat(value?.dimension4?.dimension4Rate || 0).toFixed(0)+" %")
       },
       {
         title: i18n('entities.sSASurvey.fields.dimension5')+" (30 %)",
         sorter: true,
         dataIndex: '',
-        render: (value) =>(parseFloat(value?.dimension5?.dimension5Rate).toFixed(0)+" %")
+        render: (value) =>(parseFloat(value?.dimension5?.dimension5Rate || 0).toFixed(0)+" %")
       },
       {
         title: i18n('entities.sSASurvey.fields.total')+" (100 %)",
         sorter: true,
         dataIndex: '',
-        render: (value) =>((parseFloat(value?.dimension1?.dimension1Rate)+parseFloat(value?.dimension2?.dimension2Rate)+parseFloat(value?.dimension3?.dimension3Rate)+parseFloat(value?.dimension4?.dimension4Rate)+parseFloat(value?.dimension5?.dimension5Rate)).toFixed(0)+" %")
+        render: (value) =>{
+          const total = (parseFloat(value?.dimension1?.dimension1Rate || 0)+parseFloat(value?.dimension2?.dimension2Rate || 0)+parseFloat(value?.dimension3?.dimension3Rate || 0)+parseFloat(value?.dimension4?.dimension4Rate || 0)+parseFloat(value?.dimension5?.dimension5Rate || 0)).toFixed(0)
+        
+          return (<Progress strokeLinecap="butt"
+          type='dashboard'
+          strokeWidth={10}
+          //@ts-ignore
+          strokeColor={parseFloat(total || 0) < 50 ? '#ff4d4f' : undefined}
+          //@ts-ignore
+          format={(percent) => `${parseFloat(total || 0).toFixed(0)} / ${100} %`} 
+          //@ts-ignore
+          percent={(parseFloat(total || 0).toFixed(0)/30)*100} size={[100, 20]} 
+          className="custom-progress-text"
+          />)
+        }
       },
       
       {
