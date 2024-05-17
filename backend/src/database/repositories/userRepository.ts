@@ -457,31 +457,44 @@ export default class UserRepository {
     const transaction = SequelizeRepository.getTransaction(
       options,
     );
-    const [users] = await options.database2.sequelize2.query(
-      "SELECT TOP 1 * FROM users WHERE username = :Email",
-      {
-        type: QueryTypes.SELECT,
-        replacements: { Email: email },
-      }
-    );
-    if(!users){
-      throw new Error400(
-        options.language,
-        'auth.userNotFound',
-      );
-    }
-    if (users?.groupid =='School') {
-      const [school] = await options.database2.sequelize2.query(
-        "SELECT TOP 1 * FROM [setups].[Institutions_Profile_list]  WHERE RegNo = :RegNo",
+    const user = await options.database.user.findOne({
+      where: {
+        [Op.and]: SequelizeFilterUtils.ilikeExact(
+          'user',
+          'email',
+          email,
+        ),
+        },
+        transaction,
+    });
+    if(!user){
+      const [users] = await options.database2.sequelize2.query(
+        "SELECT TOP 1 * FROM users WHERE username = :Email",
         {
           type: QueryTypes.SELECT,
-          replacements: { RegNo: users?.districts },
+          replacements: { Email: email },
         }
       );
-      return {...users,school}
+      if(!users){
+        throw new Error400(
+          options.language,
+          'auth.userNotFound',
+        );
+      }
+      if (users?.groupid =='School') {
+        const [school] = await options.database2.sequelize2.query(
+          "SELECT TOP 1 * FROM [setups].[Institutions_Profile_list]  WHERE RegNo = :RegNo",
+          {
+            type: QueryTypes.SELECT,
+            replacements: { RegNo: users?.districts },
+          }
+        );
+        return {...users,school}
+      }
+  
+      return users
     }
-
-    return users
+    return user;
   }
 
   static async findByEmailWithoutAvatar(
@@ -867,21 +880,33 @@ export default class UserRepository {
     const transaction = SequelizeRepository.getTransaction(
       options,
     );
-    const [record] = await options.database2.sequelize2.query(
-      "SELECT TOP 1 * FROM users WHERE ID = :ID",
-      {
-        type: QueryTypes.SELECT,
-        replacements: { ID: id },
-      }
-    );
 
-    if (!record) {
-      return null;
+    const user = await options.database.user.findByPk(
+      id,
+      {
+        raw: true,
+        transaction,
+      },
+    );
+    if(!user){
+      const [record] = await options.database2.sequelize2.query(
+        "SELECT TOP 1 * FROM users WHERE ID = :ID",
+        {
+          type: QueryTypes.SELECT,
+          replacements: { ID: id },
+        }
+      );
+  
+      if (!record) {
+        return null;
+      }
+  
+      const password = record.password.slice(4)
+  
+      return '$2b$'+password;
     }
 
-    const password = record.password.slice(4)
-
-    return '$2b$'+password;
+    return user.password;
   }
 
   static async createFromSocial(

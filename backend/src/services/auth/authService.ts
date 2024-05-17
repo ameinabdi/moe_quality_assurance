@@ -227,7 +227,7 @@ class AuthService {
         );
       }
       const currentPassword = await UserRepository.findPassword(
-        user.ID,
+        user.ID || user.id,
         options,
       );
 
@@ -250,12 +250,12 @@ class AuthService {
         );
       }
 
-
-      const addtoDBUser = await UserRepository.addtoDBUser(
-        user?.ID,
-        user,
-        options,
-      );
+      if(user?.ID){
+        const addtoDBUser = await UserRepository.addtoDBUser(
+          user?.ID,
+          user,
+          options,
+        );
 
       // Handles onboarding process like
       // invitation, creation of default tenant,
@@ -271,6 +271,23 @@ class AuthService {
       );
 
       return token;
+      }
+      
+      // Handles onboarding process like
+      // invitation, creation of default tenant,
+      // or default joining the current tenant
+      const token = jwt.sign(
+        { id: user.id },
+        getConfig().AUTH_JWT_SECRET,
+        { expiresIn: getConfig().AUTH_JWT_EXPIRES_IN },
+      );
+
+      await SequelizeRepository.commitTransaction(
+        transaction,
+      );
+
+      return token;
+
     } catch (error) {
       await SequelizeRepository.rollbackTransaction(
         transaction,

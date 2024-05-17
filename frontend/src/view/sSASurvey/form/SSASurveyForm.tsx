@@ -898,31 +898,31 @@ const SSASurveyForm = (props) => {
   const data =[
     {
       no:'1',
-      DIMENSIONS:'School leadership and governance',
+      DIMENSIONS: i18n('entities.sSASurvey.fields.dimension_1'),
       indicators:'14',
       value:'15%'
     },
     {
       no:'2',
-      DIMENSIONS:'School Environment and its safety',
+      DIMENSIONS:i18n('entities.sSASurvey.fields.dimension_2'),
       indicators:'8',
       value:'10%'
     },
     {
       no:'3',
-      DIMENSIONS:'Curriculum implementation',
+      DIMENSIONS:i18n('entities.sSASurvey.fields.dimension_3'),
       indicators:'15',
       value:'30%'
     },
     {
       no:'4',
-      DIMENSIONS:'Community Relations and participation',
+      DIMENSIONS:i18n('entities.sSASurvey.fields.dimension_4'),
       indicators:'4',
       value:'15%'
     },
     {
       no:'5',
-      DIMENSIONS:'Teaching and learning',
+      DIMENSIONS:i18n('entities.sSASurvey.fields.dimension_5'),
       indicators:'20',
       value:'30%'
     }
@@ -2459,7 +2459,7 @@ const SSASurveyForm = (props) => {
       />)
     },
     {
-      no:'13',
+      no:'15',
       indicator:i18n('entities.dimension3.fields.indicator315'),
       1:(<CustomCheckboxFormItem
         name="indicator315"

@@ -21,7 +21,7 @@ const SSASurveyToolbar = (props) => {
     selectors.selectSelectedKeys,
   );
   const loading = useSelector(selectors.selectLoading);
-  const rows = useSelector(selectors.selectRows);
+  // const rows = useSelector(selectors.selectRows);
 
   const destroyLoading = useSelector(
     destroySelectors.selectLoading,
