@@ -21,6 +21,7 @@
     "enzyme-adapter-react-16": "1.15.7",
     "file-saver": "2.0.5",
     "filesize": "10.0.6",
+    "html-react-parser": "^5.1.10",
     "localforage": "^1.10.0",
     "lodash": "4.17.21",
     "match-sorter": "^6.3.1",

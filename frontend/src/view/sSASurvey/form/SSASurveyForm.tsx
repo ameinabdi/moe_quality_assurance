@@ -28,6 +28,7 @@ import TextAreaFormItem from 'src/view/shared/form/items/TextAreaFormItem';
 import StepsDiv from 'src/view/layout/styles/steps';
 import _ from 'lodash';
 import FilesFormItem from 'src/view/shared/form/items/FilesFormItem';
+import parse from 'html-react-parser';
 
 
 const { Text, Title } = Typography;
@@ -868,7 +869,72 @@ const SSASurveyForm = (props) => {
   };
 
 
- 
+  const columnIndicator = [
+    {
+      title: i18n('entities.sSASurvey.fields.ratingAwarded'),
+      sorter: true,
+      dataIndex: 'ratingAwarded',    
+    },
+    {
+      title: i18n('entities.sSASurvey.fields.descriptor'),
+      sorter: true,
+      dataIndex: 'descriptor',
+    },
+    {
+      title: i18n('entities.sSASurvey.fields.looking'),
+      sorter: false,
+      dataIndex: 'looking',
+    },
+    {
+      title: i18n('entities.sSASurvey.fields.evidence'),
+      sorter: true,
+      dataIndex: 'evidence',
+    },
+    {
+      title: i18n('entities.sSASurvey.fields.interpretation'),
+      sorter: true,
+      dataIndex: 'interpretation',
+    },
+  ];
+
+  const dataIndicator =[
+    {
+      ratingAwarded:'1',
+      descriptor: i18n('entities.sSASurvey.fields.descriptor_1'),
+      looking: i18n('entities.sSASurvey.fields.looking_1'),
+      evidence: i18n('entities.sSASurvey.fields.evidence_1'),
+      interpretation: parse(i18n('entities.sSASurvey.fields.interpretation_1')) 
+    },
+    {
+      ratingAwarded:'2',
+      descriptor: i18n('entities.sSASurvey.fields.descriptor_2'),
+      looking: i18n('entities.sSASurvey.fields.looking_2'),
+      evidence: i18n('entities.sSASurvey.fields.evidence_3'),
+      interpretation: parse(i18n('entities.sSASurvey.fields.interpretation_4'))
+    },
+    {
+      ratingAwarded:'3',
+      descriptor: i18n('entities.sSASurvey.fields.descriptor_3'),
+      looking: i18n('entities.sSASurvey.fields.looking_3'),
+      evidence: i18n('entities.sSASurvey.fields.evidence_3'),
+      interpretation: parse(i18n('entities.sSASurvey.fields.interpretation_3'))
+    },
+    {
+      ratingAwarded:'4',
+      descriptor: i18n('entities.sSASurvey.fields.descriptor_4'),
+      looking: i18n('entities.sSASurvey.fields.looking_4'),
+      evidence: i18n('entities.sSASurvey.fields.evidence_4'),
+      interpretation: parse(i18n('entities.sSASurvey.fields.interpretation_4'))
+    },
+    {
+      ratingAwarded:'5',
+      descriptor: i18n('entities.sSASurvey.fields.descriptor_5'),
+      looking: i18n('entities.sSASurvey.fields.looking_5'),
+      evidence: i18n('entities.sSASurvey.fields.evidence_5'),
+      interpretation: parse(i18n('entities.sSASurvey.fields.interpretation_5'))
+    },
+    
+  ]
 
   const columns = [
     {
@@ -2660,7 +2726,7 @@ const SSASurveyForm = (props) => {
   const dimension5 =[
     {
       no:'',
-      indicator:(<Title level={3}>Lesson Preparation</Title>),
+      indicator:(<Title level={3}>{i18n('entities.dimension5.fields.lesson')}</Title>),
     },
     {
       no:'1',
@@ -2899,7 +2965,7 @@ const SSASurveyForm = (props) => {
     },
     {
       no:'',
-      indicator:(<Title level={3}>Classroom Management</Title>),
+      indicator:(<Title level={3}>{i18n('entities.dimension5.fields.classroom')}</Title>),
     },
     {
       no:'7',
@@ -3137,7 +3203,7 @@ const SSASurveyForm = (props) => {
     },
     {
       no:'',
-      indicator:(<Title level={3}>Instruction</Title>),
+      indicator:(<Title level={3}>{i18n('entities.dimension5.fields.instruction')}</Title>),
     },
     {
       no:'13',
@@ -3218,10 +3284,6 @@ const SSASurveyForm = (props) => {
       />)
     },
     {
-      no:'',
-      indicator:(<Title level={3}>Learner Assessment and Feedback</Title>),
-    },
-    {
       no:'15',
       indicator:i18n('entities.dimension5.fields.indicator515'),
       1:(<CustomCheckboxFormItem
@@ -3259,6 +3321,10 @@ const SSASurveyForm = (props) => {
         required={false}
         layout={formItemLayout}
       />)
+    },
+    {
+      no:'',
+      indicator:(<Title level={3}>{i18n('entities.dimension5.fields.learner')}</Title>),
     },
     {
       no:'16',
@@ -3605,19 +3671,17 @@ const SSASurveyForm = (props) => {
           {i18n('entities.sSASurvey.new.sectiona')}
           </Title>
           <Text>
-          {i18n('entities.sSASurvey.new.introduction')}
+          {parse(i18n('entities.sSASurvey.new.introduction'))}
           </Text>
         </Col>
         </Row>
         
         <br/>
         <Row>
-        <Col span={24}>
-          <Title level={5} style={{color:'red'}} >NOTE:</Title>
-        </Col>
+        
         <Col span={24}>
           <Text>
-          {i18n('entities.sSASurvey.new.note')}
+          {parse(i18n('entities.sSASurvey.new.note'))}
           </Text>
         </Col>
       </Row>
@@ -3631,8 +3695,20 @@ const SSASurveyForm = (props) => {
             <Col span={24}>
               <Table
                 rowKey="id"
+                columns={columnIndicator as any}
+                dataSource={dataIndicator}
+                bordered
+                scroll={{
+                  x: true,
+                }}
+              />
+            </Col>
+            <Col span={24}>
+              <Table
+                rowKey="id"
                 columns={columns as any}
                 dataSource={data}
+                bordered
                 scroll={{
                   x: true,
                 }}
