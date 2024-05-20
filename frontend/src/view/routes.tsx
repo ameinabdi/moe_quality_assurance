@@ -8,7 +8,7 @@ const privateRoutes = [
     path: '/',
     loader: () =>
       import('src/view/dashboard/DashboardPage'),
-    permissionRequired: null,
+    permissionRequired: permissions.dashboardRead,
     exact: true,
   },
 

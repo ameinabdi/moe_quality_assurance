@@ -11,7 +11,7 @@ class Permissions {
     return {
       dashboardRead: {
         id: 'dashboardRead',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district],
          allowedPlans: [
           plans.free,
           plans.growth,
@@ -20,7 +20,7 @@ class Permissions {
       },
       reportRead: {
         id: 'reportRead',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district],
          allowedPlans: [
           plans.free,
           plans.growth,

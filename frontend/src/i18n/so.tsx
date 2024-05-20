@@ -132,13 +132,13 @@ const so = {
       },
   
     sSASurvey: {
-        name: 'sSASurvey',
-        label: 'SSASurveys',
-        menu: 'SSASurveys',
+      name: 'SSA Tool',
+      label: 'SSA Tools',
+      menu: 'SSA Tools',
         exporterFileName: 'sSASurvey_export',
         list: {
-          menu: 'SSASurveys',
-          title: 'SSASurveys',
+          menu: 'SSA Tools',
+          title: 'SSA Tools',
         },
         create: {
           success: 'SSASurvey successfully saved',

@@ -29,6 +29,10 @@ function PrivateRoute({
       return <Navigate to="/auth/two-factor-authentication" />;
     }
 
+    if (!permissionChecker.match(permissionRequired)) {
+      return <Navigate to="/s-s-a-survey" />;
+    }
+
     return (
       <Layout {...props}>
            <Component {...props} />

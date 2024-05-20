@@ -16,7 +16,7 @@ export default [
     exact: true,
     icon: <DashboardOutlined rev={undefined}  />,
     label: i18n('dashboard.menu'),
-    permissionRequired: null,
+    permissionRequired:  permissions.dashboardRead,
     key: 'home',
   },
   {
