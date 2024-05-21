@@ -176,6 +176,8 @@ const so = {
           'dimension_5':'Baridda Iyo Barashada',
           'schoolStamp': 'Shaanbada Dugsiga',
           'schoolinfo': 'Warbixinta Dugsiga',
+          'schoolImprovement':'Qorshaha Hormarineed Dugsiga',
+          'teacherAttedance':'Xaadiriska Barayaasha',
           'total':'Total',
           'No':'T.T',
           'DIMENSIONS':'Waxyaabaha la Cabbirayo',

@@ -10,6 +10,8 @@ import { i18n } from 'src/i18n';
 import { Form , Row, Col, Table, Card, Typography} from 'antd';
 import ImagesViewer from 'src/view/shared/ImagesViewer';
 import CustomCheckboxViewItem from 'src/view/shared/form/items/CustomCheckboxViewItem'
+import parse from 'html-react-parser';
+import FilesViewer from 'src/view/shared/FilesViewer';
 
 
 const { Text, Title } = Typography;
@@ -2884,7 +2886,7 @@ const SSASurveyView = (props) => {
               {i18n('entities.sSASurvey.new.sectiona')}
               </Title>
               <Text>
-              {i18n('entities.sSASurvey.new.introduction')}
+              {parse(i18n('entities.sSASurvey.new.introduction'))}
               </Text>
               
             </Col>
@@ -2894,11 +2896,8 @@ const SSASurveyView = (props) => {
             <br/>
             <Row>
             <Col span={24}>
-              <Title level={5} style={{color:'red'}} >NOTE:</Title>
-            </Col>
-            <Col span={24}>
               <Text>
-              {i18n('entities.sSASurvey.new.note')}
+              {parse(i18n('entities.sSASurvey.new.note'))}
               </Text>
             </Col>
         </Row>
@@ -3240,7 +3239,8 @@ const SSASurveyView = (props) => {
           </Form.Item>
         )}
 </Col>
-<Col {...twoColumnsResponsiveProps}>  
+
+        <Col {...twoColumnsResponsiveProps}>  
 
       {Boolean(record.schoolStamp) && Boolean(record.schoolStamp.length) && (
           <Form.Item
@@ -3249,6 +3249,30 @@ const SSASurveyView = (props) => {
             label={i18n('entities.sSASurvey.fields.schoolStamp')}
           >
             <ImagesViewer value={record.schoolStamp} />
+          </Form.Item>
+        )}
+        </Col>
+        <Col {...twoColumnsResponsiveProps}>  
+
+      {Boolean(record.schoolImprovement) && Boolean(record.schoolImprovement.length) && (
+          <Form.Item
+            {...viewItemLayout}
+            labelAlign='left'
+            label={i18n('entities.sSASurvey.fields.schoolImprovement')}
+          >
+            <FilesViewer value={record.schoolImprovement} />
+          </Form.Item>
+        )}
+        </Col>
+        <Col {...twoColumnsResponsiveProps}>  
+
+      {Boolean(record.teacherAttedance) && Boolean(record.teacherAttedance.length) && (
+          <Form.Item
+            {...viewItemLayout}
+            labelAlign='left'
+            label={i18n('entities.sSASurvey.fields.teacherAttedance')}
+          >
+            <FilesViewer value={record.teacherAttedance} />
           </Form.Item>
         )}
         </Col>

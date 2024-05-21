@@ -85,6 +85,7 @@ const en = {
         'nonTeachingMaleStaff': 'Non  Teaching Male Staff', 
         'headTeacher': 'Head Teacher',
         'headsex': 'sex',
+        'teacherAttedance':'Teacher Attedance',
         'headTeacherPhone': 'Head Teacher Phone',
         'headTeacherLevelEduction': 'Head Teacher Level Eduction',
         createdAt: 'Created at',

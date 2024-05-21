@@ -261,6 +261,15 @@ class SSASurveyRepository {
       options,
     );
   
+    await FileRepository.replaceRelationFiles(
+      {
+        belongsTo: options.database.sSASurvey.getTableName(),
+        belongsToColumn: 'teacherAttedance',
+        belongsToId: record.id,
+      },
+      data.teacherAttedance,
+      options,
+    );
 
     await this._createAuditLog(
       AuditLogRepository.CREATE,
@@ -557,6 +566,17 @@ class SSASurveyRepository {
         belongsToId: record.id,
       },
       data.schoolImprovement,
+      options,
+    );
+
+
+    await FileRepository.replaceRelationFiles(
+      {
+        belongsTo: options.database.sSASurvey.getTableName(),
+        belongsToColumn: 'teacherAttedance',
+        belongsToId: record.id,
+      },
+      data.teacherAttedance,
       options,
     );
 
@@ -1097,6 +1117,12 @@ class SSASurveyRepository {
         transaction,
       }),
     );
+    output.teacherAttedance = await FileRepository.fillDownloadUrl(
+      await record.getTeacherAttedance({
+        transaction,
+      }),
+    );
+
 
     return output;
   }

@@ -56,6 +56,12 @@ const schema = yup.object().shape({
     i18n('entities.sSASurvey.fields.schoolImprovement'),
     {},
   ),
+  teacherAttedance: yupFormSchemas.files(
+    i18n('entities.sSASurvey.fields.teacherAttedance'),
+    {
+      "required": true
+    },
+  ),
   schoolName: yupFormSchemas.string(
     i18n('entities.school.fields.schoolName'),
     {
@@ -825,6 +831,8 @@ const SSASurveyForm = (props) => {
       school: record.school,
       schoolStamp: record.schoolStamp || [],
       schoolImprovement: record.schoolImprovement || [],
+      teacherAttedance:record.teacherAttedance || [],
+
 
       dimension1Challenge: record.dimension1Challenge || null,
       dimension1Mark: record.dimension1Mark || null,
@@ -4033,7 +4041,7 @@ const SSASurveyForm = (props) => {
             size={'large'}
           />
           </Col>
-          <Col {...threeColumnsResponsiveProps}>
+          <Col {...fourColumnsResponsiveProps}>
           <ImagesFormItem
             name="signatureofprincipal"
             label={i18n('entities.sSASurvey.fields.signatureofprincipal')}
@@ -4043,7 +4051,7 @@ const SSASurveyForm = (props) => {
             layout={formItemLayout}
           />
           </Col>
-          <Col {...threeColumnsResponsiveProps}>
+          <Col {...fourColumnsResponsiveProps}>
           <ImagesFormItem
             name="schoolStamp"
             label={i18n('entities.sSASurvey.fields.schoolStamp')}
@@ -4053,12 +4061,22 @@ const SSASurveyForm = (props) => {
             layout={formItemLayout}
           />
           </Col>
-          <Col {...threeColumnsResponsiveProps}>
+          <Col {...fourColumnsResponsiveProps}>
           <FilesFormItem
             name="schoolImprovement"
             label={i18n('entities.sSASurvey.fields.schoolImprovement')}
             required={false}
             storage={Storage.values.sSASurveySchoolImprovement}
+            max={undefined}
+            layout={formItemLayout}
+          />
+          </Col>
+          <Col {...fourColumnsResponsiveProps}>
+          <FilesFormItem
+            name="teacherAttedance"
+            label={i18n('entities.sSASurvey.fields.teacherAttedance')}
+            required={false}
+            storage={Storage.values.sSASurveyTeacherAttedance}
             max={undefined}
             layout={formItemLayout}
           />

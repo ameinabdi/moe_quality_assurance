@@ -42,7 +42,12 @@ export default class Storage {
         maxSizeInBytes: 100 * 1024 * 1024,
       },
 
-
+      sSASurveyTeacherAttedance: {
+        id: 'sSASurveyTeacherAttedance',
+        folder: 'tenant/:tenantId/sSASurvey/teacherAttedance',
+        maxSizeInBytes: 100 * 1024 * 1024,
+      },
+      
       sSASurveySchoolImprovement: {
         id: 'sSASurveySchoolImprovement',
         folder: 'tenant/:tenantId/sSASurvey/schoolImprovement',

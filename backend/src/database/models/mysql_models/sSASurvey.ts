@@ -141,6 +141,17 @@ export default function (sequelize) {
         belongsToColumn: 'schoolImprovement',
       },
     });
+
+    models.sSASurvey.hasMany(models.file, {
+      as: 'teacherAttedance',
+      foreignKey: 'belongsToId',
+      constraints: false,
+      scope: {
+        belongsTo: models.sSASurvey.getTableName(),
+        belongsToColumn: 'teacherAttedance',
+      },
+    });
+    
     
     models.sSASurvey.belongsTo(models.tenant, {
       as: 'tenant',

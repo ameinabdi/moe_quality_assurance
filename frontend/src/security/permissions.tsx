@@ -192,7 +192,9 @@ class Permissions {
         allowedStorage: [
           storage.sSASurveySignatureofprincipal,
           storage.sSASurveySchoolStamp,
-          storage.sSASurveySchoolImprovement
+          storage.sSASurveySchoolImprovement,
+          storage.sSASurveyTeacherAttedance
+
         ],
       },
       sSASurveyEdit: {
@@ -202,7 +204,8 @@ class Permissions {
         allowedStorage: [
           storage.sSASurveySignatureofprincipal,
           storage.sSASurveySchoolStamp,
-          storage.sSASurveySchoolImprovement
+          storage.sSASurveySchoolImprovement,
+          storage.sSASurveyTeacherAttedance
         ],
       },
       sSASurveyDestroy: {
@@ -213,6 +216,7 @@ class Permissions {
           storage.sSASurveySignatureofprincipal,
           storage.sSASurveySchoolStamp,
           storage.sSASurveySchoolImprovement,
+          storage.sSASurveyTeacherAttedance
         ],
       },
       sSASurveyRead: {
