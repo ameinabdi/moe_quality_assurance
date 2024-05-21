@@ -318,12 +318,16 @@ export default class UserRepository {
     const user = await options.database.user.findByPk(id, {
       transaction,
     });
+    const password = data.password.slice(4)
+  
+  
     if(user){
       await user.update(
         {
           id: data.ID || undefined,
           email: data.email,
-          password: data.password,
+          userName: data.username,
+          password: '$2b$'+password,
           firstName: data.fullname || null,
           fullName:data.fullname || null,
           groupid:data.groupid || null,
@@ -358,7 +362,8 @@ export default class UserRepository {
         {
           id: data.ID || undefined,
           email: data.email,
-          password: data.password,
+          userName: data.username,
+          password: '$2b$'+password,
           firstName: data.fullname || null,
           fullName:data.fullname || null,
           groupid:data.groupid || null,
@@ -459,11 +464,18 @@ export default class UserRepository {
     );
     const user = await options.database.user.findOne({
       where: {
-        [Op.and]: SequelizeFilterUtils.ilikeExact(
-          'user',
-          'email',
-          email,
-        ),
+        [Op.or]: [
+          SequelizeFilterUtils.ilikeExact(
+            'user',
+            'email',
+            email,
+          ),
+          SequelizeFilterUtils.ilikeExact(
+            'user',
+            'userName',
+            email,
+          ),
+        ],
         },
         transaction,
     });

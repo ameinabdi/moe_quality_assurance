@@ -83,9 +83,14 @@ export default function (sequelize, DataTypes) {
           len: [0, 24],
         },
       },
+      userName: {
+        type: DataTypes.STRING(255),
+        allowNull: true,
+       
+      },
       email: {
         type: DataTypes.STRING(255),
-        allowNull: false,
+        allowNull: true,
         validate: {
           isEmail: true,
           notEmpty: true,

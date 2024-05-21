@@ -242,6 +242,8 @@ class AuthService {
         password,
         currentPassword,
       );
+      console.log('yeee', user, currentPassword, passwordsMatch)
+
 
       if (!passwordsMatch) {
         throw new Error400(
