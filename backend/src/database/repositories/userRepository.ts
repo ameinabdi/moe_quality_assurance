@@ -325,7 +325,7 @@ export default class UserRepository {
       await user.update(
         {
           id: data.ID || undefined,
-          email: data.email,
+          email: data.email || data.userName+'@emis.gov.so',
           userName: data.username,
           password: '$2b$'+password,
           firstName: data.fullname || null,
@@ -361,7 +361,7 @@ export default class UserRepository {
       const user = await options.database.user.create(
         {
           id: data.ID || undefined,
-          email: data.email,
+          email: data.email || data.userName+'@emis.gov.so',
           userName: data.username,
           password: '$2b$'+password,
           firstName: data.fullname || null,
