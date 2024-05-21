@@ -46,15 +46,20 @@ const schema = yup.object().shape({
   signatureofprincipal: yupFormSchemas.images(
     i18n('entities.sSASurvey.fields.signatureofprincipal'),
     {
+      "required": true
     },
   ),
   schoolStamp: yupFormSchemas.images(
     i18n('entities.sSASurvey.fields.schoolStamp'),
-    {},
+    {
+      "required": true
+    },
   ),
   schoolImprovement: yupFormSchemas.files(
     i18n('entities.sSASurvey.fields.schoolImprovement'),
-    {},
+    {
+      "required": true
+    },
   ),
   teacherAttedance: yupFormSchemas.files(
     i18n('entities.sSASurvey.fields.teacherAttedance'),

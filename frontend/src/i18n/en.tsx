@@ -179,6 +179,7 @@ const en = {
         'dimension5': 'Dimension 5',
         'schoolStamp': 'School Stamp',
         'schoolImprovement':'School Improvement Plan',
+        'teacherAttedance':'Teacher Attedance',
         'No':'No',
         'DIMENSIONS':'DIMENSIONS',
         'Indicators':'Indicators',
