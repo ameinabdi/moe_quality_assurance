@@ -18,31 +18,6 @@ export default function (sequelize) {
       },
       schoolLevel: {
         type: SequelizeArrayUtils.DataType,
-        validate: {
-          isValidOption: function (value) {
-            if (!value || !value.length) {
-              return value;
-            }
-
-            const validOptions: any = [
-        "Primary",
-        "Intermediate",
-        "Secondary"
-      ];
-
-            if (
-              value.some(
-                (item) => !validOptions.includes(item),
-              )
-            ) {
-              throw new Error(
-                `${value} is not a valid option`,
-              );
-            }
-
-            return value;
-          },
-        },
       },
       schoolType: {
         type: DataTypes.TEXT,
