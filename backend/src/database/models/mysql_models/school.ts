@@ -21,13 +21,6 @@ export default function (sequelize) {
       },
       schoolType: {
         type: DataTypes.TEXT,
-        validate: {
-          isIn: [[
-            "Private",
-            "Public",
-            "Community"
-          ]],
-        }
       },
       schoolPhone: {
         type: DataTypes.TEXT,
