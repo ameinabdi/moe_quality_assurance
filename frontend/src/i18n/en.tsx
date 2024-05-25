@@ -97,6 +97,12 @@ const en = {
           'Primary': 'Primary',
           'Intermediate': 'Intermediate',
           'Secondary': 'Secondary',
+          'Lower/Upper Primary':'Lower/Upper Primary',
+          'Sare':'Sare',
+          "Lower Primary": "Lower Primary",
+          "Upper Primary":"Upper Primary",
+          "H/Dhexe iyo Sare":"H/Dhexe iyo Sare",
+          "ABE":"ABE"
         },
         'schoolType': {
           'Private': 'Private',
