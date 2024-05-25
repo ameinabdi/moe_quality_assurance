@@ -18,9 +18,48 @@ export default function (sequelize) {
       },
       schoolLevel: {
         type: SequelizeArrayUtils.DataType,
+        validate: {
+          isValidOption: function (value) {
+            if (!value || !value.length) {
+              return value;
+            }
+
+            const validOptions: any = [
+        "Primary",
+        "Intermediate",
+        "Secondary",
+        "Lower/Upper Primary",
+        "Sare",
+        "Lower Primary",
+        "Upper Primary",
+        "H/Dhexe iyo Sare",
+        "ABE"
+        
+      ];
+
+            if (
+              value.some(
+                (item) => !validOptions.includes(item),
+              )
+            ) {
+              throw new Error(
+                `${value} is not a valid option`,
+              );
+            }
+
+            return value;
+          },
+        },
       },
       schoolType: {
         type: DataTypes.TEXT,
+        validate: {
+          isIn: [[
+            "Private",
+            "Public",
+            "Community"
+          ]],
+        }
       },
       schoolPhone: {
         type: DataTypes.TEXT,
