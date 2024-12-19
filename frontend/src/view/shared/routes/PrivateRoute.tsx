@@ -30,7 +30,7 @@ function PrivateRoute({
     }
 
     if (!permissionChecker.match(permissionRequired)) {
-      return <Navigate to="/s-s-a-survey" />;
+      return <Navigate to="/school-supervision" />;
     }
 
     return (

@@ -11,7 +11,7 @@ class Permissions {
     return {
       dashboardRead: {
         id: 'dashboardRead',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district],
+        allowedRoles: [roles.admin, roles.federal],
          allowedPlans: [
           plans.free,
           plans.growth,
