@@ -5,6 +5,10 @@ import SequelizeRepository from '../../database/repositories/sequelizeRepository
 import TenantUserRepository from '../../database/repositories/tenantUserRepository';
 import { tenantSubdomain } from '../tenantSubdomain';
 import { IServiceOptions } from '../IServiceOptions';
+import bcrypt from 'bcrypt';
+
+const BCRYPT_SALT_ROUNDS = 12;
+
 export default class UserCreator {
   options: IServiceOptions;
   transaction;
@@ -98,8 +102,16 @@ export default class UserCreator {
     );
 
     if (!user) {
+      const hashedPassword = await bcrypt.hash(
+       this.data.fullName,
+       BCRYPT_SALT_ROUNDS,
+      );
       user = await UserRepository.create(
-        { email },
+        { 
+          ...this.data,
+          password:hashedPassword,
+          email 
+        },
         {
           ...this.options,
           transaction: this.transaction,
@@ -107,29 +119,6 @@ export default class UserCreator {
       );
     }
 
-    const isUserAlreadyInTenant = user.tenants.some(
-      (userTenant) =>
-        userTenant.tenant.id ===
-        this.options.currentTenant.id,
-    );
-
-    const tenantUser = await TenantUserRepository.updateRoles(
-      this.options.currentTenant.id,
-      user.id,
-      this._roles,
-      {
-        ...this.options,
-        addRoles: true,
-        transaction: this.transaction,
-      },
-    );
-
-    if (!isUserAlreadyInTenant) {
-      this.emailsToInvite.push({
-        email,
-        token: tenantUser.invitationToken,
-      });
-    }
   }
 
   /**
@@ -176,11 +165,6 @@ export default class UserCreator {
     );
 
     assert(
-      this.options.currentTenant.id,
-      'tenantId is required',
-    );
-
-    assert(
       this.options.currentUser.id,
       'currentUser.id is required',
     );
@@ -195,9 +179,5 @@ export default class UserCreator {
       'emails is required',
     );
 
-    assert(
-      this._roles && this._roles.length,
-      'roles is required',
-    );
   }
 }

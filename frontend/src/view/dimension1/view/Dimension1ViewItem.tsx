@@ -5,7 +5,7 @@ import selectors from 'src/modules/dimension1/dimension1Selectors';
 
 const Dimension1ViewItem = (props) => {
   const hasPermissionToRead = useSelector(
-    selectors.selectPermissionToRead,
+    selectors.selectAuditLogToRead,
   );
 
   const valueAsArray = () => {

@@ -54,13 +54,32 @@ export default class Storage {
         maxSizeInBytes: 100 * 1024 * 1024,
       },
 
+      schoolSupervisionSignatureofprincipal: {
+        id: 'schoolSupervisionSignatureofprincipal',
+        folder: 'tenant/:tenantId/schoolSupervision/signatureofprincipal',
+        maxSizeInBytes: 100 * 1024 * 1024,
+      },
+      schoolSupervisionSchoolStamp: {
+        id: 'schoolSupervisionSchoolStamp',
+        folder: 'tenant/:tenantId/schoolSupervision/schoolStamp',
+        maxSizeInBytes: 100 * 1024 * 1024,
+      },
 
-
-
-
-
-
-
+      governmentTeacherInformationTeacherPhoto: {
+        id: 'governmentTeacherInformationTeacherPhoto',
+        folder: 'tenant/:tenantId/governmentTeacherInformation/teacherPhoto',
+        maxSizeInBytes: 100 * 1024 * 1024,
+      },
+      governmentTeacherInformationTeacherSignature: {
+        id: 'governmentTeacherInformationTeacherSignature',
+        folder: 'tenant/:tenantId/governmentTeacherInformation/teacherSignature',
+        maxSizeInBytes: 100 * 1024 * 1024,
+      },
+      toolsAttachment: {
+        id: 'toolsAttachment',
+        folder: 'tenant/:tenantId/tools/attachment',
+        maxSizeInBytes: 100 * 1024 * 1024,
+      },
 
 
     };

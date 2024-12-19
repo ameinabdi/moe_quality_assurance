@@ -7,6 +7,13 @@ const userEnumerators = {
     'Email',
     'SMS',
   ],
+  type: [
+   'admin',
+   'Federal',
+   'State',
+   'District',
+   'School'
+  ],
 };
 
 export default userEnumerators;

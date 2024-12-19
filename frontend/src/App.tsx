@@ -18,7 +18,8 @@ const App = (props) => {
         colorPrimary: '#f39c12',
         borderRadius: 0,
         colorLink: '#f39c12',
-
+        fontFamily:'Century Gothic',
+        fontSize:12
       },
       components: {
         Button: {

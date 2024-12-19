@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/tool-types`,
+    require('./toolTypesCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/tool-types/:id`,
+    require('./toolTypesUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/tool-types/import`,
+    require('./toolTypesImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/tool-types`,
+    require('./toolTypesDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/tool-types/autocomplete`,
+    require('./toolTypesAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/tool-types`,
+    require('./toolTypesList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/tool-types/:id`,
+    require('./toolTypesFind').default,
+  );
+};

@@ -7,7 +7,8 @@ import destroySelectors from 'src/modules/dimension1/destroy/dimension1DestroySe
 import dimension1Selectors from 'src/modules/dimension1/dimension1Selectors';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'src/modules/hook';import { Link } from 'react-router-dom';
+import { useAppDispatch } from 'src/modules/hook';
+import { Link } from 'react-router-dom';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
 import ButtonLink from 'src/view/shared/styles/ButtonLink';
 import SchoolListItem from 'src/view/school/list/SchoolListItem';

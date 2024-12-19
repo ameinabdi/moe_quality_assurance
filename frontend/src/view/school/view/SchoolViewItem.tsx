@@ -5,7 +5,7 @@ import selectors from 'src/modules/school/schoolSelectors';
 
 const SchoolViewItem = (props) => {
   const hasPermissionToRead = useSelector(
-    selectors.selectPermissionToRead,
+    selectors.selectAuditLogToRead,
   );
 
   const valueAsArray = () => {

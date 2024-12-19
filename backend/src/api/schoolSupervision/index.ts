@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/school-supervision`,
+    require('./schoolSupervisionCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/school-supervision/:id`,
+    require('./schoolSupervisionUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/school-supervision/import`,
+    require('./schoolSupervisionImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/school-supervision`,
+    require('./schoolSupervisionDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/school-supervision/autocomplete`,
+    require('./schoolSupervisionAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/school-supervision`,
+    require('./schoolSupervisionList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/school-supervision/:id`,
+    require('./schoolSupervisionFind').default,
+  );
+};

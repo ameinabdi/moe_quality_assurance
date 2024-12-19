@@ -5,7 +5,7 @@ import selectors from 'src/modules/dimension3/dimension3Selectors';
 
 const Dimension3ViewItem = (props) => {
   const hasPermissionToRead = useSelector(
-    selectors.selectPermissionToRead,
+    selectors.selectAuditLogToRead,
   );
 
   const valueAsArray = () => {

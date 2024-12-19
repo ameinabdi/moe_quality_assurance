@@ -87,6 +87,17 @@ require('./dimension5').default(routes);
 require('./dashboard').default(routes);
 require('./report').default(routes);
 
+require('./schoolSupervision').default(routes);
+require('./dimensionSsv1').default(routes);
+require('./dimensionSsv2').default(routes);
+require('./dimensionSsv3').default(routes);
+require('./governmentTeacherInformation').default(routes);
+require('./state').default(routes);
+require('./region').default(routes);
+require('./district').default(routes);
+require('./tools').default(routes);
+require('./toolTypes').default(routes);
+
 // Loads the Tenant if the :tenantId param is passed
 routes.param('tenantId', tenantMiddleware);
 

@@ -6,7 +6,7 @@ import selectors from 'src/modules/sSASurvey/sSASurveySelectors';
 
 const SSASurveyListItem = (props) => {
   const hasPermissionToRead = useSelector(
-    selectors.selectPermissionToRead,
+    selectors.selectAuditLogToRead,
   );
 
   const valueAsArray = () => {

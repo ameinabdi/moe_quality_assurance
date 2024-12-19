@@ -14,7 +14,7 @@ import PageTitle from 'src/view/shared/styles/PageTitle';
 const AssessmentAnswerPage = (props) => {
   const dispatch = useAppDispatch();
 
-const match = useParams();
+  const match = useParams();
 
   const loading = useSelector(selectors.selectLoading);
   const record = useSelector(selectors.selectRecord);

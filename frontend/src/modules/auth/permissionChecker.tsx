@@ -11,26 +11,6 @@ export default class PermissionChecker {
     this.currentUser = currentUser;
   }
 
-  get currentUserRolesIds() {
-    if (!this.currentUser || !this.currentUser.tenants) {
-      return [];
-    }
-
-    const tenant = this.currentUser.tenants
-      .filter(
-        (tenantUser) => tenantUser.status === 'active',
-      )
-      .find(
-        (tenantUser) =>
-          tenantUser.tenant.id === this.currentTenant.id,
-      );
-
-    if (!tenant) {
-      return [];
-    }
-
-    return tenant.roles;
-  }
 
   match(permission) {
     if (!permission) {

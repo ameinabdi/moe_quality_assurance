@@ -5,7 +5,7 @@ import selectors from 'src/modules/dimension5/dimension5Selectors';
 
 const Dimension5ViewItem = (props) => {
   const hasPermissionToRead = useSelector(
-    selectors.selectPermissionToRead,
+    selectors.selectAuditLogToRead,
   );
 
   const valueAsArray = () => {

@@ -21,6 +21,16 @@ import deminsion2 from 'src/modules/deminsion2/deminsion2Reducers';
 import dimension3 from 'src/modules/dimension3/dimension3Reducers';
 import dimension4 from 'src/modules/dimension4/dimension4Reducers';
 import dimension5 from 'src/modules/dimension5/dimension5Reducers';
+import schoolSupervision from 'src/modules/schoolSupervision/schoolSupervisionReducers';
+import dimensionSsv1 from 'src/modules/dimensionSsv1/dimensionSsv1Reducers';
+import dimensionSsv2 from 'src/modules/dimensionSsv2/dimensionSsv2Reducers';
+import dimensionSsv3 from 'src/modules/dimensionSsv3/dimensionSsv3Reducers';
+import governmentTeacherInformation from 'src/modules/governmentTeacherInformation/governmentTeacherInformationReducers';
+import state from 'src/modules/state/stateReducers';
+import region from 'src/modules/region/regionReducers';
+import district from 'src/modules/district/districtReducers';
+import tools from 'src/modules/tools/toolsReducers';
+import toolTypes from 'src/modules/toolTypes/toolTypesReducers';
 
 import plan from 'src/modules/plan/planReducers';
 import { combineReducers } from 'redux';
@@ -51,5 +61,15 @@ export default (history) =>
     dimension3,
     dimension4,
     dimension5,
+    schoolSupervision,
+    dimensionSsv1,
+    dimensionSsv2,
+    dimensionSsv3,
+    governmentTeacherInformation,
+    state,
+    region,
+    district,
+    tools,
+    toolTypes,
     
   });

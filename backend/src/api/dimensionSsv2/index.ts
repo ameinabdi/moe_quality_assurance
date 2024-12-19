@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/dimension-ssv2`,
+    require('./dimensionSsv2Create').default,
+  );
+  app.put(
+    `/tenant/:tenantId/dimension-ssv2/:id`,
+    require('./dimensionSsv2Update').default,
+  );
+  app.post(
+    `/tenant/:tenantId/dimension-ssv2/import`,
+    require('./dimensionSsv2Import').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/dimension-ssv2`,
+    require('./dimensionSsv2Destroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/dimension-ssv2/autocomplete`,
+    require('./dimensionSsv2Autocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/dimension-ssv2`,
+    require('./dimensionSsv2List').default,
+  );
+  app.get(
+    `/tenant/:tenantId/dimension-ssv2/:id`,
+    require('./dimensionSsv2Find').default,
+  );
+};

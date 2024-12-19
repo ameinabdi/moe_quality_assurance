@@ -7,6 +7,9 @@ export default function (sequelize, DataTypes) {
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
       },
+      type: {
+        type: DataTypes.TEXT,
+      },
       fullName: {
         type: DataTypes.STRING(255),
         allowNull: true,
@@ -86,7 +89,6 @@ export default function (sequelize, DataTypes) {
       userName: {
         type: DataTypes.STRING(255),
         allowNull: true,
-       
       },
       email: {
         type: DataTypes.STRING(255),
@@ -158,7 +160,12 @@ export default function (sequelize, DataTypes) {
         belongsToColumn: 'avatars',
       },
     });
-
+    models.user.belongsTo(models.district, {
+      as: 'district',
+    });
+    models.user.belongsTo(models.state, {
+      as: 'state',
+    });
     models.user.belongsTo(models.user, {
       as: 'createdBy',
     });

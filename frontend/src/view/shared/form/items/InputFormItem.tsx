@@ -21,6 +21,8 @@ export const InputFormItem = (props) => {
     disabled,
     addonAfter,
     defaultValue,
+    suffix,
+    addonBefore
   } = props;
 
   const {
@@ -65,12 +67,14 @@ export const InputFormItem = (props) => {
         onBlur={(event) => {
           props.onBlur && props.onBlur(event);
         }}
+        suffix={suffix || undefined}
         size={size || undefined}
         placeholder={placeholder || undefined}
         autoFocus={autoFocus || false}
         autoComplete={autoComplete || undefined}
         prefix={prefix || undefined}
         addonAfter={addonAfter || undefined}
+        addonBefore={addonBefore || undefined}
         disabled={disabled || undefined}
         defaultValue={defaultValue || undefined}
       />
@@ -93,6 +97,7 @@ InputFormItem.propTypes = {
   autoFocus: PropTypes.bool,
   disabled: PropTypes.bool,
   size: PropTypes.string,
+  suffix: PropTypes.string,
   prefix: PropTypes.string,
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
@@ -102,6 +107,8 @@ InputFormItem.propTypes = {
   onChange: PropTypes.func,
   externalErrorMessage: PropTypes.string,
   addonAfter: PropTypes.any,
+  addonBefore: PropTypes.any,
+
 };
 
 export default InputFormItem;

@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/region`,
+    require('./regionCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/region/:id`,
+    require('./regionUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/region/import`,
+    require('./regionImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/region`,
+    require('./regionDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/region/autocomplete`,
+    require('./regionAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/region`,
+    require('./regionList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/region/:id`,
+    require('./regionFind').default,
+  );
+};

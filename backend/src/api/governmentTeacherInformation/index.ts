@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/government-teacher-information`,
+    require('./governmentTeacherInformationCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/government-teacher-information/:id`,
+    require('./governmentTeacherInformationUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/government-teacher-information/import`,
+    require('./governmentTeacherInformationImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/government-teacher-information`,
+    require('./governmentTeacherInformationDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/government-teacher-information/autocomplete`,
+    require('./governmentTeacherInformationAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/government-teacher-information`,
+    require('./governmentTeacherInformationList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/government-teacher-information/:id`,
+    require('./governmentTeacherInformationFind').default,
+  );
+};

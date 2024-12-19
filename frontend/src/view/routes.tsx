@@ -642,6 +642,387 @@ const privateRoutes = [
     permissionRequired: permissions.dimension5Read,
     exact: true,
   },
+
+  {
+    path: '/school-supervision',
+    loader: () =>
+      import('src/view/schoolSupervision/list/SchoolSupervisionListPage'),
+    permissionRequired: permissions.schoolSupervisionRead,
+    exact: true,
+  },
+  {
+    path: '/school-supervision/new',
+    loader: () =>
+      import('src/view/schoolSupervision/form/SchoolSupervisionFormPage'),
+    permissionRequired: permissions.schoolSupervisionCreate,
+    exact: true,
+  },
+  {
+    path: '/school-supervision/importer',
+    loader: () =>
+      import(
+        'src/view/schoolSupervision/importer/SchoolSupervisionImporterPage'
+      ),
+    permissionRequired: permissions.schoolSupervisionImport,
+    exact: true,
+  },
+  {
+    path: '/school-supervision/:id/edit',
+    loader: () =>
+      import('src/view/schoolSupervision/form/SchoolSupervisionFormPage'),
+    permissionRequired: permissions.schoolSupervisionEdit,
+    exact: true,
+  },
+  {
+    path: '/school-supervision/:id',
+    loader: () =>
+      import('src/view/schoolSupervision/view/SchoolSupervisionViewPage'),
+    permissionRequired: permissions.schoolSupervisionRead,
+    exact: true,
+  },
+
+  {
+    path: '/dimension-ssv1',
+    loader: () =>
+      import('src/view/dimensionSsv1/list/DimensionSsv1ListPage'),
+    permissionRequired: permissions.dimensionSsv1Read,
+    exact: true,
+  },
+  {
+    path: '/dimension-ssv1/new',
+    loader: () =>
+      import('src/view/dimensionSsv1/form/DimensionSsv1FormPage'),
+    permissionRequired: permissions.dimensionSsv1Create,
+    exact: true,
+  },
+  {
+    path: '/dimension-ssv1/importer',
+    loader: () =>
+      import(
+        'src/view/dimensionSsv1/importer/DimensionSsv1ImporterPage'
+      ),
+    permissionRequired: permissions.dimensionSsv1Import,
+    exact: true,
+  },
+  {
+    path: '/dimension-ssv1/:id/edit',
+    loader: () =>
+      import('src/view/dimensionSsv1/form/DimensionSsv1FormPage'),
+    permissionRequired: permissions.dimensionSsv1Edit,
+    exact: true,
+  },
+  {
+    path: '/dimension-ssv1/:id',
+    loader: () =>
+      import('src/view/dimensionSsv1/view/DimensionSsv1ViewPage'),
+    permissionRequired: permissions.dimensionSsv1Read,
+    exact: true,
+  },
+
+  {
+    path: '/dimension-ssv2',
+    loader: () =>
+      import('src/view/dimensionSsv2/list/DimensionSsv2ListPage'),
+    permissionRequired: permissions.dimensionSsv2Read,
+    exact: true,
+  },
+  {
+    path: '/dimension-ssv2/new',
+    loader: () =>
+      import('src/view/dimensionSsv2/form/DimensionSsv2FormPage'),
+    permissionRequired: permissions.dimensionSsv2Create,
+    exact: true,
+  },
+  {
+    path: '/dimension-ssv2/importer',
+    loader: () =>
+      import(
+        'src/view/dimensionSsv2/importer/DimensionSsv2ImporterPage'
+      ),
+    permissionRequired: permissions.dimensionSsv2Import,
+    exact: true,
+  },
+  {
+    path: '/dimension-ssv2/:id/edit',
+    loader: () =>
+      import('src/view/dimensionSsv2/form/DimensionSsv2FormPage'),
+    permissionRequired: permissions.dimensionSsv2Edit,
+    exact: true,
+  },
+  {
+    path: '/dimension-ssv2/:id',
+    loader: () =>
+      import('src/view/dimensionSsv2/view/DimensionSsv2ViewPage'),
+    permissionRequired: permissions.dimensionSsv2Read,
+    exact: true,
+  },
+
+  {
+    path: '/dimension-ssv3',
+    loader: () =>
+      import('src/view/dimensionSsv3/list/DimensionSsv3ListPage'),
+    permissionRequired: permissions.dimensionSsv3Read,
+    exact: true,
+  },
+  {
+    path: '/dimension-ssv3/new',
+    loader: () =>
+      import('src/view/dimensionSsv3/form/DimensionSsv3FormPage'),
+    permissionRequired: permissions.dimensionSsv3Create,
+    exact: true,
+  },
+  {
+    path: '/dimension-ssv3/importer',
+    loader: () =>
+      import(
+        'src/view/dimensionSsv3/importer/DimensionSsv3ImporterPage'
+      ),
+    permissionRequired: permissions.dimensionSsv3Import,
+    exact: true,
+  },
+  {
+    path: '/dimension-ssv3/:id/edit',
+    loader: () =>
+      import('src/view/dimensionSsv3/form/DimensionSsv3FormPage'),
+    permissionRequired: permissions.dimensionSsv3Edit,
+    exact: true,
+  },
+  {
+    path: '/dimension-ssv3/:id',
+    loader: () =>
+      import('src/view/dimensionSsv3/view/DimensionSsv3ViewPage'),
+    permissionRequired: permissions.dimensionSsv3Read,
+    exact: true,
+  },
+
+  {
+    path: '/government-teacher-information',
+    loader: () =>
+      import('src/view/governmentTeacherInformation/list/GovernmentTeacherInformationListPage'),
+    permissionRequired: permissions.governmentTeacherInformationRead,
+    exact: true,
+  },
+  {
+    path: '/government-teacher-information/new',
+    loader: () =>
+      import('src/view/governmentTeacherInformation/form/GovernmentTeacherInformationFormPage'),
+    permissionRequired: permissions.governmentTeacherInformationCreate,
+    exact: true,
+  },
+  {
+    path: '/government-teacher-information/importer',
+    loader: () =>
+      import(
+        'src/view/governmentTeacherInformation/importer/GovernmentTeacherInformationImporterPage'
+      ),
+    permissionRequired: permissions.governmentTeacherInformationImport,
+    exact: true,
+  },
+  {
+    path: '/government-teacher-information/:id/edit',
+    loader: () =>
+      import('src/view/governmentTeacherInformation/form/GovernmentTeacherInformationFormPage'),
+    permissionRequired: permissions.governmentTeacherInformationEdit,
+    exact: true,
+  },
+  {
+    path: '/government-teacher-information/:id',
+    loader: () =>
+      import('src/view/governmentTeacherInformation/view/GovernmentTeacherInformationViewPage'),
+    permissionRequired: permissions.governmentTeacherInformationRead,
+    exact: true,
+  },
+
+  {
+    path: '/state',
+    loader: () =>
+      import('src/view/state/list/StateListPage'),
+    permissionRequired: permissions.stateRead,
+    exact: true,
+  },
+  {
+    path: '/state/new',
+    loader: () =>
+      import('src/view/state/form/StateFormPage'),
+    permissionRequired: permissions.stateCreate,
+    exact: true,
+  },
+  {
+    path: '/state/importer',
+    loader: () =>
+      import(
+        'src/view/state/importer/StateImporterPage'
+      ),
+    permissionRequired: permissions.stateImport,
+    exact: true,
+  },
+  {
+    path: '/state/:id/edit',
+    loader: () =>
+      import('src/view/state/form/StateFormPage'),
+    permissionRequired: permissions.stateEdit,
+    exact: true,
+  },
+  {
+    path: '/state/:id',
+    loader: () =>
+      import('src/view/state/view/StateViewPage'),
+    permissionRequired: permissions.stateRead,
+    exact: true,
+  },
+
+  {
+    path: '/region',
+    loader: () =>
+      import('src/view/region/list/RegionListPage'),
+    permissionRequired: permissions.regionRead,
+    exact: true,
+  },
+  {
+    path: '/region/new',
+    loader: () =>
+      import('src/view/region/form/RegionFormPage'),
+    permissionRequired: permissions.regionCreate,
+    exact: true,
+  },
+  {
+    path: '/region/importer',
+    loader: () =>
+      import(
+        'src/view/region/importer/RegionImporterPage'
+      ),
+    permissionRequired: permissions.regionImport,
+    exact: true,
+  },
+  {
+    path: '/region/:id/edit',
+    loader: () =>
+      import('src/view/region/form/RegionFormPage'),
+    permissionRequired: permissions.regionEdit,
+    exact: true,
+  },
+  {
+    path: '/region/:id',
+    loader: () =>
+      import('src/view/region/view/RegionViewPage'),
+    permissionRequired: permissions.regionRead,
+    exact: true,
+  },
+
+  {
+    path: '/district',
+    loader: () =>
+      import('src/view/district/list/DistrictListPage'),
+    permissionRequired: permissions.districtRead,
+    exact: true,
+  },
+  {
+    path: '/district/new',
+    loader: () =>
+      import('src/view/district/form/DistrictFormPage'),
+    permissionRequired: permissions.districtCreate,
+    exact: true,
+  },
+  {
+    path: '/district/importer',
+    loader: () =>
+      import(
+        'src/view/district/importer/DistrictImporterPage'
+      ),
+    permissionRequired: permissions.districtImport,
+    exact: true,
+  },
+  {
+    path: '/district/:id/edit',
+    loader: () =>
+      import('src/view/district/form/DistrictFormPage'),
+    permissionRequired: permissions.districtEdit,
+    exact: true,
+  },
+  {
+    path: '/district/:id',
+    loader: () =>
+      import('src/view/district/view/DistrictViewPage'),
+    permissionRequired: permissions.districtRead,
+    exact: true,
+  },
+
+  {
+    path: '/tools',
+    loader: () =>
+      import('src/view/tools/list/ToolsListPage'),
+    permissionRequired: permissions.toolsRead,
+    exact: true,
+  },
+  {
+    path: '/tools/new',
+    loader: () =>
+      import('src/view/tools/form/ToolsFormPage'),
+    permissionRequired: permissions.toolsCreate,
+    exact: true,
+  },
+  {
+    path: '/tools/importer',
+    loader: () =>
+      import(
+        'src/view/tools/importer/ToolsImporterPage'
+      ),
+    permissionRequired: permissions.toolsImport,
+    exact: true,
+  },
+  {
+    path: '/tools/:id/edit',
+    loader: () =>
+      import('src/view/tools/form/ToolsFormPage'),
+    permissionRequired: permissions.toolsEdit,
+    exact: true,
+  },
+  {
+    path: '/tools/:id',
+    loader: () =>
+      import('src/view/tools/view/ToolsViewPage'),
+    permissionRequired: permissions.toolsRead,
+    exact: true,
+  },
+
+  {
+    path: '/tool-types',
+    loader: () =>
+      import('src/view/toolTypes/list/ToolTypesListPage'),
+    permissionRequired: permissions.toolTypesRead,
+    exact: true,
+  },
+  {
+    path: '/tool-types/new',
+    loader: () =>
+      import('src/view/toolTypes/form/ToolTypesFormPage'),
+    permissionRequired: permissions.toolTypesCreate,
+    exact: true,
+  },
+  {
+    path: '/tool-types/importer',
+    loader: () =>
+      import(
+        'src/view/toolTypes/importer/ToolTypesImporterPage'
+      ),
+    permissionRequired: permissions.toolTypesImport,
+    exact: true,
+  },
+  {
+    path: '/tool-types/:id/edit',
+    loader: () =>
+      import('src/view/toolTypes/form/ToolTypesFormPage'),
+    permissionRequired: permissions.toolTypesEdit,
+    exact: true,
+  },
+  {
+    path: '/tool-types/:id',
+    loader: () =>
+      import('src/view/toolTypes/view/ToolTypesViewPage'),
+    permissionRequired: permissions.toolTypesRead,
+    exact: true,
+  },
+  
 ].filter(Boolean);
 
 const accountCenterRoutes = [

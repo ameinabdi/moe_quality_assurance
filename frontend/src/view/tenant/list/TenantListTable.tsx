@@ -153,7 +153,7 @@ const TenantListTable = (props) => {
         } else {
           return (
             <div className="table-actions">
-              {currentTenant.id !== record.id && (
+              {currentTenant?.id !== record?.id && (
                 <Button
                   type="primary"
                   onClick={() => doSelectTenant(record)}

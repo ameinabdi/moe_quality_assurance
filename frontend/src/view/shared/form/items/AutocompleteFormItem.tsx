@@ -300,7 +300,7 @@ const AutocompleteFormItem = (props) => {
           }}
           value={value}
           //@ts-ignore
-          onSearch={debouncedSearch.callback}
+          onSearch={handleSearch}
           placeholder={placeholder || undefined}
           size={size || undefined}
           autoFocus={autoFocus || false}

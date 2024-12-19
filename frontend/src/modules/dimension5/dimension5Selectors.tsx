@@ -3,7 +3,7 @@ import authSelectors from 'src/modules/auth/authSelectors';
 import PermissionChecker from 'src/modules/auth/permissionChecker';
 import Permissions from 'src/security/permissions';
 
-const selectPermissionToRead = createSelector(
+const selectAuditLogToRead = createSelector(
   [
     authSelectors.selectCurrentTenant,
     authSelectors.selectCurrentUser,
@@ -59,7 +59,7 @@ const selectPermissionToDestroy = createSelector(
 );
 
 const dimension5Selectors = {
-  selectPermissionToRead,
+  selectAuditLogToRead,
   selectPermissionToEdit,
   selectPermissionToCreate,
   selectPermissionToDestroy,

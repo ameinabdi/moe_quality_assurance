@@ -564,11 +564,21 @@ class SchoolRepository {
     const tenant = SequelizeRepository.getCurrentTenant(
       options,
     );
-
+   const currentUser = SequelizeRepository.getCurrentUser(
+      options,
+    );
     let whereAnd: Array<any> = [{
-      tenantId: tenant.id,
     }];
 
+    if(currentUser?.type === 'State'){
+                       whereAnd.push(
+                         SequelizeFilterUtils.ilikeIncludes(
+                           'school',
+                           'stateId',
+                           currentUser?.stateId ,
+                         ),
+                       );
+             }
     if (query) {
       whereAnd.push({
         [Op.or]: [

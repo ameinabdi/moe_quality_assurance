@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal } from 'antd';
+import { Drawer } from 'antd';
 import { i18n } from 'src/i18n';
 import Dimension1Form from 'src/view/dimension1/form/Dimension1Form';
 import Dimension1Service from 'src/modules/dimension1/dimension1Service';
@@ -26,11 +26,11 @@ const Dimension1FormModal = (props) => {
   }
 
   return (
-    <Modal
+    <Drawer
       style={{ top: 24 }}
       title={i18n('entities.dimension1.new.title')}
       visible={props.visible}
-      onCancel={() => props.onCancel()}
+      onClose={() => props.onCancel()}
       footer={false}
       width="80%"
     >
@@ -40,7 +40,7 @@ const Dimension1FormModal = (props) => {
         onCancel={props.onCancel}
         modal
       />
-    </Modal>
+    </Drawer>
   );
 };
 

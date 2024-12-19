@@ -35,10 +35,88 @@ const en = {
   report: {
     menu: 'Report',
   },
-
+  setup: {
+    menu: 'Setup',
+  },
 
   entities: {
+    schoolSupervision: {
+      name: 'school Supervision',
+      label: 'School Supervisions',
+      menu: 'School Supervisions',
+      exporterFileName: 'school Supervision_export',
+      list: {
+        menu: 'School Supervisions',
+        title: 'School Supervisions',
+      },
+      create: {
+        success: 'School Supervision successfully saved',
+      },
+      update: {
+        success: 'School Supervision successfully saved',
+      },
+      destroy: {
+        success: 'School Supervision successfully deleted',
+      },
+      destroyAll: {
+        success: 'School Supervision(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit School Supervision',
+      },
+      fields: {
+        id: 'Id',
+        'finalizedDateRange': 'Finalized Date',
+        'finalizedDate': 'Finalized Date',
+        'principal': 'Name of principal/Deputy',
+        'signatureofprincipal': 'Signature of principal',
+        'introduction': 'Introduction',
+        'guidelines': 'Guidelines',
+        'school': 'School',
+        'finalize':'Finalize',
+        'schoolinfo': 'School Information',
+        'dimension1': 'Dimension 1',
+        'dimension2': 'Dimension 2',
+        'dimension3': 'Dimension 3',
+        'dimension4': 'Dimension4',
+        'dimension5': 'Dimension5',
+        'schoolStamp': 'School Stamp',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
 
+      },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'SCHOOL SUPERVISION TOOL',
+        'sectiona':'SECTION A: INTRODUCTION',
+        'introduction':' School SUPERVISION tool is a support tool for the school management and designed to asses of the schools performance and identify areas forimprovement. This tool helps schools to evaluate their own practices and processes against predetermined standards without any pressures from external evaluators. By conducting regular self-assessment, schools can take proactive steps to enhance their practices, align with standards, and improve educational outcomes for students. The tool consists of five dimensions: School leadership and governance, School environment and safety, Curriculum implementation, Community relations and participation, and also Teaching and learning.',
+        'note':'<h3><strong>Note:</strong></h3><br/>  1. School management is required to undertake a realistic and evidence-based assessment of their school against the criteria withi the five areas of the evaluation.<br/> 2. After completion of the SSA, the school should use the data from this SSA activity to craft a School Improvement Plan (SIP).<br/> 3. The tool will be digitalized in order to ease the data collection process, updating and expansion of quality assurance system. <br/><br/>',
+        'sectionb':'SECTION B: GUIDELINES ON RATING',
+        'basic':'Basic information about the school:',
+        'dimension1':'DIMENSION 1: SCHOOL LEADERSHIP AND GOVERNANCE',
+        'dimension2':'DIMENSION 2: CURRICULUM IMPLEMENTATION',
+        'dimension3':'DIMENSION 3: TEACHING AND LEARNING',
+        'sectionc':'SECTION C: SCHOOL NEEDS PRIORITIZATION FRAMEWORK'
+
+      },
+      view: {
+        title: 'View School Supervision',
+      },
+      importer: {
+        title: 'Import School Supervisions',
+        fileName: 'school Supervision_import_template',
+        hint:
+          'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
   school: {
       name: 'school',
       label: 'Schools',
@@ -1463,6 +1541,979 @@ const en = {
             'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
+
+    dimensionSsv1: {
+        name: 'dimensionSsv1',
+        label: 'SCHOOL LEADERSHIP AND MANAGEMENTS',
+        menu: 'SCHOOL LEADERSHIP AND MANAGEMENTS',
+        exporterFileName: 'dimensionSsv1_export',
+        list: {
+          menu: 'SCHOOL LEADERSHIP AND MANAGEMENTS',
+          title: 'SCHOOL LEADERSHIP AND MANAGEMENTS',
+        },
+        create: {
+          success: 'SCHOOL LEADERSHIP AND MANAGEMENT successfully saved',
+        },
+        update: {
+          success: 'SCHOOL LEADERSHIP AND MANAGEMENT successfully saved',
+        },
+        destroy: {
+          success: 'SCHOOL LEADERSHIP AND MANAGEMENT successfully deleted',
+        },
+        destroyAll: {
+          success: 'SCHOOL LEADERSHIP AND MANAGEMENT(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit SCHOOL LEADERSHIP AND MANAGEMENT',
+        },
+        fields: {
+          id: 'Id',
+          'indicator11': 'The principal has a university degree.',
+          'indicator12': 'The principal has the required experience according to the policies and the Education Law of the country.',
+          'indicator13': 'The school has a written vision and mission that is consistent with the general education of the country',
+          'indicator14': 'The school\'s open accounting system allows the parent committee to access financial records',
+          'indicator15': 'The school has an active student feeding program.',
+          'indicator16': 'The school has a student discipline program.',
+          'indicator17': 'The school has a plan to encourage life skills, such as problem- solving, communication, and conflict resolution.',
+          'indicator18': 'The principal guides the teachers in preparing a scheme of work',
+          'indicator19': 'The school maintains accurate records of student transfers and implements EMIS.',
+          'indicator110': 'The school participates in the preparation of the annual budget of the school CEC and financial staff.',
+          'indicator111': 'The school enforces teachers\' attendance procedures',
+          'indicator112': 'The school has a School Improvement Plan (SIP) that is based on the results of the school assessment',
+          'indicator113': 'The education policies of the country can be found in the school.',
+          'indicator114': 'The school presents the test results to the students',
+          'school': 'School',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+          'indicator11': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator12': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator13': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator14': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator15': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator16': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator17': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator18': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator19': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator110': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator111': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator112': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator113': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator114': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New SCHOOL LEADERSHIP AND MANAGEMENT',
+        },
+        view: {
+          title: 'View SCHOOL LEADERSHIP AND MANAGEMENT',
+        },
+        importer: {
+          title: 'Import SCHOOL LEADERSHIP AND MANAGEMENTS',
+          fileName: 'dimensionSsv1_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    dimensionSsv2: {
+        name: 'dimensionSsv2',
+        label: 'CURRICULUM IMPLEMENTATIONS',
+        menu: 'CURRICULUM IMPLEMENTATIONS',
+        exporterFileName: 'dimensionSsv2_export',
+        list: {
+          menu: 'CURRICULUM IMPLEMENTATIONS',
+          title: 'CURRICULUM IMPLEMENTATIONS',
+        },
+        create: {
+          success: 'CURRICULUM IMPLEMENTATION successfully saved',
+        },
+        update: {
+          success: 'CURRICULUM IMPLEMENTATION successfully saved',
+        },
+        destroy: {
+          success: 'CURRICULUM IMPLEMENTATION successfully deleted',
+        },
+        destroyAll: {
+          success: 'CURRICULUM IMPLEMENTATION(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit CURRICULUM IMPLEMENTATION',
+        },
+        fields: {
+          id: 'Id',
+          'indicator31': 'Copies of the syllabus are available in the principal\'s office.',
+          'indicator32': 'The principal regularly monitors the use of the syllabus.',
+          'indicator33': 'The school operates 6 days a week',
+          'indicator34': 'The school teaches all subjects (9 in primary).',
+          'indicator35': 'The school teaches all subjects (13 in secondary).',
+          'indicator36': 'period time for primary is (40 minutes).',
+          'indicator37': 'period time for Secondary is (45 minutes)',
+          'indicator38': 'Indicator38',
+          'indicator39': 'The school teachers are regularly trained in a curriculum implementation process',
+          'indicator310': 'The tests conducted on the students are designed to assess and differentiate their mental abilities (low, medium, and high).',
+          'indicator311': 'The school has met the standard for a student of textbook ratio 1:1',
+          'indicator312': 'The school has a laboratory',
+          'indicator313': 'The school has a library',
+          'indicator314': 'The school has ICT system',
+          'indicator315': 'All teachers keep a copy of the approved Scheme of work for every subject.',
+          'school': 'School',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+          'indicator31': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator32': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator33': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator34': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator35': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator36': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator37': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator38': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator39': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator310': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator311': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator312': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator313': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator314': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator315': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New CURRICULUM IMPLEMENTATION',
+        },
+        view: {
+          title: 'View CURRICULUM IMPLEMENTATION',
+        },
+        importer: {
+          title: 'Import CURRICULUM IMPLEMENTATIONS',
+          fileName: 'dimensionSsv2_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    dimensionSsv3: {
+        name: 'dimensionSsv3',
+        label: 'TEACHING AND LEARNING',
+        menu: 'TEACHING AND LEARNING',
+        exporterFileName: 'dimensionSsv3_export',
+        list: {
+          menu: 'TEACHING AND LEARNING',
+          title: 'TEACHING AND LEARNING',
+        },
+        create: {
+          success: 'TEACHING AND LEARNING successfully saved',
+        },
+        update: {
+          success: 'TEACHING AND LEARNING successfully saved',
+        },
+        destroy: {
+          success: 'TEACHING AND LEARNING successfully deleted',
+        },
+        destroyAll: {
+          success: 'TEACHING AND LEARNING(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit TEACHING AND LEARNING',
+        },
+        fields: {
+          id: 'Id',
+          'indicator51': 'The teacher has a scheme of work, a lesson plan developed from the syllabus, and align with the Ministry approved standard',
+          'indicator52': 'The teacher has access to various learning materials, including books, teacher\'s guides, and supplementary resources.',
+          'indicator53': 'Teacher is able to identify student /learners’ ability, capacities, experience, skills, and link lesson to previous lessons or student /learners’ daily lives',
+          'indicator54': 'He teacher uses variety of age/ability-appropriate teaching method/strategy 5. The teacher asses',
+          'indicator55': 'The teacher assesses student understanding throughout the lesson',
+          'indicator56': 'Students actively participate in the lesson.',
+          'indicator57': 'Classroom is suitable for teaching and learning',
+          'indicator58': 'The teacher employs positive discipline techniques to maintain a well-structured and supportive classroom environment.',
+          'indicator59': 'The teacher follows child protection and code of conduct standard',
+          'indicator510': 'The teacher moves around the classroom and makes eye contact',
+          'indicator511': 'The teacher respects students/learners and provide everyone with equal opportunities to learn',
+          'indicator512': 'The teacher used Class attendance twice daily – (first and last period)',
+          'indicator513': 'Teacher arouses the student /learner’s interest and motivation level. The lesson introduction captured the learner’s attention and interest as well as linked the learner’s knowledge/ experiences to new content',
+          'indicator514': 'The teacher communicates effectively to all the student /learners in class',
+          'indicator515': 'The teacher demonstrates good knowledge of the subject and can teach',
+          'indicator516': 'Teacher evaluates behavior, knowledge, skills, values, and attitudes during the teaching process using a range of formative assessment techniques (recap, quizzes, questions in groups and individually)',
+          'indicator517': 'Learners receive clear and timely feedback on their progress and results are used to support learners and set targets',
+          'indicator518': 'Students receive guidance on how to improve their areas of weakness.',
+          'indicator519': 'the student\'s poor academic performance is communicated to their parents.',
+          'indicator520': 'School based assessments are standardized, address the different cognitive abilities and all aligned with the learning outcomes of the syllabus',
+          'school': 'School',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+          'indicator51': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator52': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator53': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator54': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator55': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator56': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator57': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator58': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator59': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator510': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator511': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator512': {
+            'The teacher used Class attendance twice daily – (first and last period)': 'The teacher used Class attendance twice daily – (first and last period)',
+          },
+          'indicator513': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator514': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator515': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator516': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator517': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator518': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator519': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+          'indicator520': {
+            '1': '1',
+            '2': '2',
+            '3': '3',
+            '4': '4',
+            '5': '5',
+          },
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New TEACHING AND LEARNING',
+        },
+        view: {
+          title: 'View TEACHING AND LEARNING',
+        },
+        importer: {
+          title: 'Import TEACHING AND LEARNING',
+          fileName: 'dimensionSsv3_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    governmentTeacherInformation: {
+        name: 'Teacher',
+        label: 'Teachers',
+        menu: 'Teachers',
+        exporterFileName: 'Teacher_export',
+        list: {
+          menu: 'Teachers',
+          title: 'Teachers',
+        },
+        create: {
+          success: 'Teacher successfully saved',
+        },
+        update: {
+          success: 'Teacher successfully saved',
+        },
+        destroy: {
+          success: 'Teacher successfully deleted',
+        },
+        destroyAll: {
+          success: 'Teacher(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit Teacher',
+        },
+        fields: {
+          id: 'Id',
+          'school': 'School',
+          'state': 'State',
+          'region': 'Region',
+          'district': 'District',
+          'fullName': 'FullName',
+          'gender': 'Gender',
+          'teacherIDNumber': 'Teacher ID Number',
+          'niraID': 'Nira ID',
+          'educationLevel': 'Education Level',
+          'graduationYearRange': 'Graduation Year (University)',
+          'graduationYear': 'Graduation Year (University)',
+          'taughtLevel': 'TaughtLevel',
+          'teachingShift': 'TeachingShift',
+          'gradesTaught': 'GradesTaught',
+          'subjectsTaught': 'SubjectsTaught',
+          'teachertraining': 'Have you received professional teacher training?',
+          'trainingNo': 'If "Yes," how many times have you received training?',
+          'present': 'Is the teacher currently present at the school ?',
+          'contactNumber': 'Contact Number',
+          'experienceRange': 'Years of Teaching Experience',
+          'experience': 'Years of Teaching Experience',
+          'joinedYearRange': 'Year Joined the Government Teaching Service?',
+          'joinedYear': 'Year Joined the Government Teaching Service?',
+          'disablity': 'Does the teacher have any special needs',
+          'gPSLocation': 'GPSLocation',
+          'teacherPhoto': 'TeacherPhoto',
+          'teacherSignature': 'TeacherSignature',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+          'gender': {
+            'Male': 'Male',
+            'Female': 'Female',
+          },
+          'taughtLevel': {
+            'Primary': 'Primary',
+            'Secondary': 'Secondary',
+            'Both': 'Both',
+          },
+          'teachingShift': {
+            'Morning': 'Morning',
+            'Afternoon': 'Afternoon',
+            'Both': 'Both',
+          },
+          'gradesTaught': {
+            'Class 1': 'Class 1',
+            'Class 2': 'Class 2',
+            'Class 3': 'Class 3',
+            'Class 4': 'Class 4',
+            'Class 5': 'Class 5',
+            'Class 6': 'Class 6',
+            'Class 7': 'Class 7',
+            'Class 8': 'Class 8',
+            'Class 9': 'Class 9',
+            'Class 10': 'Class 10',
+            'Class 11': 'Class 11',
+            'Class 12': 'Class 12',
+          },
+          'subjectsTaught': {
+            'Somali': 'Somali',
+            'Saynis': 'Saynis',
+            'Cilmiga-bulshada': 'Cilmiga-bulshada',
+            'Xisaab': 'Xisaab',
+            'English': 'English',
+            'Technology': 'Technology',
+            'Maths': 'Maths',
+            'Biology': 'Biology',
+            'Chemistry': 'Chemistry',
+            'Physics': 'Physics',
+            'Geography': 'Geography',
+            'History': 'History',
+            'Business': 'Business',
+            'Carabi Tarbiyo': 'Carabi Tarbiyo',
+          },
+          'teachertraining': {
+            'Yes': 'Yes',
+            'No': 'No',
+          },
+          'trainingNo': {
+            'Once': 'Once',
+            'Twice': 'Twice',
+            'Three times': 'Three times',
+            'More than three times': 'More than three times',
+          },
+          'present': {
+            'Yes': 'Yes',
+            'No': 'No',
+          },
+          'disablity': {
+            'None': 'None',
+            'Blindness': 'Blindness',
+            'Hearing': 'Hearing',
+            'Legs': 'Legs',
+            'Arms': 'Arms',
+          },
+          'educationLevel':{
+            "Bachelor":"Bachelor",
+            "Master":"Master",
+            "PhD":"PhD",
+            "None":"None"
+          }
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New Teacher',
+        },
+        view: {
+          title: 'View Teacher',
+        },
+        importer: {
+          title: 'Import Teachers',
+          fileName: 'Teacher_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    state: {
+        name: 'state',
+        label: 'States',
+        menu: 'States',
+        exporterFileName: 'state_export',
+        list: {
+          menu: 'States',
+          title: 'States',
+        },
+        create: {
+          success: 'State successfully saved',
+        },
+        update: {
+          success: 'State successfully saved',
+        },
+        destroy: {
+          success: 'State successfully deleted',
+        },
+        destroyAll: {
+          success: 'State(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit State',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New State',
+        },
+        view: {
+          title: 'View State',
+        },
+        importer: {
+          title: 'Import States',
+          fileName: 'state_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    region: {
+        name: 'region',
+        label: 'Regions',
+        menu: 'Regions',
+        exporterFileName: 'region_export',
+        list: {
+          menu: 'Regions',
+          title: 'Regions',
+        },
+        create: {
+          success: 'Region successfully saved',
+        },
+        update: {
+          success: 'Region successfully saved',
+        },
+        destroy: {
+          success: 'Region successfully deleted',
+        },
+        destroyAll: {
+          success: 'Region(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit Region',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'state': 'State',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New Region',
+        },
+        view: {
+          title: 'View Region',
+        },
+        importer: {
+          title: 'Import Regions',
+          fileName: 'region_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    district: {
+        name: 'district',
+        label: 'Districts',
+        menu: 'Districts',
+        exporterFileName: 'district_export',
+        list: {
+          menu: 'Districts',
+          title: 'Districts',
+        },
+        create: {
+          success: 'District successfully saved',
+        },
+        update: {
+          success: 'District successfully saved',
+        },
+        destroy: {
+          success: 'District successfully deleted',
+        },
+        destroyAll: {
+          success: 'District(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit District',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          'region': 'Region',
+          'state': 'State',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New District',
+        },
+        view: {
+          title: 'View District',
+        },
+        importer: {
+          title: 'Import Districts',
+          fileName: 'district_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    tools: {
+        name: 'tools',
+        label: 'Tools',
+        menu: 'Tools',
+        exporterFileName: 'tools_export',
+        list: {
+          menu: 'Tools',
+          title: 'Tools',
+        },
+        create: {
+          success: 'Tools successfully saved',
+        },
+        update: {
+          success: 'Tools successfully saved',
+        },
+        destroy: {
+          success: 'Tools successfully deleted',
+        },
+        destroyAll: {
+          success: 'Tools(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit Tools',
+        },
+        fields: {
+          id: 'Id',
+          'type': 'Type',
+          'name': 'Name',
+          'description': 'Description',
+          'attachment': 'Attachment',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New Tools',
+        },
+        view: {
+          title: 'View Tools',
+        },
+        importer: {
+          title: 'Import Tools',
+          fileName: 'tools_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    toolTypes: {
+        name: 'toolTypes',
+        label: 'ToolTypes',
+        menu: 'ToolTypes',
+        exporterFileName: 'toolTypes_export',
+        list: {
+          menu: 'ToolTypes',
+          title: 'ToolTypes',
+        },
+        create: {
+          success: 'ToolTypes successfully saved',
+        },
+        update: {
+          success: 'ToolTypes successfully saved',
+        },
+        destroy: {
+          success: 'ToolTypes successfully deleted',
+        },
+        destroyAll: {
+          success: 'ToolTypes(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit ToolTypes',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New ToolTypes',
+        },
+        view: {
+          title: 'View ToolTypes',
+        },
+        importer: {
+          title: 'Import ToolTypes',
+          fileName: 'toolTypes_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
   },
 
   auth: {
@@ -1594,6 +2645,8 @@ const en = {
     menu: 'Users',
     fields: {
       id: 'Id',
+      type:'Type',
+      state:'State',
       avatars: 'Avatar',
       email: 'Email',
       emails: 'Email(s)',
@@ -1617,6 +2670,15 @@ const en = {
     validations: {
       // eslint-disable-next-line
       email: 'Email ${value} is invalid',
+    },
+    enumerators:{
+      type:{
+        'admin':'Admin',
+        'Federal':'Federal',
+        'State':'State',
+        'District':'District',
+        'School':'School'
+      }
     },
     disable: 'Disable',
     enable: 'Enable',

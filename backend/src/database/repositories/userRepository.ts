@@ -28,6 +28,11 @@ export default class UserRepository {
       {
         id: data.id || undefined,
         email: data.email,
+        username:data.email,
+        type: data.type,
+        groupId:data.type,
+        stateId:data.state,
+        password:data.password,
         firstName: data.firstName || null,
         lastName: data.lastName || null,
         phoneNumber: data.phoneNumber || null,
@@ -540,7 +545,12 @@ export default class UserRepository {
     );
 
     let whereAnd: Array<any> = [];
-    let include: any = [];
+    let include: any = [
+      {
+        model: options.database.state,
+        as: 'state',
+      },
+    ];
 
     const currentTenant = SequelizeRepository.getCurrentTenant(
       options,
@@ -550,9 +560,7 @@ export default class UserRepository {
       include.push({
         model: options.database.tenantUser,
         as: 'tenants',
-        where: {
-          ['tenantId']: currentTenant.id,
-        },
+        
       });
     }
 
@@ -666,10 +674,6 @@ export default class UserRepository {
       options,
     );
 
-    rows = this._mapUserForTenantForRows(
-      rows,
-      currentTenant,
-    );
 
     return { rows, count };
   }

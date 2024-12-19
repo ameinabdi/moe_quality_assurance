@@ -9,7 +9,6 @@ import React, { useState } from 'react';
 import { i18n } from 'src/i18n';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
-import TagsFormItem from 'src/view/shared/form/items/TagsFormItem';
 import FormWrapper, {
   formItemLayout,
   tailFormItemLayout,
@@ -18,46 +17,36 @@ import * as yup from 'yup';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import userEnumerators from 'src/modules/user/userEnumerators';
 import { yupResolver } from '@hookform/resolvers/yup';
+import StateAutocompleteFormItem from 'src/view/state/autocomplete/StateAutocompleteFormItem';
 
 const singleSchema = yup.object().shape({
+  fullName: yupFormSchemas.string(
+    i18n('user.fields.fullName'),
+    {},
+  ),
   email: yupFormSchemas.email(i18n('user.fields.email'),{}),
-  roles: yupFormSchemas.stringArray(
-    i18n('user.fields.roles'),
-    { required: true, min: 1 },
+  type: yupFormSchemas.enumerator(
+    i18n('user.fields.schoolType'),
+    {
+      "options": userEnumerators.type
+
+    },
+  ),
+  state: yupFormSchemas.relationToOne(
+    i18n('user.fields.state'),
+    {},
   ),
 });
-
-const multipleSchema = yup.object().shape({
-  emails: yup
-    .array()
-    .label(i18n('user.fields.emails'))
-    .of(
-      yup
-        .string()
-        .transform((cv, ov) => {
-          return ov === '' ? null : cv;
-        })
-        .email(i18n('user.validations.email'))
-        .label(i18n('user.fields.email'))
-        .max(255)
-        .required(),
-    )
-    .required().min(1),
-  roles: yupFormSchemas.stringArray(
-    i18n('user.fields.roles'),
-    { required: true, min: 1 },
-  ),
-});
-
+ 
 const UserNewForm = (props) => {
-  const schema = props.single
-    ? singleSchema
-    : multipleSchema;
+  const schema = singleSchema
 
   const [initialValues] = useState(() => ({
-    emails: [],
     email: '',
-    roles: [],
+    state: null,
+    fullName:'',
+    type:'',
+
   }));
 
   const form = useForm({
@@ -83,13 +72,34 @@ const UserNewForm = (props) => {
     });
   };
 
-  const { single, saveLoading } = props;
+  const { saveLoading } = props;
 
   return (
     <FormWrapper>
       <FormProvider {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          {single ? (
+        <SelectFormItem
+            name="type"
+            label={i18n('user.fields.type')}
+            options={userEnumerators.type.map(
+              (value) => ({
+                value,
+                label: i18n(
+                  `user.enumerators.type.${value}`,
+                ),
+              }),
+            )}
+            required={false}
+            layout={formItemLayout}
+            size={'large'}
+          />
+            <InputFormItem
+                      name="fullName"
+                      label={i18n('user.fields.fullName')}  
+                      required={false}
+                      layout={formItemLayout}
+                      autoFocus
+                    />
             <InputFormItem
               name="email"
               label={i18n('user.fields.email')}
@@ -97,29 +107,14 @@ const UserNewForm = (props) => {
               layout={formItemLayout}
               autoFocus
             />
-          ) : (
-            <TagsFormItem
-              name="emails"
-              label={i18n('user.fields.emails')}
-              notFoundContent={i18n('user.new.emailsHint')}
-              required={true}
-              layout={formItemLayout}
-              autoFocus
-            />
-          )}
-
-          <SelectFormItem
-            name="roles"
-            label={i18n('user.fields.roles')}
-            required={true}
-            options={userEnumerators.roles.map((value) => ({
-              value,
-              label: i18n(`roles.${value}.label`),
-            }))}
-            mode="multiple"
+          <StateAutocompleteFormItem 
+            name="state"
+            label={i18n('user.fields.state')}
+            required={false}
+            showCreate={!props.modal}
             layout={formItemLayout}
           />
-
+         
           <Form.Item
             className="form-buttons"
             {...tailFormItemLayout}

@@ -333,11 +333,11 @@ class TenantRepository {
     // Fetch only tenant that the current user has access
 
     whereAnd.push({
-      id: {
-        [Op.in]: currentUser.tenants.map(
-          (tenantUser) => tenantUser.tenant.id,
-        ),
-      },
+      // id: {
+      //   [Op.in]: currentUser.tenants?.map(
+      //     (tenantUser) => tenantUser.tenant.id,
+      //   ),
+      // },
     });
 
     if (filter) {

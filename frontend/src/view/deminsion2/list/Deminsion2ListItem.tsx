@@ -6,7 +6,7 @@ import selectors from 'src/modules/deminsion2/deminsion2Selectors';
 
 const Deminsion2ListItem = (props) => {
   const hasPermissionToRead = useSelector(
-    selectors.selectPermissionToRead,
+    selectors.selectAuditLogToRead,
   );
 
   const valueAsArray = () => {

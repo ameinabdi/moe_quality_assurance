@@ -138,8 +138,15 @@ export default function (sequelize) {
   );
 
   school.associate = (models) => {
+    models.school.belongsTo(models.district, {
+      as: 'district',
+      constraints: false,
+    });
 
-
+    models.school.belongsTo(models.state, {
+      as: 'state',
+      constraints: false,
+    });
 
     
     models.school.belongsTo(models.tenant, {
