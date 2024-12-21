@@ -36,9 +36,525 @@ const so = {
   report: {
     menu: 'Report',
   },
-
+  setup: {
+    menu: 'Setup',
+  },
+  
   entities: {
+    schoolSupervision: {
+      name: 'school Supervision',
+      label: 'School Supervisions',
+      menu: 'School Supervisions',
+      exporterFileName: 'school Supervision_export',
+      list: {
+        menu: 'School Supervisions',
+        title: 'School Supervisions',
+      },
+      create: {
+        success: 'School Supervision successfully saved',
+      },
+      update: {
+        success: 'School Supervision successfully saved',
+      },
+      destroy: {
+        success: 'School Supervision successfully deleted',
+      },
+      destroyAll: {
+        success: 'School Supervision(s) successfully deleted',
+      },
+      edit: {
+        title: 'SCHOOL SUPERVISION TOOL'
+      },
+      fields: {
+        id: 'Id',
+        'finalizedDateRange': 'Finalized Date',
+        'finalizedDate': 'Wakhtiga La Gudbiyey',
+        'principal': 'Magaca Maamulah/Maamule Ku Xigeenka',
+        'signatureofprincipal': 'Saxeexa Maamulaha',
+        'introduction': 'Horidhac',
+        'guidelines': 'Hage',
+        'school': 'Dugsi',
+        'dimension1': 'Dimension 1',
+        'dimension2': 'Dimension 2',
+        'dimension3': 'Dimension 3',
+        'dimension4': 'Dimension 4',
+        'dimension5': 'Dimension 5',
+        'dimension_1':'Maamulka Iyo Hoggaanka Dugsiga',
+        'dimension_2':'Deegaanka Dugsiga Iyo Bad-qabkiisa',
+        'dimension_3':'Fulinta Manhajka',
+        'dimension_4':'Xariirka Bulshada Iyo Dugsiga',
+        'dimension_5':'Baridda Iyo Barashada',
+        'schoolStamp': 'Shaanbada Dugsiga',
+        'schoolinfo': 'Warbixinta Dugsiga',
+        'schoolImprovement':'Qorshaha Hormarineed Dugsiga',
+        'teacherAttedance':'Xaadiriska Barayaasha',
+        'total':'Total',
+        'No':'T.T',
+        'DIMENSIONS':'Waxyaabaha la Cabbirayo',
+        'Indicators':'Dhibcaha  Cabbirka',
+        'value':"Dhibcaha Guud ee Cabbirka",
+        'Indicator':'Titlmaame',
+        'answer':'Jawaab',
+        'finalize':'DHAMAAD',
+        'indicatorDesc':'Qalad Goobta Ku Haboon Sida Ku Xusan Hagaha Kore',
+        '1':'U baahan taageero degdeg ah',
+        '2':'U baahan horumarin',
+        '3':'La aqbali karo',
+        '4':'Wanaagsan',
+        '5':'Heer sare',
+        'aspect':'QAYBAHA DUGSIGA',
+        'challenge':'CAQABADAHA LA TILMAAMEY',
+        'rating':'QIIMEYNTA (MIISAANKA 1-5) KAN UGU SAREEYA WUXUU MATALEYSAA MUHIIMADDA UGU SAREEYA 1: Waxay u baahan tahay taageero degdeg ah \n 2: Waxay u baahan tahay horumar \n 3: La aqbali karo \n 4: Wanaagsan \n 5: Heer sare',
+        'solution':'XALALKA LA TILMAAMEY',
+        'ratingAwarded':'Cabbirka Qiimaynta',
+        'descriptor':'Sharraxaad',
+        'looking':'Fiiri tilmaamaha oo weydii su aalaha soo socda ',
+        'evidence':'Waa maxay xaaladda ka jirta dugsiga ka dib marka la eego? caddaymaha la heli karo',
+        'interpretation':'Turjumaad',
+        'descriptor_1':'Wuxuu u baahan yahay taageero degdeg ah',
+        'looking_1':'Ma la heli karaa?',
+        'evidence_1':'Lama heli karo.',
+        'interpretation_1':'1. Wax kale oo ay la macno tahay Ma jiraan? Ma la sameeyay? ma dhacdaa? Si looga jawaabo su aashan, qiimeeyuhu waa in uu eego caddaynta dokumentiga ah ama caddaynta lagu soo ururiyey waraysiyada, casharrada iyo indha-indhaynta. sidoo kale waxa  uu tixraaci karaa dhaqan ama dhacdo gaar ah oo ka dhacday dugsiga. <br /> 2. U hoggaansanaan la aan, aan habboonayn, aan la heli karin, aan loo hoggaansamin, aan la hirgelin. Waxaa jira habacsanaan weyn oo u baahan faragelin degdeg ah iyo ficil sixitaan. Gobolka/Degmadu waxay u baahan yihiin in ay si degdeg ah u soo farageliyaan',
+        'descriptor_2':'U baahan in la horumariyo',
+        'looking_2':'Ma ku habboon tahay?',
+        'evidence_2':'Waa la heli karaa. Dhinacyada qaarkood ayaa ku habboon, qaarna kuma habboona.',
+        'interpretation_2':'1. Wax kasta oo ka dhaca dugsiga ama laga diiwaangeliyey waa in lagu tijaabiyaa in ay waafaqsan yihiin dhammaan sharciyada khuseeya waxbarashada, tusaale; xeerarka  iyo siyaasadaha waxbarashada dalka iyo siyaasadda dugsiyada gaarka ah. <br /> 2. Buuxin la’aanta shuruudaha ugu yaryar ee tilmaamayaal gaar ah, waxaa jira meelo uu ku xooganyahay laakiin waxaa ka miisaan culus  meelaha horumarka u baahan.  Dugsigu waxa uu u baahan yahay waxqabad habaysan oo qorshaysan si ardayda loo siiyo waxbarashada aasaasiga ah. Hirgelinta lagama qaybgelin saamileyda dugsiga. ',
+        'descriptor_3':'La aqbali karo',
+        'looking_3':'Ma la fuliyaa ?',
+        'evidence_3':'Waa la heli karaa wayna ku habboon yihiin. Dhinacyada intooda badan waa la fuliyaa, waxayna waafaqsan yihiin sharciga oo hawlaha dugsiga ayey wax ku kordhiyaan.',
+        'interpretation_3':'1. Siyaasadaha, nidaamyada, dhaqammada iyo qorshaha dugsiga waa la fuliyaa. Caddaymaha waxa lagu soo ururin karaa indha-indhayn, diiwaangelin, xiriir qoraal ah, waraysiyo lala yeesho saamileyda dugsiga, xogwaraysiyo iwm. Hirgelintu waa in ay sidoo kale noqotaa mid ku habboon oo waafaqsan sharciga. <br /> 2. Ku filan, buuxinaysa shuruudaha ugu yar, meelaha hagaagsan ayaa ka miisaan badan meelaha horumarinta u baahan, siyaasadaha, qorshayaasha iyo habraacyada si buuxda ayaa loo fuliyey. Tayada waxbaridda ayaa wanaagsan, dhibcaha qiimaynta qaranka sanadlaha ah ee ardayda fasalka 12aad waxay gaaraan celcelis ahaan (60% - 70%)   ardaydu waxa ay helaan xirfado asaasi ah, inta ugu yar filashooyinkana waa la dhamaystiray. ',
+        'descriptor_4':'Wanaagsan',
+        'looking_4':'waxtar ma leedahay?',
+        'evidence_4':'Waa la heli karaa, weyna ku habboon tahay, waana la hirgeliyey. Dhinacyada oo dhan waa la fuliyay, waa la raacayaa sharciga waxayna wax ku ku kordhiyeen qiimaha hawlaha dugsiga.',
+        'interpretation_4':'1. Siyaasadda, qorshaha, habraaca iyo habdhaqanku waxa ay kordhiyaan qiyamka  hawlaha dugsiga. Way shaqaysaa oo waa mid wax ku ool ah. Dugsigu waxa uu u hoggaansamay dhammaan shuruucda iyo siyaasadaha  looga baahan yahay, sharcidejinta iyo habraacyada kale ee la xiriira, tayada waxbariddana waxa lagu sifeeyaa awoodo waaweyn oo si cad uga miisaan culus horumar kasta. Waaya-aragnimada ardayda iyo guuluhu waxa ay ka sarreeyaan celceliska Filashada. Siyaasadaha qorshayaasha iyo habraacyada kale si buuxda ayey waxtar u leeyihiin.',
+        'descriptor_5':'Heer sare ah',
+        'looking_5':'Hal-abuur ma jiraa ?',
+        'evidence_5':'Waa la heli karaa, waana kuwo ku habboon, lana hirgeliyay waxtarna leh. Dhammaan dhinacyadu waxa ay u hirgeliyeen qodobadan si waafaqsan sharciga waxbarashada dalka taas oo qiimo weyn ku soo kordhisay dugsiga, iyada oo leh caddeymo cad iyo waxqabadyo muuqda oo la arki karo. ',
+        'interpretation_5':'1. Waxaa jira habdhaqan gaar ah, si wanaagsana loo dabaqay dhiirigelinayana dugsiyada kale. Nidaam hirgelineed oo wax ku ool ah, suurtageliyeyna waxbarid iyo barasho tayo sare leh, taas oo horumarisay waaya-aragnimada iyo guulaha ardayda, waxaana sidoo kale la dabaqay dhaqamo cusub oo hal abuurnimo. ',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
 
+      },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'Agabka Isqiimaynta Dugsiyada',
+        'sectiona':'QAYBTA A: HOR DHAC',
+        'introduction':"Agabka is-qiimeynta dugsigu waa agab loo adeegsado in lagu qiimeeyo hawlgudashada dugsiga ayada oo aysan jirin culeys ka imaanaya cid ka baxsan dugsiga ay maamulayaashu sameeyaan is- qiimeyn, ayna ogaadaan waxa u hagaagsan Dugsiga  iyo halka uu horumarinta uga baahan. <br /> Agabka is-qiimeynta dugsigu  waxa uu kakooban yahay 5 qayb,kuwaas oo kala ah: <br/> 1.	Hoggaaminta iyo maamulka dugsiga <br/> 2.	Degaanka dugsiga iyo badqabkiisa <br/> 3.	Fulinta iyo hirgelinta manhajka <br/> 4.	Ka qaybgalka waalidka iyo bulshada <br/> 5.	Baridda iyo barashada",
+        'note':'<h3><strong>FIIRO GAAR AH:</strong></h3><br/> ✅	Maamulka dugsiga waxa looga baahan yahay in uu sameeyo is-qiimayn dhab,oo waafaqsan Agabka is-qiimeyn,Dugsiga. <br/> ✅ Kadib dhamaystirka Is-qiimeynta Dugsiga, dugsigu waa in uu isticmaalo xogta Is-qiimeynta si uu u sameeyo Qorshaha Horumarinta Dugsiga (QHD). <br/><br/>',
+        'sectionb':'QAYBTA B: QIIMEYNTA TILMAAMAHA ',
+        'basic':'WARBIXINTA AASAASIGA EE DUGSIGA:',
+        'sectionc':'QAYBTA C: QAAB-DHISMEEDKA MUDNAANTA BAAHIYAHA ISKUULKA',
+        'dimension1':'TILMAAMAHA 1: MAAMULKA IYO HOGGAANKA DUGSIGA',
+        'dimension2':'TILMAAMAHA 2: DEEGAANKA DUGSIGA IYO BAD-QABKIISA',
+        'dimension3':'TILMAAMAHA 3: FULINTA MANHAJKA',
+        'dimension4':'TILMAAMAHA 4: XIRIIRKA BULSHADA IYO DUGSIGA ',
+        'dimension5':'TILMAAMAHA 5: BARIDDA IYO BARASHADA'
+      },
+      view: {
+        title: 'View SSA Tool',
+      },
+      importer: {
+        title: 'Import SSA Tools',
+        fileName: 'sSASurvey_import_template',
+        hint:
+          'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
+
+
+    governmentTeacherInformation: {
+      name: 'Macallin',
+      label: 'Macallimiin',
+      menu: 'Macallimiin',
+      exporterFileName: 'Macallin_export',
+      list: {
+        menu: 'Macallimiin',
+        title: 'Macallimiin',
+      },
+      create: {
+        success: 'Macallin si guul ah ayaa loo keydiyay',
+      },
+      update: {
+        success: 'Macallin si guul ah ayaa loo keydiyay',
+      },
+      destroy: {
+        success: 'Macallin si guul ah ayaa loo tirtiray',
+      },
+      destroyAll: {
+        success: 'Macallimiin si guul ah ayaa loo tirtiray',
+      },
+      edit: {
+        title: 'Tafatir Macallin',
+      },
+      fields: {
+        id: 'Id',
+        school: 'Dugsi',
+        state: 'Gobol',
+        region: 'Degmo',
+        district: 'Degmo',
+        fullName: 'Magaca Buuxa',
+        gender: 'Jinsiga',
+        teacherIDNumber: 'Lambarka Aqoonsiga Macallinka',
+        niraID: 'Lambarka NIRA',
+        educationLevel: 'Heerka Waxbarashada',
+        graduationYearRange: 'Sanadka Qalin-jabinta (Jaamacad)',
+        graduationYear: 'Sanadka Qalin-jabinta (Jaamacad)',
+        taughtLevel: 'Heerka Waxbaridda',
+        teachingShift: 'Waqtiga Waxbaridda',
+        gradesTaught: 'Fasalada La Baro',
+        subjectsTaught: 'Maaddooyinka La Baro',
+        teachertraining: 'Ma helay tababar xirfadeed oo macallinnimo?',
+        trainingNo: 'Haddii "Haa," imisa jeer ayaad tababar heshay?',
+        present: 'Ma jooga macallinka dugsiga?',
+        contactNumber: 'Lambarka Taleefanka',
+        experienceRange: 'Sanadaha Khibradda Waxbaridda',
+        experience: 'Sanadaha Khibradda Waxbaridda',
+        joinedYearRange: 'Sanadka Ku Biiray Adeegga Waxbarista Dawladda',
+        joinedYear: 'Sanadka Ku Biiray Adeegga Waxbarista Dawladda',
+        disablity: 'Macallinku ma leeyahay baahiyo gaar ah?',
+        gPSLocation: 'Goobta GPS',
+        teacherPhoto: 'Sawirka Macallinka',
+        teacherSignature: 'Saxiixa Macallinka',
+        reason: 'Sababta',
+        createdAt: 'La abuuray',
+        updatedAt: 'La cusboonaysiiyay',
+        createdAtRange: 'La abuuray',
+      },
+      enumerators: {
+        gender: {
+          Male: 'Lab',
+          Female: 'Dhedig',
+        },
+        taughtLevel: {
+          Primary: 'Dugsiga Hoose',
+          Secondary: 'Dugsiga Sare',
+          Both: 'Labada',
+        },
+        teachingShift: {
+          Morning: 'Subax',
+          Afternoon: 'Galab',
+          Both: 'Labada',
+        },
+        gradesTaught: {
+          'Class 1': 'Fasalka 1aad',
+          'Class 2': 'Fasalka 2aad',
+          'Class 3': 'Fasalka 3aad',
+          'Class 4': 'Fasalka 4aad',
+          'Class 5': 'Fasalka 5aad',
+          'Class 6': 'Fasalka 6aad',
+          'Class 7': 'Fasalka 7aad',
+          'Class 8': 'Fasalka 8aad',
+          'Class 9': 'Fasalka 9aad',
+          'Class 10': 'Fasalka 10aad',
+          'Class 11': 'Fasalka 11aad',
+          'Class 12': 'Fasalka 12aad',
+        },
+        subjectsTaught: {
+          Somali: 'Af-Soomaali',
+          Saynis: 'Saynis',
+          'Cilmiga-bulshada': 'Cilmiga Bulshada',
+          Xisaab: 'Xisaab',
+          English: 'Ingiriis',
+          Technology: 'Tignoolajiyada',
+          Maths: 'Xisaabta',
+          Biology: 'Bayooloji',
+          Chemistry: 'Kiimiko',
+          Physics: 'Fiisigis',
+          Geography: 'Juquraafi',
+          History: 'Taariikh',
+          Business: 'Ganacsi',
+          'Carabi Tarbiyo': 'Carabi & Tarbiyo',
+        },
+        teachertraining: {
+          Yes: 'Haa',
+          No: 'Maya',
+        },
+        trainingNo: {
+          Once: 'Hal mar',
+          Twice: 'Laba jeer',
+          'Three times': 'Saddex jeer',
+          'More than three times': 'Ka badan saddex jeer',
+        },
+        present: {
+          Yes: 'Haa',
+          No: 'Maya',
+        },
+        disablity: {
+          None: 'Midna',
+          Blindness: 'Indho la’aan',
+          Hearing: 'Dhagoolnimo',
+          Legs: 'Lugaha',
+          Arms: 'Gacmaha',
+        },
+        educationLevel: {
+          Bachelor: 'Shahaadada Koowaad',
+          Master: 'Shahaadada Labaad',
+          PhD: 'PhD',
+          None: 'Midna',
+        },
+      },
+      placeholders: {},
+      hints: {
+        reason: 'Sababta maqnaanshaha',
+      },
+      new: {
+        title: 'Macallin Cusub',
+      },
+      view: {
+        title: 'Eeg Macallin',
+      },
+      importer: {
+        title: 'Soo Dhoofinta Macallimiinta',
+        fileName: 'Macallin_import_template',
+        hint: 'Khadadka Faylka/Sawirka waa inay ahaadaan URLs, oo kala soocan meel bannaan.',
+      },
+    },
+    
+    state: {
+      name: 'gobol',
+      label: 'Gobollada',
+      menu: 'Gobollada',
+      exporterFileName: 'gobol_export',
+      list: {
+        menu: 'Gobollada',
+        title: 'Gobollada',
+      },
+      create: {
+        success: 'Gobolka si guul ah ayaa loo keydiyay',
+      },
+      update: {
+        success: 'Gobolka si guul ah ayaa loo keydiyay',
+      },
+      destroy: {
+        success: 'Gobolka si guul ah ayaa loo tirtiray',
+      },
+      destroyAll: {
+        success: 'Gobollada si guul ah ayaa loo tirtiray',
+      },
+      edit: {
+        title: 'Tafatir Gobol',
+      },
+      fields: {
+        id: 'ID',
+        name: 'Magac',
+        createdAt: 'La abuuray',
+        updatedAt: 'La cusboonaysiiyay',
+        createdAtRange: 'La abuuray',
+      },
+      enumerators: {},
+      placeholders: {},
+      hints: {},
+      new: {
+        title: 'Gobol Cusub',
+      },
+      view: {
+        title: 'Eeg Gobol',
+      },
+      importer: {
+        title: 'Soo Dhoofinta Gobollada',
+        fileName: 'gobol_import_template',
+        hint: 'Khadadka Faylka/Sawirka waa inay URLs yihiin, oo kala soocan meel bannaan.',
+      },
+    },
+    region: {
+      name: 'degmo',
+      label: 'Degmooyinka',
+      menu: 'Degmooyinka',
+      exporterFileName: 'degmo_export',
+      list: {
+        menu: 'Degmooyinka',
+        title: 'Degmooyinka',
+      },
+      create: {
+        success: 'Degmada si guul ah ayaa loo keydiyay',
+      },
+      update: {
+        success: 'Degmada si guul ah ayaa loo keydiyay',
+      },
+      destroy: {
+        success: 'Degmada si guul ah ayaa loo tirtiray',
+      },
+      destroyAll: {
+        success: 'Degmooyin si guul ah ayaa loo tirtiray',
+      },
+      edit: {
+        title: 'Tafatir Degmo',
+      },
+      fields: {
+        id: 'ID',
+        name: 'Magac',
+        state: 'Gobol',
+        createdAt: 'La abuuray',
+        updatedAt: 'La cusboonaysiiyay',
+        createdAtRange: 'La abuuray',
+      },
+      enumerators: {},
+      placeholders: {},
+      hints: {},
+      new: {
+        title: 'Degmo Cusub',
+      },
+      view: {
+        title: 'Eeg Degmo',
+      },
+      importer: {
+        title: 'Soo Dhoofinta Degmooyinka',
+        fileName: 'degmo_import_template',
+        hint: 'Khadadka Faylka/Sawirka waa inay URLs yihiin, oo kala soocan meel bannaan.',
+      },
+    },
+    district: {
+      name: 'tuulo',
+      label: 'Tuulooyinka',
+      menu: 'Tuulooyinka',
+      exporterFileName: 'tuulo_export',
+      list: {
+        menu: 'Tuulooyinka',
+        title: 'Tuulooyinka',
+      },
+      create: {
+        success: 'Tuulada si guul ah ayaa loo keydiyay',
+      },
+      update: {
+        success: 'Tuulada si guul ah ayaa loo keydiyay',
+      },
+      destroy: {
+        success: 'Tuulada si guul ah ayaa loo tirtiray',
+      },
+      destroyAll: {
+        success: 'Tuulooyin si guul ah ayaa loo tirtiray',
+      },
+      edit: {
+        title: 'Tafatir Tuulo',
+      },
+      fields: {
+        id: 'ID',
+        name: 'Magac',
+        region: 'Degmo',
+        state: 'Gobol',
+        createdAt: 'La abuuray',
+        updatedAt: 'La cusboonaysiiyay',
+        createdAtRange: 'La abuuray',
+      },
+      enumerators: {},
+      placeholders: {},
+      hints: {},
+      new: {
+        title: 'Tuulo Cusub',
+      },
+      view: {
+        title: 'Eeg Tuulo',
+      },
+      importer: {
+        title: 'Soo Dhoofinta Tuulooyinka',
+        fileName: 'tuulo_import_template',
+        hint: 'Khadadka Faylka/Sawirka waa inay URLs yihiin, oo kala soocan meel bannaan.',
+      },
+    },
+    tools: {
+      name: 'qalab',
+      label: 'Qalabka',
+      menu: 'Qalabka',
+      exporterFileName: 'qalab_export',
+      list: {
+        menu: 'Qalabka',
+        title: 'Qalabka',
+      },
+      create: {
+        success: 'Qalabka si guul ah ayaa loo keydiyay',
+      },
+      update: {
+        success: 'Qalabka si guul ah ayaa loo keydiyay',
+      },
+      destroy: {
+        success: 'Qalabka si guul ah ayaa loo tirtiray',
+      },
+      destroyAll: {
+        success: 'Qalab si guul ah ayaa loo tirtiray',
+      },
+      edit: {
+        title: 'Tafatir Qalab',
+      },
+      fields: {
+        id: 'ID',
+        type: 'Nooca',
+        name: 'Magac',
+        description: 'Sharaxaada',
+        attachment: 'Ku-xiridda',
+        createdAt: 'La abuuray',
+        updatedAt: 'La cusboonaysiiyay',
+        createdAtRange: 'La abuuray',
+      },
+      enumerators: {},
+      placeholders: {},
+      hints: {},
+      new: {
+        title: 'Qalab Cusub',
+      },
+      view: {
+        title: 'Eeg Qalab',
+      },
+      importer: {
+        title: 'Soo Dhoofinta Qalabka',
+        fileName: 'qalab_import_template',
+        hint: 'Khadadka Faylka/Sawirka waa inay URLs yihiin, oo kala soocan meel bannaan.',
+      },
+    },
+    toolTypes: {
+      name: 'noocyadaQalabka',
+      label: 'Noocyada Qalabka',
+      menu: 'Noocyada Qalabka',
+      exporterFileName: 'noocyada_qalabka_export',
+      list: {
+        menu: 'Noocyada Qalabka',
+        title: 'Noocyada Qalabka',
+      },
+      create: {
+        success: 'Noocyada qalabka si guul ah ayaa loo keydiyay',
+      },
+      update: {
+        success: 'Noocyada qalabka si guul ah ayaa loo keydiyay',
+      },
+      destroy: {
+        success: 'Noocyada qalabka si guul ah ayaa loo tirtiray',
+      },
+      destroyAll: {
+        success: 'Noocyo qalab si guul ah ayaa loo tirtiray',
+      },
+      edit: {
+        title: 'Tafatir Noocyada Qalabka',
+      },
+      fields: {
+        id: 'ID',
+        name: 'Magac',
+        createdAt: 'La abuuray',
+        updatedAt: 'La cusboonaysiiyay',
+        createdAtRange: 'La abuuray',
+      },
+      enumerators: {},
+      placeholders: {},
+      hints: {},
+      new: {
+        title: 'Nooc Cusub oo Qalab ah',
+      },
+      view: {
+        title: 'Eeg Noocyada Qalabka',
+      },
+      importer: {
+        title: 'Soo Dhoofinta Noocyada Qalabka',
+        fileName: 'noocyada_qalabka_import_template',
+        hint: 'Khadadka Faylka/Sawirka waa inay URLs yihiin, oo kala soocan meel bannaan.',
+      },
+    },
+    
     school: {
         name: 'school',
         label: 'Schools',

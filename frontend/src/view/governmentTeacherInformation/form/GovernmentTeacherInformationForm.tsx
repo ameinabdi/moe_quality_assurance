@@ -26,6 +26,7 @@ import ImagesFormItem from 'src/view/shared/form/items/ImagesFormItem';
 import SchoolAutocompleteFormItem from 'src/view/school/autocomplete/SchoolAutocompleteFormItem';
 import DistrictAutocompleteFormItem from 'src/view/district/autocomplete/DistrictAutocompleteFormItem';
 import { useGeolocated } from "react-geolocated";
+import TextAreaFormItem from 'src/view/shared/form/items/TextAreaFormItem';
 
 const schema = yup.object().shape({
   school: yupFormSchemas.relationToOne(
@@ -62,7 +63,11 @@ const schema = yup.object().shape({
   niraID: yupFormSchemas.string(
     i18n('entities.governmentTeacherInformation.fields.niraID'),
     {
-      "required": true
+    },
+  ),
+  reason: yupFormSchemas.string(
+    i18n('entities.governmentTeacherInformation.fields.reason'),
+    {
     },
   ),
   
@@ -201,6 +206,7 @@ const GovernmentTeacherInformationForm = (props) => {
       gPSLocation: record.gPSLocation,
       teacherPhoto: record.teacherPhoto || [],
       teacherSignature: record.teacherSignature || [],
+      reason:record.reason
     };
   });
 
@@ -332,7 +338,7 @@ const GovernmentTeacherInformationForm = (props) => {
             <InputFormItem
               name="niraID"
               label={i18n('entities.governmentTeacherInformation.fields.niraID')}  
-              required={true}
+              required={false}
               size="large"
               layout={formItemLayout}
             />
@@ -486,11 +492,21 @@ const GovernmentTeacherInformationForm = (props) => {
               />
            </Col>
            <Col {...threeColumnsResponsiveProps}>
+              <TextAreaFormItem
+                name="reason"
+                label={i18n('entities.governmentTeacherInformation.fields.reason')}  
+                required={false}
+                hint={i18n('entities.governmentTeacherInformation.hints.reason')}
+                layout={formItemLayout}
+              />
+           </Col>
+           <Col {...threeColumnsResponsiveProps}>
               <InputFormItem
                 name="contactNumber"
                 label={i18n('entities.governmentTeacherInformation.fields.contactNumber')}  
                 required={true}
                 size="large"
+                placeholder="+252 xx xxxxxx"
                 layout={formItemLayout}
               />
            </Col>
@@ -543,7 +559,7 @@ const GovernmentTeacherInformationForm = (props) => {
               }}/>}
             />
            </Col>
-           <Col {...twoColumnsResponsiveProps}>
+           <Col {...threeColumnsResponsiveProps}>
             <ImagesFormItem
               name="teacherPhoto"
               label={i18n('entities.governmentTeacherInformation.fields.teacherPhoto')}
@@ -553,7 +569,7 @@ const GovernmentTeacherInformationForm = (props) => {
               layout={formItemLayout}
             />
            </Col>
-           <Col {...twoColumnsResponsiveProps}>
+           <Col {...threeColumnsResponsiveProps}>
             <ImagesFormItem
               name="teacherSignature"
               label={i18n('entities.governmentTeacherInformation.fields.teacherSignature')}

@@ -26,7 +26,7 @@ const singleSchema = yup.object().shape({
   ),
   email: yupFormSchemas.email(i18n('user.fields.email'),{}),
   type: yupFormSchemas.enumerator(
-    i18n('user.fields.schoolType'),
+    i18n('user.fields.type'),
     {
       "options": userEnumerators.type
 

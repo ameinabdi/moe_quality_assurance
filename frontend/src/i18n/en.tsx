@@ -2142,6 +2142,8 @@ const en = {
           'gPSLocation': 'GPSLocation',
           'teacherPhoto': 'TeacherPhoto',
           'teacherSignature': 'TeacherSignature',
+          'reason':'Reason',
+
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -2223,7 +2225,7 @@ const en = {
 
         },
         hints: {
-
+          'reason':'Reason of Absent',
         },
         new: {
           title: 'New Teacher',

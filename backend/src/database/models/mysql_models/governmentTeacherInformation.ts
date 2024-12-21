@@ -32,6 +32,9 @@ export default function (sequelize) {
       niraID: {
         type: DataTypes.TEXT,
       },
+      reason: {
+        type: DataTypes.TEXT,
+      },
       educationLevel: {
         type: DataTypes.TEXT,
       },
