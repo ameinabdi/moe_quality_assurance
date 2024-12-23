@@ -120,7 +120,7 @@ const SchoolSupervisionListTable = (props) => {
         title: i18n('entities.schoolSupervision.fields.dimension3'),
         sorter: false,
         dataIndex: 'dimension3s',
-        render: (values) =>(values.map((value)=>(<Tag>{parseFloat(value?.totalpercentage || 0).toFixed(0)+" % "}</Tag>)))
+        render: (values) =>(values?.map((value)=>(<Tag>{parseFloat(value?.totalpercentage || 0).toFixed(0)+" % "}</Tag>)))
       },
      
       {
