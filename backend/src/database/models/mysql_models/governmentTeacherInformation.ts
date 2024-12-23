@@ -54,8 +54,10 @@ export default function (sequelize) {
         type: DataTypes.TEXT,
         validate: {
           isIn: [[
-            "Primary",
-            "Secondary",
+            'Primary',
+    'Secondary',
+    'Primary/Seconday',
+    'ABE',
             "Both"
           ]],
         }
