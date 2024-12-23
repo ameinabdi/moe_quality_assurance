@@ -40,7 +40,7 @@ const en = {
   },
 
   entities: {
-    schoolSupervision: {
+  schoolSupervision: {
       name: 'school Supervision',
       label: 'School Supervisions',
       menu: 'School Supervisions',
@@ -1227,7 +1227,7 @@ const en = {
         },
       },
 
-    question: {
+  question: {
         name: 'question',
         label: 'Questions',
         menu: 'Questions',
@@ -1297,7 +1297,7 @@ const en = {
         },
       },
 
-    subQuestion: {
+  subQuestion: {
         name: 'subQuestion',
         label: 'SubQuestions',
         menu: 'SubQuestions',
@@ -1367,7 +1367,7 @@ const en = {
         },
       },
 
-    assessmentAnswer: {
+  assessmentAnswer: {
         name: 'assessmentAnswer',
         label: 'AssessmentAnswers',
         menu: 'AssessmentAnswers',
@@ -1428,7 +1428,7 @@ const en = {
         },
       },
 
-    answer: {
+  answer: {
         name: 'answer',
         label: 'Answers',
         menu: 'Answers',
@@ -1484,7 +1484,7 @@ const en = {
         },
       },
 
-    subAnswer: {
+  subAnswer: {
         name: 'subAnswer',
         label: 'SubAnswers',
         menu: 'SubAnswers',
@@ -1542,7 +1542,7 @@ const en = {
         },
       },
 
-    dimensionSsv1: {
+  dimensionSsv1: {
         name: 'dimensionSsv1',
         label: 'SCHOOL LEADERSHIP AND MANAGEMENTS',
         menu: 'SCHOOL LEADERSHIP AND MANAGEMENTS',
@@ -1707,7 +1707,7 @@ const en = {
         },
       },
 
-    dimensionSsv2: {
+  dimensionSsv2: {
         name: 'dimensionSsv2',
         label: 'CURRICULUM IMPLEMENTATIONS',
         menu: 'CURRICULUM IMPLEMENTATIONS',
@@ -1880,7 +1880,7 @@ const en = {
         },
       },
 
-    dimensionSsv3: {
+  dimensionSsv3: {
         name: 'dimensionSsv3',
         label: 'TEACHING AND LEARNING',
         menu: 'TEACHING AND LEARNING',
@@ -2089,7 +2089,7 @@ const en = {
         },
       },
 
-    governmentTeacherInformation: {
+  governmentTeacherInformation: {
         name: 'Teacher',
         label: 'Teachers',
         menu: 'Teachers',
@@ -2156,6 +2156,7 @@ const en = {
           'taughtLevel': {
             'Primary': 'Primary',
             'Secondary': 'Secondary',
+            'ABE`': 'ABE',
             'Both': 'Both',
           },
           'teachingShift': {

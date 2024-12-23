@@ -20,7 +20,7 @@ const DimensionSsv3ListTable = (props) => {
  
 
   useEffect(() => {
-    dispatch(actions.doFetch({supervision:props.supervision?.id}, rawFilter));
+    dispatch(actions.doFetch({supervision:props.supervision?.id}, {supervision:props.supervision?.id}));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

@@ -6,7 +6,8 @@ const governmentTeacherInformationEnumerators = {
   taughtLevel: [
     'Primary',
     'Secondary',
-    'Both',
+    'Primary/Seconday',
+    'ABE'
   ],
   teachingShift: [
     'Morning',
