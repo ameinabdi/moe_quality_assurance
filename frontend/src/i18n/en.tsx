@@ -2156,8 +2156,8 @@ const en = {
           'taughtLevel': {
             'Primary': 'Primary',
             'Secondary': 'Secondary',
-            'ABE`': 'ABE',
-            'Both': 'Both',
+            'Primary/Seconday': 'Primary/Seconday',
+            'ABE': 'ABE',
           },
           'teachingShift': {
             'Morning': 'Morning',
