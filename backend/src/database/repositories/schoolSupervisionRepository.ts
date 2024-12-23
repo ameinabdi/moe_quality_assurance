@@ -546,6 +546,10 @@ class SchoolSupervisionRepository {
         as: 'dimension3',
       },
       {
+        model: options.database.dimensionSsv3,
+        as: 'dimension3s',
+      },
+      {
         model: options.database.district,
         as: 'district',
       },

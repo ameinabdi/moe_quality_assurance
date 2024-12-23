@@ -259,6 +259,39 @@ export default function (sequelize) {
        dimension5Solution: {
         type: DataTypes.TEXT,
        },
+       totalpercentage: {
+        type: DataTypes.VIRTUAL,
+        get() {
+          const rateEachIndicator = 40 / 20;
+          const rateEachRate1 = rateEachIndicator / 5;
+          const indicators = [
+            this.getDataValue('indicator51'),
+            this.getDataValue('indicator52'),
+            this.getDataValue('indicator53'),
+            this.getDataValue('indicator54'),
+            this.getDataValue('indicator55'),
+            this.getDataValue('indicator56'),
+            this.getDataValue('indicator57'),
+            this.getDataValue('indicator58'),
+            this.getDataValue('indicator59'),
+            this.getDataValue('indicator510'),
+            this.getDataValue('indicator511'),
+            this.getDataValue('indicator512'),
+            this.getDataValue('indicator513'),
+            this.getDataValue('indicator514'),
+            this.getDataValue('indicator515'),
+            this.getDataValue('indicator516'),
+            this.getDataValue('indicator517'),
+            this.getDataValue('indicator518'),
+            this.getDataValue('indicator519'),
+            this.getDataValue('indicator520'),
+          ];
+
+          return indicators.reduce((total, value) => {
+            return total + (Number(value) || 0) * rateEachRate1;
+          }, 0);
+        },
+      },
         gradesTaught: {
                type: SequelizeArrayUtils.DataType,
                validate: {

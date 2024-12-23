@@ -128,6 +128,11 @@ export default function (sequelize) {
       },
     });
     
+    models.schoolSupervision.hasMany(models.dimensionSsv3, {
+      as: 'dimension3s',
+      foreignKey: 'schoolSupervisionId',
+      constraints: false,
+    });
     models.schoolSupervision.belongsTo(models.tenant, {
       as: 'tenant',
       foreignKey: {

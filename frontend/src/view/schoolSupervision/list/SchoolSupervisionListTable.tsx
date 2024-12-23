@@ -1,4 +1,4 @@
-import { Table, Popconfirm } from 'antd';
+import { Table, Popconfirm, Tag } from 'antd';
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/schoolSupervision/list/schoolSupervisionListActions';
 import destroyActions from 'src/modules/schoolSupervision/destroy/schoolSupervisionDestroyActions';
@@ -119,8 +119,8 @@ const SchoolSupervisionListTable = (props) => {
       {
         title: i18n('entities.schoolSupervision.fields.dimension3'),
         sorter: false,
-        dataIndex: 'dimension3',
-        render: (value) =>(parseFloat(value?.dimension5Rate || 0).toFixed(0)+" %")
+        dataIndex: 'dimension3s',
+        render: (values) =>(values.map((value)=>(<Tag>{parseFloat(value?.totalpercentage || 0).toFixed(0)+" % "}</Tag>)))
       },
      
       {

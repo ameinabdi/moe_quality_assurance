@@ -708,7 +708,7 @@ const SchoolSupervisionView = (props) => {
         no:'1',
         indicator:i18n('entities.dimension3.fields.indicator31'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator31}
+          record={record?.dimension2?.indicator31}
           name="indicator31"
           size={'large'}
           value={'1'}
@@ -716,7 +716,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator31}
+          record={record?.dimension2?.indicator31}
           name="indicator31"
           size={'large'}
           value={'2'}
@@ -724,7 +724,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator31}
+          record={record?.dimension2?.indicator31}
           name="indicator31"
           size={'large'}
           value={'3'}
@@ -732,7 +732,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator31}
+          record={record?.dimension2?.indicator31}
           name="indicator31"
           size={'large'}
           value={'4'}
@@ -740,7 +740,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator31}
+          record={record?.dimension2?.indicator31}
           name="indicator31"
           size={'large'}
           value={'5'}
@@ -752,7 +752,7 @@ const SchoolSupervisionView = (props) => {
         no:'2',
         indicator:i18n('entities.dimension3.fields.indicator32'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator32}
+          record={record?.dimension2?.indicator32}
           name="indicator32"
           size={'large'}
           value={'1'}
@@ -760,7 +760,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator32}
+          record={record?.dimension2?.indicator32}
           name="indicator32"
           size={'large'}
           value={'2'}
@@ -768,7 +768,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator32}
+          record={record?.dimension2?.indicator32}
           name="indicator32"
           size={'large'}
           value={'3'}
@@ -776,7 +776,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator32}
+          record={record?.dimension2?.indicator32}
           name="indicator32"
           size={'large'}
           value={'4'}
@@ -784,7 +784,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator32}
+          record={record?.dimension2?.indicator32}
           name="indicator32"
           size={'large'}
           value={'5'}
@@ -796,7 +796,7 @@ const SchoolSupervisionView = (props) => {
         no:'3',
         indicator:i18n('entities.dimension3.fields.indicator33'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator33}
+          record={record?.dimension2?.indicator33}
           name="indicator33"
           size={'large'}
           value={'1'}
@@ -804,7 +804,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator33}
+          record={record?.dimension2?.indicator33}
           name="indicator33"
           size={'large'}
           value={'2'}
@@ -812,7 +812,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator33}
+          record={record?.dimension2?.indicator33}
           name="indicator33"
           size={'large'}
           value={'3'}
@@ -820,7 +820,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator33}
+          record={record?.dimension2?.indicator33}
           name="indicator33"
           size={'large'}
           value={'4'}
@@ -828,7 +828,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator33}
+          record={record?.dimension2?.indicator33}
           name="indicator33"
           size={'large'}
           value={'5'}
@@ -840,7 +840,7 @@ const SchoolSupervisionView = (props) => {
         no:'4',
         indicator:i18n('entities.dimension3.fields.indicator34'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator34}
+          record={record?.dimension2?.indicator34}
           name="indicator34"
           size={'large'}
           value={'1'}
@@ -848,7 +848,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator34}
+          record={record?.dimension2?.indicator34}
           name="indicator34"
           size={'large'}
           value={'2'}
@@ -856,7 +856,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator34}
+          record={record?.dimension2?.indicator34}
           name="indicator34"
           size={'large'}
           value={'3'}
@@ -864,7 +864,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator34}
+          record={record?.dimension2?.indicator34}
           name="indicator34"
           size={'large'}
           value={'4'}
@@ -872,7 +872,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator34}
+          record={record?.dimension2?.indicator34}
           name="indicator34"
           size={'large'}
           value={'5'}
@@ -884,7 +884,7 @@ const SchoolSupervisionView = (props) => {
         no:'5',
         indicator:i18n('entities.dimension3.fields.indicator35'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator35}
+          record={record?.dimension2?.indicator35}
           name="indicator35"
           size={'large'}
           value={'1'}
@@ -892,7 +892,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator35}
+          record={record?.dimension2?.indicator35}
           name="indicator35"
           size={'large'}
           value={'2'}
@@ -900,7 +900,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator35}
+          record={record?.dimension2?.indicator35}
           name="indicator35"
           size={'large'}
           value={'3'}
@@ -908,7 +908,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator35}
+          record={record?.dimension2?.indicator35}
           name="indicator35"
           size={'large'}
           value={'4'}
@@ -916,7 +916,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator35}
+          record={record?.dimension2?.indicator35}
           name="indicator35"
           size={'large'}
           value={'5'}
@@ -928,7 +928,7 @@ const SchoolSupervisionView = (props) => {
         no:'6',
         indicator:i18n('entities.dimension3.fields.indicator36'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator36}
+          record={record?.dimension2?.indicator36}
           name="indicator36"
           size={'large'}
           value={'1'}
@@ -936,7 +936,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator36}
+          record={record?.dimension2?.indicator36}
           name="indicator36"
           size={'large'}
           value={'2'}
@@ -944,7 +944,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator36}
+          record={record?.dimension2?.indicator36}
           name="indicator36"
           size={'large'}
           value={'3'}
@@ -952,7 +952,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator36}
+          record={record?.dimension2?.indicator36}
           name="indicator36"
           size={'large'}
           value={'4'}
@@ -960,7 +960,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator36}
+          record={record?.dimension2?.indicator36}
           name="indicator36"
           size={'large'}
           value={'5'}
@@ -972,7 +972,7 @@ const SchoolSupervisionView = (props) => {
         no:'7',
         indicator:i18n('entities.dimension3.fields.indicator37'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator37}
+          record={record?.dimension2?.indicator37}
           name="indicator37"
           size={'large'}
           value={'1'}
@@ -980,7 +980,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator37}
+          record={record?.dimension2?.indicator37}
           name="indicator37"
           size={'large'}
           value={'2'}
@@ -988,7 +988,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator37}
+          record={record?.dimension2?.indicator37}
           name="indicator37"
           size={'large'}
           value={'3'}
@@ -996,7 +996,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator37}
+          record={record?.dimension2?.indicator37}
           name="indicator37"
           size={'large'}
           value={'4'}
@@ -1004,7 +1004,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator37}
+          record={record?.dimension2?.indicator37}
           name="indicator37"
           size={'large'}
           value={'5'}
@@ -1016,7 +1016,7 @@ const SchoolSupervisionView = (props) => {
         no:'8',
         indicator:i18n('entities.dimension3.fields.indicator38'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator38}
+          record={record?.dimension2?.indicator38}
           name="indicator38"
           size={'large'}
           value={'1'}
@@ -1024,7 +1024,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator38}
+          record={record?.dimension2?.indicator38}
           name="indicator38"
           size={'large'}
           value={'2'}
@@ -1032,7 +1032,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator38}
+          record={record?.dimension2?.indicator38}
           name="indicator38"
           size={'large'}
           value={'3'}
@@ -1040,7 +1040,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator38}
+          record={record?.dimension2?.indicator38}
           name="indicator38"
           size={'large'}
           value={'4'}
@@ -1048,7 +1048,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator38}
+          record={record?.dimension2?.indicator38}
           name="indicator38"
           size={'large'}
           value={'5'}
@@ -1060,7 +1060,7 @@ const SchoolSupervisionView = (props) => {
         no:'9',
         indicator:i18n('entities.dimension3.fields.indicator39'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator39}
+          record={record?.dimension2?.indicator39}
           name="indicator39"
           size={'large'}
           value={'1'}
@@ -1068,7 +1068,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator39}
+          record={record?.dimension2?.indicator39}
           name="indicator39"
           size={'large'}
           value={'2'}
@@ -1076,7 +1076,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator39}
+          record={record?.dimension2?.indicator39}
           name="indicator39"
           size={'large'}
           value={'3'}
@@ -1084,7 +1084,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator39}
+          record={record?.dimension2?.indicator39}
           name="indicator39"
           size={'large'}
           value={'4'}
@@ -1092,7 +1092,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator39}
+          record={record?.dimension2?.indicator39}
           name="indicator39"
           size={'large'}
           value={'5'}
@@ -1104,7 +1104,7 @@ const SchoolSupervisionView = (props) => {
         no:'10',
         indicator:i18n('entities.dimension3.fields.indicator310'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator310}
+          record={record?.dimension2?.indicator310}
           name="indicator310"
           size={'large'}
           value={'1'}
@@ -1112,7 +1112,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator310}
+          record={record?.dimension2?.indicator310}
           name="indicator310"
           size={'large'}
           value={'2'}
@@ -1120,7 +1120,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator310}
+          record={record?.dimension2?.indicator310}
           name="indicator310"
           size={'large'}
           value={'3'}
@@ -1128,7 +1128,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator310}
+          record={record?.dimension2?.indicator310}
           name="indicator310"
           size={'large'}
           value={'4'}
@@ -1136,7 +1136,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator310}
+          record={record?.dimension2?.indicator310}
           name="indicator310"
           size={'large'}
           value={'5'}
@@ -1148,7 +1148,7 @@ const SchoolSupervisionView = (props) => {
         no:'11',
         indicator:i18n('entities.dimension3.fields.indicator311'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator311}
+          record={record?.dimension2?.indicator311}
           name="indicator311"
           size={'large'}
           value={'1'}
@@ -1156,7 +1156,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator311}
+          record={record?.dimension2?.indicator311}
           name="indicator311"
           size={'large'}
           value={'2'}
@@ -1164,7 +1164,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator311}
+          record={record?.dimension2?.indicator311}
           name="indicator311"
           size={'large'}
           value={'3'}
@@ -1172,7 +1172,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator311}
+          record={record?.dimension2?.indicator311}
           name="indicator311"
           size={'large'}
           value={'4'}
@@ -1180,7 +1180,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator311}
+          record={record?.dimension2?.indicator311}
           name="indicator311"
           size={'large'}
           value={'5'}
@@ -1192,7 +1192,7 @@ const SchoolSupervisionView = (props) => {
         no:'12',
         indicator:i18n('entities.dimension3.fields.indicator312'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator312}
+          record={record?.dimension2?.indicator312}
           name="indicator312"
           size={'large'}
           value={'1'}
@@ -1200,7 +1200,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator312}
+          record={record?.dimension2?.indicator312}
           name="indicator312"
           size={'large'}
           value={'2'}
@@ -1208,7 +1208,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator312}
+          record={record?.dimension2?.indicator312}
           name="indicator312"
           size={'large'}
           value={'3'}
@@ -1216,7 +1216,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator312}
+          record={record?.dimension2?.indicator312}
           name="indicator312"
           size={'large'}
           value={'4'}
@@ -1224,7 +1224,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator312}
+          record={record?.dimension2?.indicator312}
           name="indicator312"
           size={'large'}
           value={'5'}
@@ -1236,7 +1236,7 @@ const SchoolSupervisionView = (props) => {
         no:'13',
         indicator:i18n('entities.dimension3.fields.indicator313'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator313}
+          record={record?.dimension2?.indicator313}
           name="indicator313"
           size={'large'}
           value={'1'}
@@ -1244,7 +1244,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator313}
+          record={record?.dimension2?.indicator313}
           name="indicator313"
           size={'large'}
           value={'2'}
@@ -1252,7 +1252,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator313}
+          record={record?.dimension2?.indicator313}
           name="indicator313"
           size={'large'}
           value={'3'}
@@ -1260,7 +1260,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator313}
+          record={record?.dimension2?.indicator313}
           name="indicator313"
           size={'large'}
           value={'4'}
@@ -1268,7 +1268,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator313}
+          record={record?.dimension2?.indicator313}
           name="indicator313"
           size={'large'}
           value={'5'}
@@ -1280,7 +1280,7 @@ const SchoolSupervisionView = (props) => {
         no:'14',
         indicator:i18n('entities.dimension3.fields.indicator314'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator314}
+          record={record?.dimension2?.indicator314}
           name="indicator314"
           size={'large'}
           value={'1'}
@@ -1288,7 +1288,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator314}
+          record={record?.dimension2?.indicator314}
           name="indicator314"
           size={'large'}
           value={'2'}
@@ -1296,7 +1296,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator314}
+          record={record?.dimension2?.indicator314}
           name="indicator314"
           size={'large'}
           value={'3'}
@@ -1304,7 +1304,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator314}
+          record={record?.dimension2?.indicator314}
           name="indicator314"
           size={'large'}
           value={'4'}
@@ -1312,7 +1312,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         5:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator314}
+          record={record?.dimension2?.indicator314}
           name="indicator314"
           size={'large'}
           value={'5'}
@@ -1324,7 +1324,7 @@ const SchoolSupervisionView = (props) => {
         no:'13',
         indicator:i18n('entities.dimension3.fields.indicator315'),
         1:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator315}
+          record={record?.dimension2?.indicator315}
           name="indicator315"
           size={'large'}
           value={'1'}
@@ -1332,7 +1332,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         2:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator315}
+          record={record?.dimension2?.indicator315}
           name="indicator315"
           size={'large'}
           value={'2'}
@@ -1340,7 +1340,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         3:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator315}
+          record={record?.dimension2?.indicator315}
           name="indicator315"
           size={'large'}
           value={'3'}
@@ -1348,7 +1348,7 @@ const SchoolSupervisionView = (props) => {
           layout={formItemLayout}
         />),
         4:(<CustomCheckboxViewItem
-          record={record?.dimension3?.indicator315}
+          record={record?.dimension2?.indicator315}
           name="indicator315"
           size={'large'}
           value={'4'}

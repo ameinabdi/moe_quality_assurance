@@ -55,9 +55,9 @@ export default function (sequelize) {
         validate: {
           isIn: [[
             'Primary',
-    'Secondary',
-    'Primary/Seconday',
-    'ABE',
+            'Secondary',
+            'Primary/Seconday',
+            'ABE',
             "Both"
           ]],
         }
