@@ -579,6 +579,16 @@ class SchoolRepository {
                          ),
                        );
              }
+
+             else if(currentUser?.type == 'District'){
+                       whereAnd.push(
+                         SequelizeFilterUtils.ilikeIncludes(
+                           'school',
+                           'districtId',
+                           currentUser?.districtId ,
+                         ),
+                       );
+                     }
     if (query) {
       whereAnd.push({
         [Op.or]: [
