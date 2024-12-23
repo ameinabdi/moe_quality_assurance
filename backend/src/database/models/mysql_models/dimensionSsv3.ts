@@ -265,25 +265,45 @@ export default function (sequelize) {
           const rateEachIndicator = 40 / 20;
           const rateEachRate1 = rateEachIndicator / 5;
           const indicators = [
+            //@ts-ignore
             this.getDataValue('indicator51'),
+            //@ts-ignore
             this.getDataValue('indicator52'),
+            //@ts-ignore
             this.getDataValue('indicator53'),
+            //@ts-ignore
             this.getDataValue('indicator54'),
+            //@ts-ignore
             this.getDataValue('indicator55'),
+            //@ts-ignore
             this.getDataValue('indicator56'),
+            //@ts-ignore
             this.getDataValue('indicator57'),
+            //@ts-ignore
             this.getDataValue('indicator58'),
+            //@ts-ignore
             this.getDataValue('indicator59'),
+            //@ts-ignore
             this.getDataValue('indicator510'),
+            //@ts-ignore
             this.getDataValue('indicator511'),
+            //@ts-ignore
             this.getDataValue('indicator512'),
+            //@ts-ignore
             this.getDataValue('indicator513'),
+            //@ts-ignore
             this.getDataValue('indicator514'),
+            //@ts-ignore
             this.getDataValue('indicator515'),
+            //@ts-ignore
             this.getDataValue('indicator516'),
+            //@ts-ignore
             this.getDataValue('indicator517'),
+            //@ts-ignore
             this.getDataValue('indicator518'),
+            //@ts-ignore
             this.getDataValue('indicator519'),
+            //@ts-ignore
             this.getDataValue('indicator520'),
           ];
 
