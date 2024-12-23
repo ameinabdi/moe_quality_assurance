@@ -14,7 +14,6 @@ const {  Title } = Typography;
 
 const DimensionSsv3ListTable = (props) => {
   const dispatch = useAppDispatch();
-  const rawFilter = useSelector(selectors.selectRawFilter);
 
   const rows = useSelector(selectors.selectRows);
  
