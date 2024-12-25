@@ -349,8 +349,6 @@ class SchoolSupervisionRepository {
       },
     );
 
-
-
     await FileRepository.replaceRelationFiles(
       {
         belongsTo: options.database.schoolSupervision.getTableName(),
@@ -421,6 +419,10 @@ class SchoolSupervisionRepository {
     );
 
     const include = [
+      {
+        model: options.database.district,
+        as: 'district',
+      },
       {
         model: options.database.school,
         as: 'school',

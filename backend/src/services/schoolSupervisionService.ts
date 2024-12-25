@@ -53,13 +53,6 @@ export default class SchoolSupervisionService {
     );
 
     try {
-      data.school = await SchoolRepository.filterIdInTenant(data.school, { ...this.options, transaction });
-      data.dimension1 = await Dimension1Repository.filterIdInTenant(data.dimension1, { ...this.options, transaction });
-      data.dimension2 = await Deminsion2Repository.filterIdInTenant(data.dimension2, { ...this.options, transaction });
-      data.dimension3 = await Dimension3Repository.filterIdInTenant(data.dimension3, { ...this.options, transaction });
-      data.dimension4 = await Dimension4Repository.filterIdInTenant(data.dimension4, { ...this.options, transaction });
-      data.dimension5 = await Dimension5Repository.filterIdInTenant(data.dimension5, { ...this.options, transaction });
-
       const record = await SchoolSupervisionRepository.update(
         id,
         data,
