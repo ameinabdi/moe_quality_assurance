@@ -375,7 +375,15 @@ class DistrictRepository {
                      ),
                    );
          }
-
+  else if(currentUser?.type == 'District'){
+                       whereAnd.push(
+                         SequelizeFilterUtils.ilikeIncludes(
+                           'district',
+                           'id',
+                           currentUser?.districtId ,
+                         ),
+                       );
+                     }
     if (query) {
       whereAnd.push({
         [Op.or]: [

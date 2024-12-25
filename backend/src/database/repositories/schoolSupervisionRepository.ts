@@ -598,6 +598,12 @@ class SchoolSupervisionRepository {
         });
       }
 
+      if (filter.district) {
+        whereAnd.push({
+          ['districtId']: filter.district,
+        });
+      }
+
       if (filter.finalizedDateRange) {
         const [start, end] = filter.finalizedDateRange;
 
@@ -741,6 +747,7 @@ class SchoolSupervisionRepository {
       transaction: SequelizeRepository.getTransaction(
         options,
       ),
+      distinct:true
     });
 
     rows = await this._fillWithRelationsAndFilesForRows(

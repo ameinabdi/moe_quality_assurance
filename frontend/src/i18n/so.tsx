@@ -74,6 +74,7 @@ const so = {
         'introduction': 'Horidhac',
         'guidelines': 'Hage',
         'school': 'Dugsi',
+        'district':'Degmo',
         'dimension1': 'Dimension 1',
         'dimension2': 'Dimension 2',
         'dimension3': 'Dimension 3',

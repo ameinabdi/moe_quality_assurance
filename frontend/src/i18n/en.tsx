@@ -80,6 +80,7 @@ const en = {
         'dimension3': 'Dimension 3',
         'dimension4': 'Dimension4',
         'dimension5': 'Dimension5',
+        'district':'District',
         'schoolStamp': 'School Stamp',
         createdAt: 'Created at',
         updatedAt: 'Updated at',

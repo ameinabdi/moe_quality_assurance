@@ -478,7 +478,8 @@ class SchoolRepository {
           ),
         );
       }
-
+ 
+    
       if (filter.headsex) {
         whereAnd.push({
           headsex: filter.headsex,
