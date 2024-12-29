@@ -59,12 +59,49 @@ export default [
       ]
   },
   {
+    path: '/state-report',
+    exact: true,
+    icon: <BarChartOutlined rev={undefined}  />,
+    label: i18n('stateReport.menu'),
+    permissionRequired: permissions.stateReportRead,
+    key: 'stateReport',
+    
+  },
+  {
     path: '/report',
     exact: true,
     icon: <BarChartOutlined rev={undefined}  />,
     label: i18n('report.menu'),
     permissionRequired: permissions.reportRead,
     key: 'report',
+    submenu:[
+      {
+        path: '/report',
+        exact: true,
+        icon: <BarChartOutlined rev={undefined}  />,
+        label: i18n('report.menu'),
+        permissionRequired: permissions.reportRead,
+        key: 'report',
+        
+      },
+      {
+        path: '/supervision-report',
+        exact: true,
+        icon: <BarChartOutlined rev={undefined}  />,
+        label: i18n('supervisionReport.menu'),
+        permissionRequired: permissions.reportRead,
+        key: 'supervisionReport',
+      },
+      {
+        path: '/teacher-report',
+        exact: true,
+        icon: <BarChartOutlined rev={undefined}  />,
+        label: i18n('teacherReport.menu'),
+        permissionRequired: permissions.reportRead,
+        key: 'teacherReport',
+        
+      },
+    ]
   },
   {
     path: '/s-s-a-survey',

@@ -20,4 +20,62 @@ export default class ExamcenterService {
     return response.data;
   }
 
+  static async supervisionReport(filter, orderBy, limit, offset) {
+    const params = {
+      filter,
+      orderBy,
+      limit,
+      offset,
+    };
+
+
+    const response = await authAxios.get(
+      `/supervision-report`,
+      {
+        params,
+      },
+    );
+
+    return response.data;
+  }
+
+
+  static async teacherReport(filter, orderBy, limit, offset) {
+    const params = {
+      filter,
+      orderBy,
+      limit,
+      offset,
+    };
+
+
+    const response = await authAxios.get(
+      `/teacher-report`,
+      {
+        params,
+      },
+    );
+
+    return response.data;
+  }
+
+  static async stateReport(filter, orderBy, limit, offset) {
+    const params = {
+      filter,
+      orderBy,
+      limit,
+      offset,
+    };
+
+
+    const response = await authAxios.get(
+      `/state-report`,
+      {
+        params,
+      },
+    );
+
+    return response.data;
+  }
+
 }

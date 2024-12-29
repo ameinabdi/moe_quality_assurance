@@ -27,6 +27,16 @@ class Permissions {
           plans.enterprise,
         ],
       },
+
+      stateReportRead: {
+        id: 'reportRead',
+        allowedRoles: [roles.admin, roles.federal, roles.state],
+         allowedPlans: [
+          plans.free,
+          plans.growth,
+          plans.enterprise,
+        ],
+      },
       tenantEdit: {
         id: 'tenantEdit',
         allowedRoles: [roles.admin, roles.federal],

@@ -16,6 +16,7 @@ import { DeleteOutlined, DownOutlined, EyeOutlined } from '@ant-design/icons';
 import GovernmentTeacherInformationViewToolbar from '../view/GovernmentTeacherInformationViewToolbar';
 import GovernmentTeacherInformationPage from '../view/GovernmentTeacherInformationViewPage';
 import StateListItem from 'src/view/state/list/StateListItem';
+import dayjs from 'dayjs';
 
 const GovernmentTeacherInformationListTable = (props) => {
   const dispatch = useAppDispatch();
@@ -120,6 +121,8 @@ const GovernmentTeacherInformationListTable = (props) => {
         title: i18n('entities.governmentTeacherInformation.fields.graduationYear'),
         sorter: true,
         dataIndex: 'graduationYear',
+        render: (value) => (dayjs(value).format('YYYY')),
+
       },
       {
         title: i18n('entities.governmentTeacherInformation.fields.taughtLevel'),

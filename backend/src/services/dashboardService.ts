@@ -16,6 +16,26 @@ export default class InvigilatorService {
       this.options,
     );
   }
+  async supervisionReport(args) {
+    return DashboardRepository.supervisionReport(
+      args,
+      this.options,
+    );
+  }
+
+  async teacherReport(args) {
+    return DashboardRepository.teacherReport(
+      args,
+      this.options,
+    );
+  }
+
+  async stateReport(args) {
+    return DashboardRepository.stateReport(
+      args,
+      this.options,
+    );
+  }
 
   async activities(args) {
     return DashboardRepository.activities(

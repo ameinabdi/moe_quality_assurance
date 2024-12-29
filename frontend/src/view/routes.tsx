@@ -19,6 +19,28 @@ const privateRoutes = [
     permissionRequired: permissions.reportRead,
     exact: true,
   },
+  {
+    path: '/supervision-report',
+    loader: () =>
+      import('src/view/report/SupervisionReportPage'),
+    permissionRequired: permissions.reportRead,
+    exact: true,
+  },
+  {
+    path: '/teacher-report',
+    loader: () =>
+      import('src/view/report/TeacherReportPage'),
+    permissionRequired: permissions.reportRead,
+    exact: true,
+  },
+
+  {
+    path: '/state-report',
+    loader: () =>
+      import('src/view/report/StateReportPage'),
+    permissionRequired: permissions.stateReportRead,
+    exact: true,
+  },
 
   {
     path: '/profile',

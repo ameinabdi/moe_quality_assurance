@@ -38,7 +38,16 @@ const en = {
   setup: {
     menu: 'Setup',
   },
+  teacherReport: {
+    menu: 'Teacher Report',
+  },
+  supervisionReport: {
+    menu: 'Supervision Report',
+  },
 
+  stateReport: {
+    menu: 'State Report',
+  },
   entities: {
   schoolSupervision: {
       name: 'school Supervision',
