@@ -129,7 +129,6 @@ class GovernmentTeacherInformationRepository {
       {
         where: {
           id,
-          tenantId: currentTenant.id,
         },
         transaction,
       },
@@ -160,13 +159,10 @@ class GovernmentTeacherInformationRepository {
           'experience',
           'joinedYear',
           'disablity',
-          'gPSLocation',  
           'reason',        
           'importHash',
         ]),
         schoolId: data.school || null,
-        stateId:district?.stateId || currentUser?.stateId,
-        districtId: data.district || null,
         updatedById: currentUser.id,
       },
       {
@@ -174,26 +170,6 @@ class GovernmentTeacherInformationRepository {
       },
     );
 
-
-
-    await FileRepository.replaceRelationFiles(
-      {
-        belongsTo: options.database.governmentTeacherInformation.getTableName(),
-        belongsToColumn: 'teacherPhoto',
-        belongsToId: record.id,
-      },
-      data.teacherPhoto,
-      options,
-    );
-    await FileRepository.replaceRelationFiles(
-      {
-        belongsTo: options.database.governmentTeacherInformation.getTableName(),
-        belongsToColumn: 'teacherSignature',
-        belongsToId: record.id,
-      },
-      data.teacherSignature,
-      options,
-    );
 
     await this._createAuditLog(
       AuditLogRepository.UPDATE,
@@ -263,9 +239,6 @@ class GovernmentTeacherInformationRepository {
       },
     ];
 
-    const currentTenant = SequelizeRepository.getCurrentTenant(
-      options,
-    );
 
     const record = await options.database.governmentTeacherInformation.findOne(
       {

@@ -39,10 +39,10 @@ const en = {
     menu: 'Setup',
   },
   teacherReport: {
-    menu: 'Teacher Report',
+    menu: 'Teacher Report 2024/2025',
   },
   supervisionReport: {
-    menu: 'Supervision Report',
+    menu: 'Supervision Report 2024/2025',
   },
 
   stateReport: {

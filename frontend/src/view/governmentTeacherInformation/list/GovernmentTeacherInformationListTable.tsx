@@ -12,11 +12,12 @@ import TableWrapper from 'src/view/shared/styles/TableWrapper';
 import ImagesListView from 'src/view/shared/list/ImagesListView';
 import SchoolListItem from 'src/view/school/list/SchoolListItem';
 import DistrictListItem from 'src/view/district/list/DistrictListItem';
-import { DeleteOutlined, DownOutlined, EyeOutlined } from '@ant-design/icons';
+import { DeleteOutlined, DownOutlined, EditOutlined, EyeOutlined } from '@ant-design/icons';
 import GovernmentTeacherInformationViewToolbar from '../view/GovernmentTeacherInformationViewToolbar';
 import GovernmentTeacherInformationPage from '../view/GovernmentTeacherInformationViewPage';
 import StateListItem from 'src/view/state/list/StateListItem';
 import dayjs from 'dayjs';
+import { Link } from 'react-router-dom';
 
 const GovernmentTeacherInformationListTable = (props) => {
   const dispatch = useAppDispatch();
@@ -225,6 +226,11 @@ const GovernmentTeacherInformationListTable = (props) => {
                 disabled:!hasPermissionToDestroy,
                 icon:(<DeleteOutlined rev={undefined}  />),
                 key: '2',
+              },
+              {
+                label:(<Link to={`/government-teacher-information/${record.id}/edit`}>{i18n('common.edit')}</Link>),
+                key: '3',
+                icon:(<EditOutlined rev={undefined}  />),
               },
             ],
           }

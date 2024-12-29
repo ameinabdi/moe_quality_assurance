@@ -15,7 +15,6 @@ const yupFormSchemas = {
         return ov === '' ? null : cv;
       })
       .nullable()
-      .trim()
       .label(label);
 
     if (config.required) {
@@ -73,7 +72,7 @@ const yupFormSchemas = {
           .transform((cv, ov) => {
             return ov === '' ? null : cv;
           })
-          .trim(),
+        ,
       )
       .label(label);
 
@@ -226,7 +225,6 @@ const yupFormSchemas = {
         return ov === '' ? null : cv;
       })
       .nullable()
-      .trim()
       .label(label)
       .email();
 

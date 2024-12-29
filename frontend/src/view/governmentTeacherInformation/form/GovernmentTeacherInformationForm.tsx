@@ -218,7 +218,7 @@ const GovernmentTeacherInformationForm = (props) => {
   const { coords,getPosition } =
   useGeolocated({
       positionOptions: {
-          enableHighAccuracy: false,
+        enableHighAccuracy: false,
       },
       userDecisionTimeout: 5000,
   });

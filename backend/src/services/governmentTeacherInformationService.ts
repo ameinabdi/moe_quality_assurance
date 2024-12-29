@@ -19,10 +19,6 @@ export default class GovernmentTeacherInformationService {
     );
 
     try {
-      data.school = await SchoolRepository.filterIdInTenant(data.school, { ...this.options, transaction });
-      data.region = await RegionRepository.filterIdInTenant(data.region, { ...this.options, transaction });
-      data.district = await DistrictRepository.filterIdInTenant(data.district, { ...this.options, transaction });
-
       const record = await GovernmentTeacherInformationRepository.create(data, {
         ...this.options,
         transaction,
@@ -54,10 +50,6 @@ export default class GovernmentTeacherInformationService {
     );
 
     try {
-      data.school = await SchoolRepository.filterIdInTenant(data.school, { ...this.options, transaction });
-      data.region = await RegionRepository.filterIdInTenant(data.region, { ...this.options, transaction });
-      data.district = await DistrictRepository.filterIdInTenant(data.district, { ...this.options, transaction });
-
       const record = await GovernmentTeacherInformationRepository.update(
         id,
         data,
