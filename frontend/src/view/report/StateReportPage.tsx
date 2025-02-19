@@ -161,7 +161,8 @@ const StateReportPage = (props) => {
               {...configOwner} />
             </Card>
             </Col>
-           </Row>
+      </Row>
+     
      <Row>
       <Col span={18}>
       <Card title="Teachers By District">
@@ -252,10 +253,7 @@ const StateReportPage = (props) => {
             xField: 'taughtLevel',
             yField: 'totalTeachers',
             label: {
-              // 可手动配置 label 数据标签位置
               position: 'middle',
-              // 'top', 'bottom', 'middle',
-              // 配置样式
               style: {
                 fill: '#FFFFFF',
                 opacity: 0.6,

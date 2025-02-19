@@ -32,6 +32,17 @@ export default [
     label: i18n('entities.school.fields.schoolName'),
   },
   {
+    name: 'state',
+    label: i18n('entities.school.fields.state'),
+    render: (value)=>(value?.name),
+
+  },
+  {
+    name: 'district',
+    label: i18n('entities.school.fields.district'),
+    render: (value)=>(value?.name),
+  },
+  {
     name: 'schoolLevel',
     label: i18n('entities.school.fields.schoolLevel'),
     render: exporterRenders.stringArray(),
