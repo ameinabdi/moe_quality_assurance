@@ -33,13 +33,13 @@ export default [
   },
   {
     name: 'state',
-    label: i18n('entities.school.fields.state'),
+    label: 'state',
     render: (value)=>(value?.name),
 
   },
   {
     name: 'district',
-    label: i18n('entities.school.fields.district'),
+    label: 'district',
     render: (value)=>(value?.name),
   },
   {
