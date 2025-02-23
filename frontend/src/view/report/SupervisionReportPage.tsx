@@ -121,7 +121,7 @@ const SupervisionReportPage = (props) => {
      </Row>
      <br/><br/><br/>
      <Row>
-      <Col span={16}>
+      <Col span={18}>
         <Card title="School Supervision By District">
           <Column 
           {...{

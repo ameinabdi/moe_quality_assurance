@@ -64,15 +64,24 @@ static async dashboard(
         `, { type: QueryTypes.SELECT });
         const supervisionByLevel = await  options.database.sequelize.query(`
             SELECT 
-            REPLACE(REPLACE(REPLACE(school.schoolLevel, '"', ''), '[', ''), ']', '') AS schoolLevelGroup,
-            COUNT(schoolSupervision.id) AS totalSupervisions
-            FROM schoolSupervisions AS schoolSupervision
-            LEFT JOIN schools AS school 
-                ON schoolSupervision.schoolId = school.id 
-                AND school.deletedAt IS NULL
-            WHERE schoolSupervision.deletedAt IS NULL
-            GROUP BY schoolLevelGroup
-            ORDER BY totalSupervisions DESC;
+    CASE 
+        WHEN REPLACE(REPLACE(REPLACE(school.schoolLevel, '"', ''), '[', ''), ']', '') = 'Primary' THEN 'Primary'
+        WHEN REPLACE(REPLACE(REPLACE(school.schoolLevel, '"', ''), '[', ''), ']', '') = 'Secondary' THEN 'Secondary'
+        WHEN REPLACE(REPLACE(REPLACE(school.schoolLevel, '"', ''), '[', ''), ']', '') = 'Primary, Intermediate' THEN 'Primary'
+        WHEN REPLACE(REPLACE(REPLACE(school.schoolLevel, '"', ''), '[', ''), ']', '') = 'Primary, Intermediate, Secondary' THEN 'Primary & Secondary'
+        WHEN REPLACE(REPLACE(REPLACE(school.schoolLevel, '"', ''), '[', ''), ']', '') = 'Primary, Secondary' THEN 'Primary & Secondary'
+        WHEN REPLACE(REPLACE(REPLACE(school.schoolLevel, '"', ''), '[', ''), ']', '') = 'Intermediate' THEN 'Primary'
+        WHEN REPLACE(REPLACE(REPLACE(school.schoolLevel, '"', ''), '[', ''), ']', '') = 'Intermediate, Secondary' THEN 'Primary & Secondary'
+        ELSE 'Primary' 
+    END AS schoolLevelGroup,
+    COUNT(schoolSupervision.id) AS totalSupervisions
+FROM schoolSupervisions AS schoolSupervision
+LEFT JOIN schools AS school 
+    ON schoolSupervision.schoolId = school.id 
+    AND school.deletedAt IS NULL
+WHERE schoolSupervision.deletedAt IS NULL
+GROUP BY schoolLevelGroup
+ORDER BY totalSupervisions DESC;
             `, { type: QueryTypes.SELECT });
       const supervisionByUser = await  options.database.sequelize.query(`
         SELECT 
