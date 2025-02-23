@@ -62,7 +62,18 @@ static async dashboard(
         GROUP BY school.schoolType
         ORDER BY totalSupervisions DESC;
         `, { type: QueryTypes.SELECT });
-  
+        const supervisionByLevel = await  options.database.sequelize.query(`
+            SELECT 
+            REPLACE(REPLACE(REPLACE(school.schoolLevel, '"', ''), '[', ''), ']', '') AS schoolLevelGroup,
+            COUNT(schoolSupervision.id) AS totalSupervisions
+            FROM schoolSupervisions AS schoolSupervision
+            LEFT JOIN schools AS school 
+                ON schoolSupervision.schoolId = school.id 
+                AND school.deletedAt IS NULL
+            WHERE schoolSupervision.deletedAt IS NULL
+            GROUP BY schoolLevelGroup
+            ORDER BY totalSupervisions DESC;
+            `, { type: QueryTypes.SELECT });
       const supervisionByUser = await  options.database.sequelize.query(`
         SELECT 
       users.id AS userId,
@@ -125,7 +136,7 @@ static async dashboard(
       totalDimension1Added DESC, totalDimension2Added DESC, totalDimension3Added DESC;
       `, { type: QueryTypes.SELECT });
   
-      return { supervisionByState, supervisionByDistrict, supervisionByOwnership,supervisionByUser,supervisionByMostDimensionState ,supervisionByMostDimensionDistrict };
+      return { supervisionByState, supervisionByLevel, supervisionByDistrict, supervisionByOwnership,supervisionByUser,supervisionByMostDimensionState ,supervisionByMostDimensionDistrict };
   }
   static async teacherReport(
     { filter, limit = 0, offset = 0, orderBy = '' },

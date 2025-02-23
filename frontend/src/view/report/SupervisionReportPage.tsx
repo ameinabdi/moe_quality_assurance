@@ -47,6 +47,27 @@ const SupervisionReportPage = (props) => {
       },
     },
   };
+  const configLevel = {
+    data: rows?.supervisionByLevel?.map((item)=>({
+      type:item.schoolLevelGroup,
+      value:item.totalSupervisions
+    })) || [],
+    angleField: 'value',
+    colorField: 'type',
+    label: {
+      text: 'value',
+      style: {
+        fontWeight: 'bold',
+      },
+    },
+    legend: {
+      color: {
+        title: false,
+        position: 'right',
+        rowPadding: 5,
+      },
+    },
+  };
 
   return (
     <>
@@ -100,7 +121,7 @@ const SupervisionReportPage = (props) => {
      </Row>
      <br/><br/><br/>
      <Row>
-      <Col span={24}>
+      <Col span={16}>
         <Card title="School Supervision By District">
           <Column 
           {...{
@@ -133,6 +154,12 @@ const SupervisionReportPage = (props) => {
             },
           }} />
         </Card>
+      </Col>
+      <Col span={6}>
+      <Card title="School Supervision By Level">
+        <Pie 
+        {...configLevel} />
+      </Card>
       </Col>
      </Row>
      <br/><br/><br/>
