@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/teacher-g-p-e`,
+    require('./teacherGPECreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/teacher-g-p-e/:id`,
+    require('./teacherGPEUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/teacher-g-p-e/import`,
+    require('./teacherGPEImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/teacher-g-p-e`,
+    require('./teacherGPEDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/teacher-g-p-e/autocomplete`,
+    require('./teacherGPEAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/teacher-g-p-e`,
+    require('./teacherGPEList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/teacher-g-p-e/:id`,
+    require('./teacherGPEFind').default,
+  );
+};

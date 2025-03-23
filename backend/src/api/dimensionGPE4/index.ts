@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/dimension-g-p-e4`,
+    require('./dimensionGPE4Create').default,
+  );
+  app.put(
+    `/tenant/:tenantId/dimension-g-p-e4/:id`,
+    require('./dimensionGPE4Update').default,
+  );
+  app.post(
+    `/tenant/:tenantId/dimension-g-p-e4/import`,
+    require('./dimensionGPE4Import').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/dimension-g-p-e4`,
+    require('./dimensionGPE4Destroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/dimension-g-p-e4/autocomplete`,
+    require('./dimensionGPE4Autocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/dimension-g-p-e4`,
+    require('./dimensionGPE4List').default,
+  );
+  app.get(
+    `/tenant/:tenantId/dimension-g-p-e4/:id`,
+    require('./dimensionGPE4Find').default,
+  );
+};

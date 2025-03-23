@@ -1,18 +1,20 @@
 /**
- * This script is responsible for create the SQL tables.
+ * This script is responsible for creating the SQL tables.
  * Run it via `npm run db:create`.
  */
 require('dotenv').config();
 
 import models from '../models';
 
-models()
-  .database.sync()
+const { database } = models(); // destructure the result
+const { sequelize } = database; // get the sequelize instance
+
+sequelize.sync()
   .then(() => {
-    console.log('OK');
+    console.log('✅ Tables created successfully.');
     process.exit();
   })
   .catch((error) => {
-    console.error(error);
+    console.error('❌ Error creating tables:', error);
     process.exit(1);
   });

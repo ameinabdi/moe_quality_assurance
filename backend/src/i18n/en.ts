@@ -88,6 +88,55 @@ const en = {
   },
 
   entities: {
+    schoolSupervisionGPE: {
+      errors: {
+        unique: {
+
+        }
+      }
+    },
+    dimensionGPE1: {
+      errors: {
+        unique: {
+
+        }
+      }
+    },
+    dimensionGPE2: {
+      errors: {
+        unique: {
+
+        }
+      }
+    },
+    dimensionGPE3: {
+      errors: {
+        unique: {
+
+        }
+      }
+    },
+    dimensionGPE4: {
+      errors: {
+        unique: {
+
+        }
+      }
+    },
+    teacherGPE: {
+      errors: {
+        unique: {
+
+        }
+      }
+    },
+    dimensionGPE5: {
+      errors: {
+        unique: {
+
+        }
+      }
+    },
     school: {
       errors: {
         unique: {

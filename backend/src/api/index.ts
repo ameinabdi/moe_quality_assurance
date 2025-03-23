@@ -97,6 +97,13 @@ require('./region').default(routes);
 require('./district').default(routes);
 require('./tools').default(routes);
 require('./toolTypes').default(routes);
+require('./schoolSupervisionGPE').default(routes);
+require('./dimensionGPE1').default(routes);
+require('./dimensionGPE2').default(routes);
+require('./dimensionGPE3').default(routes);
+require('./dimensionGPE4').default(routes);
+require('./dimensionGPE5').default(routes);
+require('./teacherGPE').default(routes);
 
 // Loads the Tenant if the :tenantId param is passed
 routes.param('tenantId', tenantMiddleware);

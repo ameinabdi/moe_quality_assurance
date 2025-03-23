@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/school-supervision-g-p-e`,
+    require('./schoolSupervisionGPECreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/school-supervision-g-p-e/:id`,
+    require('./schoolSupervisionGPEUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/school-supervision-g-p-e/import`,
+    require('./schoolSupervisionGPEImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/school-supervision-g-p-e`,
+    require('./schoolSupervisionGPEDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/school-supervision-g-p-e/autocomplete`,
+    require('./schoolSupervisionGPEAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/school-supervision-g-p-e`,
+    require('./schoolSupervisionGPEList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/school-supervision-g-p-e/:id`,
+    require('./schoolSupervisionGPEFind').default,
+  );
+};
