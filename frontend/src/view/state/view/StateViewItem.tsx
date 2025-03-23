@@ -27,7 +27,7 @@ const StateViewItem = (props) => {
       return (
         <div key={record.id}>
           <Link to={`/state/${record.id}`}>
-            {record.id}
+            {record.name}
           </Link>
         </div>
       );

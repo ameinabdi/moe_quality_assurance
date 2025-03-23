@@ -27,7 +27,7 @@ const DistrictViewItem = (props) => {
       return (
         <div key={record.id}>
           <Link to={`/district/${record.id}`}>
-            {record.id}
+            {record.name}
           </Link>
         </div>
       );

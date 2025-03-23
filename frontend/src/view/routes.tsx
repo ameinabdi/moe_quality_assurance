@@ -132,7 +132,271 @@ const privateRoutes = [
       import('src/view/settings/SettingsFormPage'),
     permissionRequired: permissions.settingsEdit,
   },
+  {
+    path: '/school-supervision-g-p-e',
+    loader: () =>
+      import('src/view/schoolSupervisionGPE/list/SchoolSupervisionGPEListPage'),
+    permissionRequired: permissions.schoolSupervisionGPERead,
+    exact: true,
+  },
+  {
+    path: '/school-supervision-g-p-e/new',
+    loader: () =>
+      import('src/view/schoolSupervisionGPE/form/SchoolSupervisionGPEFormPage'),
+    permissionRequired: permissions.schoolSupervisionGPECreate,
+    exact: true,
+  },
+  {
+    path: '/school-supervision-g-p-e/importer',
+    loader: () =>
+      import(
+        'src/view/schoolSupervisionGPE/importer/SchoolSupervisionGPEImporterPage'
+      ),
+    permissionRequired: permissions.schoolSupervisionGPEImport,
+    exact: true,
+  },
+  {
+    path: '/school-supervision-g-p-e/:id/edit',
+    loader: () =>
+      import('src/view/schoolSupervisionGPE/form/SchoolSupervisionGPEFormPage'),
+    permissionRequired: permissions.schoolSupervisionGPEEdit,
+    exact: true,
+  },
+  {
+    path: '/school-supervision-g-p-e/:id',
+    loader: () =>
+      import('src/view/schoolSupervisionGPE/view/SchoolSupervisionGPEViewPage'),
+    permissionRequired: permissions.schoolSupervisionGPERead,
+    exact: true,
+  },
 
+  {
+    path: '/dimension-g-p-e1',
+    loader: () =>
+      import('src/view/dimensionGPE1/list/DimensionGPE1ListPage'),
+    permissionRequired: permissions.dimensionGPE1Read,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e1/new',
+    loader: () =>
+      import('src/view/dimensionGPE1/form/DimensionGPE1FormPage'),
+    permissionRequired: permissions.dimensionGPE1Create,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e1/importer',
+    loader: () =>
+      import(
+        'src/view/dimensionGPE1/importer/DimensionGPE1ImporterPage'
+      ),
+    permissionRequired: permissions.dimensionGPE1Import,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e1/:id/edit',
+    loader: () =>
+      import('src/view/dimensionGPE1/form/DimensionGPE1FormPage'),
+    permissionRequired: permissions.dimensionGPE1Edit,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e1/:id',
+    loader: () =>
+      import('src/view/dimensionGPE1/view/DimensionGPE1ViewPage'),
+    permissionRequired: permissions.dimensionGPE1Read,
+    exact: true,
+  },
+
+  {
+    path: '/dimension-g-p-e2',
+    loader: () =>
+      import('src/view/dimensionGPE2/list/DimensionGPE2ListPage'),
+    permissionRequired: permissions.dimensionGPE2Read,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e2/new',
+    loader: () =>
+      import('src/view/dimensionGPE2/form/DimensionGPE2FormPage'),
+    permissionRequired: permissions.dimensionGPE2Create,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e2/importer',
+    loader: () =>
+      import(
+        'src/view/dimensionGPE2/importer/DimensionGPE2ImporterPage'
+      ),
+    permissionRequired: permissions.dimensionGPE2Import,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e2/:id/edit',
+    loader: () =>
+      import('src/view/dimensionGPE2/form/DimensionGPE2FormPage'),
+    permissionRequired: permissions.dimensionGPE2Edit,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e2/:id',
+    loader: () =>
+      import('src/view/dimensionGPE2/view/DimensionGPE2ViewPage'),
+    permissionRequired: permissions.dimensionGPE2Read,
+    exact: true,
+  },
+
+  {
+    path: '/dimension-g-p-e3',
+    loader: () =>
+      import('src/view/dimensionGPE3/list/DimensionGPE3ListPage'),
+    permissionRequired: permissions.dimensionGPE3Read,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e3/new',
+    loader: () =>
+      import('src/view/dimensionGPE3/form/DimensionGPE3FormPage'),
+    permissionRequired: permissions.dimensionGPE3Create,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e3/importer',
+    loader: () =>
+      import(
+        'src/view/dimensionGPE3/importer/DimensionGPE3ImporterPage'
+      ),
+    permissionRequired: permissions.dimensionGPE3Import,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e3/:id/edit',
+    loader: () =>
+      import('src/view/dimensionGPE3/form/DimensionGPE3FormPage'),
+    permissionRequired: permissions.dimensionGPE3Edit,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e3/:id',
+    loader: () =>
+      import('src/view/dimensionGPE3/view/DimensionGPE3ViewPage'),
+    permissionRequired: permissions.dimensionGPE3Read,
+    exact: true,
+  },
+
+  {
+    path: '/dimension-g-p-e4',
+    loader: () =>
+      import('src/view/dimensionGPE4/list/DimensionGPE4ListPage'),
+    permissionRequired: permissions.dimensionGPE4Read,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e4/new',
+    loader: () =>
+      import('src/view/dimensionGPE4/form/DimensionGPE4FormPage'),
+    permissionRequired: permissions.dimensionGPE4Create,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e4/importer',
+    loader: () =>
+      import(
+        'src/view/dimensionGPE4/importer/DimensionGPE4ImporterPage'
+      ),
+    permissionRequired: permissions.dimensionGPE4Import,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e4/:id/edit',
+    loader: () =>
+      import('src/view/dimensionGPE4/form/DimensionGPE4FormPage'),
+    permissionRequired: permissions.dimensionGPE4Edit,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e4/:id',
+    loader: () =>
+      import('src/view/dimensionGPE4/view/DimensionGPE4ViewPage'),
+    permissionRequired: permissions.dimensionGPE4Read,
+    exact: true,
+  },
+
+  {
+    path: '/teacher-g-p-e',
+    loader: () =>
+      import('src/view/teacherGPE/list/TeacherGPEListPage'),
+    permissionRequired: permissions.teacherGPERead,
+    exact: true,
+  },
+  {
+    path: '/teacher-g-p-e/new',
+    loader: () =>
+      import('src/view/teacherGPE/form/TeacherGPEFormPage'),
+    permissionRequired: permissions.teacherGPECreate,
+    exact: true,
+  },
+  {
+    path: '/teacher-g-p-e/importer',
+    loader: () =>
+      import(
+        'src/view/teacherGPE/importer/TeacherGPEImporterPage'
+      ),
+    permissionRequired: permissions.teacherGPEImport,
+    exact: true,
+  },
+  {
+    path: '/teacher-g-p-e/:id/edit',
+    loader: () =>
+      import('src/view/teacherGPE/form/TeacherGPEFormPage'),
+    permissionRequired: permissions.teacherGPEEdit,
+    exact: true,
+  },
+  {
+    path: '/teacher-g-p-e/:id',
+    loader: () =>
+      import('src/view/teacherGPE/view/TeacherGPEViewPage'),
+    permissionRequired: permissions.teacherGPERead,
+    exact: true,
+  },
+
+  {
+    path: '/dimension-g-p-e5',
+    loader: () =>
+      import('src/view/dimensionGPE5/list/DimensionGPE5ListPage'),
+    permissionRequired: permissions.dimensionGPE5Read,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e5/new',
+    loader: () =>
+      import('src/view/dimensionGPE5/form/DimensionGPE5FormPage'),
+    permissionRequired: permissions.dimensionGPE5Create,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e5/importer',
+    loader: () =>
+      import(
+        'src/view/dimensionGPE5/importer/DimensionGPE5ImporterPage'
+      ),
+    permissionRequired: permissions.dimensionGPE5Import,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e5/:id/edit',
+    loader: () =>
+      import('src/view/dimensionGPE5/form/DimensionGPE5FormPage'),
+    permissionRequired: permissions.dimensionGPE5Edit,
+    exact: true,
+  },
+  {
+    path: '/dimension-g-p-e5/:id',
+    loader: () =>
+      import('src/view/dimensionGPE5/view/DimensionGPE5ViewPage'),
+    permissionRequired: permissions.dimensionGPE5Read,
+    exact: true,
+  },
   {
     path: '/assessment',
     loader: () =>

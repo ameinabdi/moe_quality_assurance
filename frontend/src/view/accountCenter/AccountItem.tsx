@@ -41,7 +41,7 @@ export default function AccountItem() {
         selectors.selectRoles,
       );
     const items: MenuItem[] = [
-        getItem('Account Center', '/account-center', <SettingOutlined rev={undefined} />, ),
+        getItem('Account Center', '/account-center', <SettingOutlined rev={undefined} /> ),
         getItem('Change Password', '/password-change', <LockOutlined rev={undefined}  />, ),
         getItem('Workspace', '/tenant', <AppstoreOutlined rev={undefined}  />, ),
         getItem('Admin Area', '/admin-area', <ControlOutlined rev={undefined}  />, ),

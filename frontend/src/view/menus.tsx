@@ -116,6 +116,29 @@ export default [
     icon: <RightOutlined  rev={undefined} />,
     label: i18n('entities.schoolSupervision.menu'),
     key: 'schoolSupervision',
+    submenu:[
+      {
+        path: '/school-supervision',
+        permissionRequired: permissions.schoolSupervisionRead,
+        icon: <RightOutlined  rev={undefined} />,
+        label: i18n('entities.schoolSupervision.menu'),
+        key: 'schoolSupervision',
+      },
+      {
+        path: '/school-supervision-g-p-e',
+        permissionRequired: permissions.schoolSupervisionGPERead,
+        icon: <RightOutlined rev={undefined} />,
+        label: i18n('entities.schoolSupervisionGPE.menu'),
+        key: 'schoolSupervisionGPE',
+      },
+      {
+        path: '/teacher-g-p-e',
+        permissionRequired: permissions.teacherGPERead,
+        icon: <RightOutlined rev={undefined} />,
+        label: i18n('entities.teacherGPE.menu'),
+        key: 'teacherGPE',
+      },
+    ]
   },
   {
     path: '/government-teacher-information',
@@ -132,6 +155,7 @@ export default [
     label: i18n('entities.tools.menu'),
     key: 'tools',
   },
-
+  
+ 
   
 ].filter(Boolean);

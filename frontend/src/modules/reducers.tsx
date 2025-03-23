@@ -31,6 +31,13 @@ import region from 'src/modules/region/regionReducers';
 import district from 'src/modules/district/districtReducers';
 import tools from 'src/modules/tools/toolsReducers';
 import toolTypes from 'src/modules/toolTypes/toolTypesReducers';
+import schoolSupervisionGPE from 'src/modules/schoolSupervisionGPE/schoolSupervisionGPEReducers';
+import dimensionGPE1 from 'src/modules/dimensionGPE1/dimensionGPE1Reducers';
+import dimensionGPE2 from 'src/modules/dimensionGPE2/dimensionGPE2Reducers';
+import dimensionGPE3 from 'src/modules/dimensionGPE3/dimensionGPE3Reducers';
+import dimensionGPE4 from 'src/modules/dimensionGPE4/dimensionGPE4Reducers';
+import teacherGPE from 'src/modules/teacherGPE/teacherGPEReducers';
+import dimensionGPE5 from 'src/modules/dimensionGPE5/dimensionGPE5Reducers';
 
 import plan from 'src/modules/plan/planReducers';
 import { combineReducers } from 'redux';
@@ -71,5 +78,11 @@ export default (history) =>
     district,
     tools,
     toolTypes,
-    
+    schoolSupervisionGPE,
+    dimensionGPE1,
+    dimensionGPE2,
+    dimensionGPE3,
+    dimensionGPE4,
+    teacherGPE,
+    dimensionGPE5,
   });

@@ -27,7 +27,7 @@ const RegionViewItem = (props) => {
       return (
         <div key={record.id}>
           <Link to={`/region/${record.id}`}>
-            {record.id}
+            {record.name}
           </Link>
         </div>
       );

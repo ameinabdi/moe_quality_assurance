@@ -77,6 +77,16 @@ export default class Storage {
         bypassWritingPermissions: true,
         publicRead: true,
       },
+      schoolSupervisionGPESignatureofprincipal: {
+        id: 'schoolSupervisionGPESignatureofprincipal',
+        folder: 'tenant/:tenantId/schoolSupervisionGPE/signatureofprincipal',
+        maxSizeInBytes: 100 * 1024 * 1024,
+      },
+      schoolSupervisionGPESchoolStamp: {
+        id: 'schoolSupervisionGPESchoolStamp',
+        folder: 'tenant/:tenantId/schoolSupervisionGPE/schoolStamp',
+        maxSizeInBytes: 100 * 1024 * 1024,
+      },
     };
   }
 }
