@@ -121,4 +121,13 @@ export default class PermissionChecker {
 
     return (this.currentUser.twoFA && this.currentUser.twoFAVerified) || (!this.currentUser.twoFAVerificationToken && !this.currentUser.twoFA)  ;
   }
+
+  get isState() {
+    if (!this.isAuthenticated) {
+      return false;
+    }
+
+    return (this.currentUser.type	=== "District" || this.currentUser.type === "State")  ;
+  }
+  
 }

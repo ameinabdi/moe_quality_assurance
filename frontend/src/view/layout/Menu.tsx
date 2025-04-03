@@ -22,6 +22,7 @@ import I18nSelect from 'src/view/layout/I18nSelect';
 import { getHistory } from 'src/modules/store';
 import authActions from 'src/modules/auth/authActions';
 import config from 'src/config';
+import Permissions from 'src/security/permissions';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -49,7 +50,6 @@ const AppMenu = (props) => {
   const currentUser = useSelector(
     authSelectors.selectCurrentUser,
   );
-
   
   const userDropdownText = useSelector(
     authSelectors.selectCurrentUserNameOrEmailPrefix,
@@ -108,7 +108,7 @@ const AppMenu = (props) => {
     const url = props.url;
     let match;
 
-    menus.map((option:any) => {
+    menus.mainMenu.map((option:any) => {
       let initialPathSegment = "/" + url.split('/')[1];
       if (option?.submenu) {
         option?.submenu.forEach(subOption => {
@@ -142,7 +142,7 @@ const AppMenu = (props) => {
     let keys = selectedKeys() || [];
     let openKeys: string[] = [];
 
-    menus.forEach((option:any) => {
+    menus.mainMenu.forEach((option:any) => {
       if (option?.submenu) {
         option?.submenu.forEach((sub:any) => {
           if (keys.includes(sub.key)) {
@@ -154,58 +154,110 @@ const AppMenu = (props) => {
 
     return openKeys;
   };
+  const selectedStateKeys = () => {
+    const url = props.url;
+    let match;
+
+    menus.stateMenu.map(option => {
+      let initialPathSegment = "/" + url.split('/')[1];
+        if (option.path === initialPathSegment) {
+          match = [option.key];
+        }
+      return match
+    })
+
+    return match;
+  };
+
+
+
+  const defaultStateOpenKeys = () => {
+    let keys = selectedKeys() || [];
+    let openKeys: string[] = [];
+
+    menus.stateMenu.forEach(option => {
+      if (option?.submenu) {
+        option.submenu.forEach((sub:any) => {
+          if (keys.includes(sub.key)) {
+            openKeys.push(option.key);
+          }
+        });
+      }
+    });
+
+    return openKeys;
+  };
+
+  
+
+  
 
   const items: MenuProps['items'] = [
-    ...menus.filter((menu) => match(menu.permissionRequired)).map((menu) => (getItem(<Link to={`${menu.path}`} style={{color:'white'}}>{menu.label}</Link>, menu.key,  menu.icon, 
+    ...menus.mainMenu.filter((menu) => match(menu.permissionRequired)).map((menu) => (getItem(<Link to={`${menu.path}`} style={{color:'white'}}>{menu.label}</Link>, menu.key,  menu.icon, 
       //@ts-ignore
       menu.submenu ? [...menu.submenu.map((item)=>getItem(<Link to={`${item.path}`}>{item.label}</Link>, item.path, item.icon))]: null)
       )),
   ];
 
+  const stateItems: MenuProps['items'] = [
+    ...menus.stateMenu.filter((menu) => match(menu.permissionRequired)).map((menu) => (getItem(<Link to={`${menu.path}`} style={{color:'white'}}>{menu.label}</Link>, menu.key,  menu.icon, 
+      //@ts-ignore
+      menu.submenu ? [...menu.submenu.map((item)=>getItem(<Link to={`${item.path}`}>{item.label}</Link>, item.path, item.icon))]: null)
+      )),
+  ];
+
+ 
+
   const userMenu = (
     <Menu selectedKeys={[]}>
-      <Menu.Item
-        onClick={doNavigateToProfile}
-        key="userCenter"
-      >
-        <UserOutlined style={{ marginRight: 8 }} rev={undefined}/>
-        {i18n('auth.profile.title')}
-      </Menu.Item>
+     {match(Permissions.values.planRead) && (
+       <Menu.Item
+       onClick={doNavigateToProfile}
+       key="userCenter"
+     >
+       <UserOutlined rev={undefined} style={{ marginRight: 8 }} />
+       {i18n('auth.profile.title')}
+     </Menu.Item>
+     )} 
       <Menu.Item
         onClick={doNavigateToPasswordChange}
         key="passwordChange"
       >
-        <LockOutlined style={{ marginRight: 8 }} rev={undefined}/>
+        <LockOutlined rev={undefined} style={{ marginRight: 8 }} />
         {i18n('auth.passwordChange.title')}
       </Menu.Item>
       {['multi', 'multi-with-subdomain'].includes(
         config.tenantMode,
-      ) && (
+      ) && match(Permissions.values.planRead) && (
         <Menu.Item
           onClick={doNavigateToTenants}
           key="tenants"
         >
-          <AppstoreOutlined style={{ marginRight: 8 }} rev={undefined}/>
+          <AppstoreOutlined rev={undefined} style={{ marginRight: 8 }} />
           {i18n('auth.tenants')}
         </Menu.Item>
       )}
+      {match(Permissions.values.settingsEdit) && (
        <Menu.Item
           onClick={doNavigateToSettings}
           key="settings"
         >
-          <SettingOutlined style={{ marginRight: 8 }} rev={undefined}/>
+          <SettingOutlined rev={undefined} style={{ marginRight: 8 }} />
           {i18n('settings.menu')}
       </Menu.Item>
+       )}
+     {match(Permissions.values.auditLogRead) && (
       <Menu.Item
           onClick={doNavigateToAuditLogs}
           key="audit-logs"
         >
-          <FileSearchOutlined style={{ marginRight: 8 }} rev={undefined}/>
+          <FileSearchOutlined rev={undefined} style={{ marginRight: 8 }} />
           {i18n('auditLog.menu')}
       </Menu.Item>
+       )}
       <Menu.Divider />
       <Menu.Item onClick={doSignout} key="logout">
-        <LogoutOutlined style={{ marginRight: 8 }} rev={undefined}/>
+        <LogoutOutlined rev={undefined} style={{ marginRight: 8 }} />
         {i18n('auth.signout')}
       </Menu.Item>
     </Menu>
@@ -216,27 +268,38 @@ const AppMenu = (props) => {
       <div className='Main'>
    
       <div className='left'>
-            <h3 style={{margin:'10px', fontWeight:'bold',color:'#f39c12'}}><span style={{color:'#00bbf9'}}>{i18n('app.name')}</span> </h3>
+         
         </div>
         <div className='center'>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          selectedKeys={selectedKeys()}
-          defaultOpenKeys={defaultOpenKeys()}
-          items={items}
-          selectable={true}
-          expandIcon
-          >
-          
-        </Menu>
+        { permissionChecker.isState ? 
+         <Menu
+         theme="dark"
+         mode="horizontal"
+         selectedKeys={selectedStateKeys()}
+         defaultOpenKeys={defaultStateOpenKeys()}
+         items={stateItems}
+         selectable={true}
+         expandIcon
+         >
+         </Menu>
+        :
+         <Menu
+         theme="dark"
+         mode="horizontal"
+         selectedKeys={selectedKeys()}
+         defaultOpenKeys={defaultOpenKeys()}
+         items={items}
+         selectable={true}
+         expandIcon
+         >
+         
+       </Menu>
+          }
         </div>
         <div className='right'>
-       
           <span className="i18n-select">
             <I18nSelect />
           </span>
-
           <Dropdown
             className="user-dropdown"
             overlay={userMenu}
@@ -250,19 +313,12 @@ const AppMenu = (props) => {
                 alt="avatar"
                 icon={
                   userDropdownAvatar ? undefined : (
-                    <UserOutlined rev={undefined}  />
+                    <UserOutlined rev={undefined}   />
                   )
                 }
               />
               <span className="user-dropdown-text">
                 <span>{userDropdownText}</span>{' '}
-                {['multi', 'multi-with-subdomain'].includes(
-                  config.tenantMode,
-                ) && (
-                  <span className="user-dropdown-text-tenant">
-                    {currentTenant && currentTenant.name}
-                  </span>
-                )}
               </span>
             </div>
           </Dropdown>

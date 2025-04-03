@@ -50,6 +50,1075 @@ const so = {
     menu: 'State Report',
   },
   entities: {
+    schoolSupervisionGPE: {
+      name: 'school Supervision GPE',
+      label: 'School Supervision GPES',
+      menu: 'School Supervision GPES',
+      exporterFileName: 'school Supervision GPE_export',
+      list: {
+        menu: 'School Supervision GPES',
+        title: 'School Supervision GPES',
+      },
+      create: {
+        success: 'School Supervision GPE successfully saved',
+      },
+      update: {
+        success: 'School Supervision GPE successfully saved',
+      },
+      destroy: {
+        success: 'School Supervision GPE successfully deleted',
+      },
+      destroyAll: {
+        success: 'School Supervision GPE(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit School Supervision GPE',
+      },
+      fields: {
+        id: 'Id',
+        'introduction': 'Introduction',
+        'guidelines': 'Guidelines',
+        'finalizedDateRange': 'Finalized Date',
+        'finalizedDate': 'Finalized Date',
+        'principal': 'Name of principal/Deputy',
+        'signatureofprincipal': 'Signature of principal',
+        'school': 'School',
+        'dimension1': 'Dimension 1',
+        'dimension2': 'Dimension 2',
+        'dimension3': 'Dimension 3',
+        'dimension4': 'Dimension 4',
+        'dimensionGPE1': 'Dimension1',
+        'dimensionGPE2': 'Dimension2',
+        'dimensionGPE3': 'Dimension3',
+        'dimensionGPE4': 'Dimension4',
+        'schoolStamp': 'School Stamp',
+        'schoolinfo':'School Information',
+        'finalize':'Finalize',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+
+      },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'New School Supervision GPE',
+        "sectionC": "Section C",
+        'sectiona':'SECTION A: INTRODUCTION',
+        'introduction':' School SUPERVISION tool is a support tool for the school management and designed to asses of the schools performance and identify areas forimprovement. This tool helps schools to evaluate their own practices and processes against predetermined standards without any pressures from external evaluators. By conducting regular self-assessment, schools can take proactive steps to enhance their practices, align with standards, and improve educational outcomes for students. The tool consists of five dimensions: School leadership and governance, School environment and safety, Curriculum implementation, Community relations and participation, and also Teaching and learning.',
+        'note':'<h3><strong>Note:</strong></h3><br/>  1. School management is required to undertake a realistic and evidence-based assessment of their school against the criteria withi the five areas of the evaluation.<br/> 2. After completion of the SSA, the school should use the data from this SSA activity to craft a School Improvement Plan (SIP).<br/> 3. The tool will be digitalized in order to ease the data collection process, updating and expansion of quality assurance system. <br/><br/>',
+        'sectionb':'SECTION B: GUIDELINES ON RATING',
+        'basic':'Basic information about the school:',
+        'dimension1':'DIMENSION 1: SCHOOL LEADERSHIP AND GOVERNANCE',
+        'dimension2':'DIMENSION 2: CURRICULUM IMPLEMENTATION',
+        'dimension3':'DIMENSION 3: TEACHING AND LEARNING',
+        'sectionc':'SECTION C: SCHOOL NEEDS PRIORITIZATION FRAMEWORK'
+      },
+      view: {
+        title: 'View SchoolSupervisionGPE',
+      },
+      importer: {
+        title: 'Import SchoolSupervisionGPES',
+        fileName: 'schoolSupervisionGPE_import_template',
+        hint:
+          'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
+
+  dimensionGPE1: {
+      name: 'dimensionGPE1',
+      label: 'DimensionGPE1s',
+      menu: 'DimensionGPE1s',
+      exporterFileName: 'dimensionGPE1_export',
+      list: {
+        menu: 'DimensionGPE1s',
+        title: 'DimensionGPE1s',
+      },
+      create: {
+        success: 'DimensionGPE1 successfully saved',
+      },
+      update: {
+        success: 'DimensionGPE1 successfully saved',
+      },
+      destroy: {
+        success: 'DimensionGPE1 successfully deleted',
+      },
+      destroyAll: {
+        success: 'DimensionGPE1(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit DimensionGPE1',
+      },
+      fields: {
+        id: 'Id',
+        'indicator11': 'The principal has a university degree.',
+        'indicator12': 'The principal has the required experience according to the policies and the Education Law of the country.',
+        'indicator13': 'The school has a written vision and mission that is consistent with the general education of the country',
+        'indicator14': 'The school\'s open accounting system allows the parent committee to access financial records',
+        'indicator15': 'The school has an active student feeding program.',
+        'indicator16': 'The school has a student discipline program.',
+        'indicator17': 'The school has a plan to encourage life skills, such as problem- solving, communication, and conflict resolution.',
+        'indicator18': 'The principal guides the teachers in preparing a scheme of work',
+        'indicator19': 'The school maintains accurate records of student transfers and implements EMIS.',
+        'indicator110': 'The school participates in the preparation of the annual budget of the school CEC and financial staff.',
+        'indicator111': 'The school enforces teachers\' attendance procedures',
+        'indicator112': 'The school has a School Improvement Plan (SIP) that is based on the results of the school assessment',
+        'indicator113': 'The education policies of the country can be found in the school.',
+        'indicator114': 'The school presents the test results to the students',
+        'school': 'School',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+        'indicator11': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator12': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator13': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator14': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator15': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator16': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator17': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator18': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator19': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator110': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator111': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator112': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator113': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator114': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+      },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'New DimensionGPE1',
+      },
+      view: {
+        title: 'View DimensionGPE1',
+      },
+      importer: {
+        title: 'Import DimensionGPE1s',
+        fileName: 'dimensionGPE1_import_template',
+        hint:
+          'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
+
+  dimensionGPE2: {
+      name: 'dimensionGPE2',
+      label: 'DimensionGPE2s',
+      menu: 'DimensionGPE2s',
+      exporterFileName: 'dimensionGPE2_export',
+      list: {
+        menu: 'DimensionGPE2s',
+        title: 'DimensionGPE2s',
+      },
+      create: {
+        success: 'DimensionGPE2 successfully saved',
+      },
+      update: {
+        success: 'DimensionGPE2 successfully saved',
+      },
+      destroy: {
+        success: 'DimensionGPE2 successfully deleted',
+      },
+      destroyAll: {
+        success: 'DimensionGPE2(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit DimensionGPE2',
+      },
+      fields: {
+        id: 'Id',
+        'indicator31': 'Copies of the syllabus are available in the principal\'s office.',
+        'indicator32': 'The principal regularly monitors the use of the syllabus.',
+        'indicator33': 'The school operates 6 days a week',
+        'indicator34': 'The school teaches all subjects (9 in primary).',
+        'indicator35': 'The school teaches all subjects (13 in secondary).',
+        'indicator36': 'period time for primary is (40 minutes).',
+        'indicator37': 'period time for Secondary is (45 minutes)',
+        'indicator38': 'Indicator38',
+        'indicator39': 'The school teachers are regularly trained in a curriculum implementation process',
+        'indicator310': 'The tests conducted on the students are designed to assess and differentiate their mental abilities (low, medium, and high).',
+        'indicator311': 'The school has met the standard for a student of textbook ratio 1:1',
+        'indicator312': 'The school has a laboratory',
+        'indicator313': 'The school has a library',
+        'indicator314': 'The school has ICT system',
+        'indicator315': 'All teachers keep a copy of the approved Scheme of work for every subject.',
+        'school': 'School',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+        'indicator31': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator32': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator33': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator34': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator35': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator36': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator37': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator38': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator39': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator310': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator311': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator312': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator313': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator314': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator315': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+      },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'New DimensionGPE2',
+      },
+      view: {
+        title: 'View DimensionGPE2',
+      },
+      importer: {
+        title: 'Import DimensionGPE2s',
+        fileName: 'dimensionGPE2_import_template',
+        hint:
+          'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
+
+  dimensionGPE3: {
+      name: 'dimensionGPE3',
+      label: 'DimensionGPE3s',
+      menu: 'DimensionGPE3s',
+      exporterFileName: 'dimensionGPE3_export',
+      list: {
+        menu: 'DimensionGPE3s',
+        title: 'DimensionGPE3s',
+      },
+      create: {
+        success: 'DimensionGPE3 successfully saved',
+      },
+      update: {
+        success: 'DimensionGPE3 successfully saved',
+      },
+      destroy: {
+        success: 'DimensionGPE3 successfully deleted',
+      },
+      destroyAll: {
+        success: 'DimensionGPE3(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit DimensionGPE3',
+      },
+      fields: {
+        id: 'Id',
+        'indicator31': 'The teacher has a scheme of work, a lesson plan developed from the syllabus, and align with the Ministry approved standard',
+        'indicator32': 'The teacher has access to various learning materials, including books, teacher\'s guides, and supplementary resources.',
+        'indicator33': 'Teacher is able to identify student /learners’ ability, capacities, experience, skills, and link lesson to previous lessons or student /learners’ daily lives',
+        'indicator34': 'He teacher uses variety of age/ability-appropriate teaching method/strategy 5. The teacher asses',
+        'indicator35': 'The teacher assesses student understanding throughout the lesson',
+        'indicator36': 'Students actively participate in the lesson.',
+        'indicator37': 'Classroom is suitable for teaching and learning',
+        'indicator38': 'The teacher employs positive discipline techniques to maintain a well-structured and supportive classroom environment.',
+        'indicator39': 'The teacher follows child protection and code of conduct standard',
+        'indicator310': 'The teacher moves around the classroom and makes eye contact',
+        'indicator311': 'The teacher respects students/learners and provide everyone with equal opportunities to learn',
+        'indicator312': 'The teacher used Class attendance twice daily – (first and last period)',
+        'indicator313': 'Teacher arouses the student /learner’s interest and motivation level. The lesson introduction captured the learner’s attention and interest as well as linked the learner’s knowledge/ experiences to new content',
+        'indicator314': 'The teacher communicates effectively to all the student /learners in class',
+        'indicator315': 'The teacher demonstrates good knowledge of the subject and can teach',
+        'indicator316': 'Teacher evaluates behavior, knowledge, skills, values, and attitudes during the teaching process using a range of formative assessment techniques (recap, quizzes, questions in groups and individually)',
+        'indicator317': 'Learners receive clear and timely feedback on their progress and results are used to support learners and set targets',
+        'indicator318': 'Students receive guidance on how to improve their areas of weakness.',
+        'indicator319': 'the student\'s poor academic performance is communicated to their parents.',
+        'indicator320': 'School based assessments are standardized, address the different cognitive abilities and all aligned with the learning outcomes of the syllabus',
+        'school': 'School',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+        'indicator51': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator52': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator53': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator54': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator55': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator56': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator57': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator58': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator59': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator510': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator511': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator512': {
+          'The teacher used Class attendance twice daily – (first and last period)': 'The teacher used Class attendance twice daily – (first and last period)',
+        },
+        'indicator513': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator514': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator515': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator516': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator517': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator518': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator519': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator520': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+      },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'New DimensionGPE3',
+      },
+      view: {
+        title: 'View DimensionGPE3',
+      },
+      importer: {
+        title: 'Import DimensionGPE3s',
+        fileName: 'dimensionGPE3_import_template',
+        hint:
+          'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
+
+  dimensionGPE4: {
+      name: 'dimensionGPE4',
+      label: 'DimensionGPE4s',
+      menu: 'DimensionGPE4s',
+      exporterFileName: 'dimensionGPE4_export',
+      list: {
+        menu: 'DimensionGPE4s',
+        title: 'DimensionGPE4s',
+      },
+      create: {
+        success: 'DimensionGPE4 successfully saved',
+      },
+      update: {
+        success: 'DimensionGPE4 successfully saved',
+      },
+      destroy: {
+        success: 'DimensionGPE4 successfully deleted',
+      },
+      destroyAll: {
+        success: 'DimensionGPE4(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit DimensionGPE4',
+      },
+      fields: {
+        id: 'Id',
+        'indicator41': 'The school has a functioning CEC',
+        'indicator42': 'The CEC composition complies with the provisions of MOECHE’s CEC policy framework',
+        'indicator43': 'The school CEC meets regularly and keeps records of their meetings and signed resolutions.',
+        'indicator44': 'The principal ensures parent and local community are well-informed about school matters.',
+        'school': 'School',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+        'indicator41': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator42': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator43': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator44': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+      },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'New DimensionGPE4',
+      },
+      view: {
+        title: 'View DimensionGPE4',
+      },
+      importer: {
+        title: 'Import DimensionGPE4s',
+        fileName: 'dimensionGPE4_import_template',
+        hint:
+          'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
+
+  teacherGPE: {
+      name: 'teacher GPE',
+      label: 'Teacher GPES',
+      menu: 'Teacher GPES',
+      exporterFileName: 'teacherGPE_export',
+      list: {
+        menu: 'Teacher GPES',
+        title: 'Teacher GPES',
+      },
+      create: {
+        success: 'TeacherGPE successfully saved',
+      },
+      update: {
+        success: 'TeacherGPE successfully saved',
+      },
+      destroy: {
+        success: 'TeacherGPE successfully deleted',
+      },
+      destroyAll: {
+        success: 'TeacherGPE(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit Teacher GPE',
+      },
+      fields: {
+        id: 'Id',
+        'school': 'Dugsi',
+        'state': 'M.Goboleed',
+        'region': 'Gobol',
+        'district': 'Degmo',
+        'fullName': 'Magaca dhameystiran',
+        'gender': 'Jinsiga',
+        'subjectName': 'Maadada',
+        'teachingLevel': 'Heerka wax dhigida',
+        'grade': 'Fasalka',
+        'totalStudentRange': 'wadarta ardeyda',
+        'totalStudent': 'Wadarta ardayda fasalka',
+        'maleStudentsRange': 'Ardayda labka ah',
+        'maleStudents': 'Ardayda labka ah',
+        'femaleStudentRange': 'Ardayda dhidiga ah',
+        'femaleStudent': 'Ardayda dhidiga ah',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+        'gender': {
+          'Male': 'Lab',
+          'Female': 'Dhidig',
+        },
+        'subjectName': {
+          'Somali': 'Somali',
+          'Saynis': 'Saynis',
+          'Cilmiga-bulshada': 'Cilmiga-bulshada',
+          'Xisaab': 'Xisaab',
+          'English': 'English',
+          'Technology': 'Technology',
+          'Maths': 'Maths',
+          'Biology': 'Biology',
+          'Chemistry': 'Chemistry',
+          'Physics': 'Physics',
+          'Geography': 'Geography',
+          'History': 'History',
+          'Business': 'Business',
+          'Carabi Tarbiyo': 'Carabi Tarbiyo',
+        },
+        'teachingLevel': {
+          'Primary': 'Hoose/dhexe',
+          'Secondary': 'Sare',
+        },
+        'grade': {
+          'Class 1': 'Class 1',
+          'Class 2': 'Class 2',
+          'Class 3': 'Class 3',
+          'Class 4': 'Class 4',
+          'Class 5': 'Class 5',
+          'Class 6': 'Class 6',
+          'Class 7': 'Class 7',
+          'Class 8': 'Class 8',
+          'Class 9': 'Class 9',
+          'Class 10': 'Class 10',
+          'Class 11': 'Class 11',
+          'Class 12': 'Class 12',
+          '': '',
+        },
+      },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'New Teacher GPE',
+      },
+      view: {
+        title: 'View Teacher GPE',
+      },
+      importer: {
+        title: 'Import Teacher GPES',
+        fileName: 'teacherGPE_import_template',
+        hint:
+          'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
+
+  dimensionGPE5: {
+      name: 'dimensionGPE5',
+      label: 'DimensionGPE5s',
+      menu: 'DimensionGPE5s',
+      exporterFileName: 'dimensionGPE5_export',
+      list: {
+        menu: 'DimensionGPE5s',
+        title: 'DimensionGPE5s',
+      },
+      create: {
+        success: 'DimensionGPE5 successfully saved',
+      },
+      update: {
+        success: 'DimensionGPE5 successfully saved',
+      },
+      destroy: {
+        success: 'DimensionGPE5 successfully deleted',
+      },
+      destroyAll: {
+        success: 'DimensionGPE5(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit DimensionGPE5',
+      },
+      fields: {
+        id: 'Id',
+        'lesson':'Diyaarinta Casharka',
+        'classroom':'Maareynta Fasalka',
+        'instruction':'Waxbarid',
+        'Professionalism':'Teacher Professionalism',
+        'learner':'Xirfadda Macallinka',
+        'indicator51': 'Macallinku waxa uu leeyahay qorshe shaqo iyo qorshe cashar oo laga soo saaray manhajka qaran',
+        'indicator52': 'Macallinku waxa uu haystaa agabka waxbarashada ee loo baahana kaas oo ku habboon cashar dhigidda sida: (Buugaagta hagaha macallinka',
+        'indicator53': 'Macallinku waxa uu awoodaa in uu aqoonsado kartida,waaya- aragnimada iyo xirfadaha ardayda iyo isku xirka casharka cusub iyo casharradii hore',
+        'indicator54': 'Macallinku waxa uu adeegsadaa hababaka wax dhigidda isaga oo eegaya kala duwanaanshaha da da iyo kartida ardayda',
+        'indicator55': 'Macallinku waxa uu hubiyaa fahamka ardayga inta casharku socdo.',
+        'indicator56': 'Ardaydu waxa ay si firfircoon uga qayb qaataan casharka',
+        'indicator57': 'Fasalku waa mid ku habboon Baridda iyo barashada',
+        'indicator58': 'Fasalku waa mid ku habboon Baridda iyo barashada',
+        'indicator59': 'Macallinku waxa uu adeegsadaa xeelado edbin togan, si uu u maareeyo fasalka.',
+        'indicator510': 'Macallinku waxa uu raacaa habraaca ilaalinta ardayda iyo heerka anshaxa',
+        'indicator511': 'Macallinku waxa uu sameeyaa socsocod fasalka(class moves around) gudihiisa ah si uu ula socdo dhaqdhaqaaqa ardayda (eye contact).',
+        'indicator512': 'Macallinku wuu ixtiraamaa ardayda, waxa uuna qof walba siiyaa fursado siman oo uu wax ku barto.',
+        'indicator513': 'Macallinku waxa uu xaadiriyaa ardayda bilowga iyo dhammaadka xiisada.',
+        'indicator514': 'Macallinku waxa uu kor u qaadaa xiisaha iyo heerka dhiirigelinta ardayda, isaga oo hordhaca casharka ka dhigaya mid xiiso leh oo soo jiidanaya ardayda.',
+        'indicator515': 'Macallinku waxa uu la sameeya dhammaan ardayda fasalka xiriir wanaagsan.',
+        'indicator516': 'Macallinku waxa uu aqoon wanaagsan u leeyahay maaddada.',
+        'indicator517': 'Macallinku si joogto ah ayuu waqtigiisa ugu yimaadaa dugsiga iyo fasalka..',
+        'indicator518': 'Macallinku joogitaan joogto ah ayuu leeyahay oo ma yeesho maqnaansho xad-dhaaf ah.',
+        'indicator519': 'Macallinku wuxuu muujiyaa go’aan iyo dadaal uu ku horumarinayo xirfaddiisa (tusaale: ka qaybgalka tababarada, adeegsiga farsamooyin cusub).',
+        'indicator520': 'Macallinku waxa uu qiimeeyaa habdhaqanka, aqoonta, xirfadaha, qiyamka, iyo dabeecadaha inta lagu jiro habka Waxbaridda',
+        'indicator521': 'Ardaydu waxa ay helaan jawaabcelin cad oo waqti ku habboon, natiijooyinkana waxaa loo isticmaalaa in lagu taageero ardayda iyo dejinta bartilmaameedyada kobcinta horuma inta ardayda.',
+        'indicator522': 'Ardayda waxaa la siiyaa talooyin ay ku hagaajinayaan meelaha ay ku liitaan.',
+        'indicator523': 'Waxqabadka liita ee ardayga waxaa lala wadaagaa waalidiintiisa.',
+        'indicator524': 'Qiimaynta dugsigu waxa ay ku salaysantahay heerarka sare ee kala duwanashaha awoodaha garashada kuwaas oo dhammaan la jaanqaadaya natiijooyinka waxbarasho ee manhajka',
+        'teacher': 'Bare',
+        'school': 'Dugsi',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+        'indicator51': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator52': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator53': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator54': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator55': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator56': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator57': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator58': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator59': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator510': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator511': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator512': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator513': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator514': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator515': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator516': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator517': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator518': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator519': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator520': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator521': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator522': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator523': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+        'indicator524': {
+          '1': '1',
+          '2': '2',
+          '3': '3',
+          '4': '4',
+          '5': '5',
+        },
+      },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'New DimensionGPE5',
+      },
+      view: {
+        title: 'View DimensionGPE5',
+      },
+      importer: {
+        title: 'Import DimensionGPE5s',
+        fileName: 'dimensionGPE5_import_template',
+        hint:
+          'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
     schoolSupervision: {
       name: 'school Supervision',
       label: 'School Supervisions',
@@ -1981,6 +3050,7 @@ const so = {
   
 
   auth: {
+    title:'Login into your account',
     tenants: 'Workspaces',
     profile: {
       title: 'Profile',
@@ -2104,6 +3174,8 @@ const so = {
     menu: 'Users',
     fields: {
       id: 'Id',
+      type:'Type',
+      state:"State",
       avatars: 'Avatar',
       email: 'Email',
       emails: 'Email(s)',

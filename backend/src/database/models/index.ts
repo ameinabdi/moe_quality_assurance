@@ -43,16 +43,25 @@ function models() {
     getConfig().DATABASE2_PASSWORD,
     {
       dialectOptions: {
+        instanceName: 'MSSQLSERVER17',  // Named instance support
         options: {
           encrypt: true,
           enableArithAbort: true,
+          trustServerCertificate: true,
           cryptoCredentialsDetails: {
-            minVersion: 'TLSv1'
-          }
-        }
+            minVersion: 'TLSv1',
+          },
+        },
       },
       host: getConfig().DATABASE2_HOST,
+      port: getConfig().DATABASE2_PORT,
       dialect: getConfig().DATABASE2_DIALECT,
+      pool: {
+        max: 10, // Increase max connections
+        min: 0,  // Allow pool to scale down
+        acquire: 30000, // 30 seconds before timeout
+        idle: 10000, // 10 seconds idle timeout
+      },
       logging:
         getConfig().DATABASE2_LOGGING === 'true'
           ? (log) =>
@@ -64,6 +73,7 @@ function models() {
               )
           : false,
     },
+   
   );
 
   fs.readdirSync(dirPath)

@@ -85,6 +85,7 @@ const dimenion = await options.database.dimensionGPE5.create(
           'indicator524',          
           'importHash',
         ]),
+        dimension5Rate:data.dimensionRate || 0,
         teacherId: record.id || null,
         schoolId: data.school || null,
         tenantId: tenant.id,
@@ -380,6 +381,9 @@ const dimenion = await options.database.dimensionGPE5.create(
     const tenant = SequelizeRepository.getCurrentTenant(
       options,
     );
+   const currentUser = SequelizeRepository.getCurrentUser(
+     options,
+    );
 
     let whereAnd: Array<any> = [];
     let include = [
@@ -398,11 +402,35 @@ const dimenion = await options.database.dimensionGPE5.create(
       {
         model: options.database.district,
         as: 'district',
-      },      
+      },    
+      {
+        model: options.database.dimensionGPE5,
+        as: 'dimension5',
+      },  
     ];
 
     whereAnd.push({
     });
+
+     if(currentUser?.type == 'District'){
+                  whereAnd.push(
+                    SequelizeFilterUtils.ilikeIncludes(
+                      'teacherGPE',
+                      'districtId',
+                      currentUser?.districtId ,
+                    ),
+                  );
+        }
+               
+        else if(currentUser?.type === 'State'){
+                  whereAnd.push(
+                    SequelizeFilterUtils.ilikeIncludes(
+                      'teacherGPE',
+                      'stateId',
+                      currentUser?.stateId ,
+                    ),
+                  );
+        }
 
     if (filter) {
       if (filter.id) {

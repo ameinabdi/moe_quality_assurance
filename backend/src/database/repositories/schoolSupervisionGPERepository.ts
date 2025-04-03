@@ -711,7 +711,7 @@ class SchoolSupervisionGPERepository {
     if(currentUser?.school?.RegNo){
               whereAnd.push(
                 SequelizeFilterUtils.ilikeIncludes(
-                  'schoolSupervision',
+                  'schoolSupervisionGPE',
                   'schoolEMISNumber',
                   currentUser?.school?.RegNo,
                 ),
@@ -720,7 +720,7 @@ class SchoolSupervisionGPERepository {
             }else if(currentUser?.type == 'District'){
               whereAnd.push(
                 SequelizeFilterUtils.ilikeIncludes(
-                  'schoolSupervision',
+                  'schoolSupervisionGPE',
                   'districtId',
                   currentUser?.districtId ,
                 ),
@@ -730,7 +730,7 @@ class SchoolSupervisionGPERepository {
             else if(currentUser?.type === 'State'){
               whereAnd.push(
                 SequelizeFilterUtils.ilikeIncludes(
-                  'schoolSupervision',
+                  'schoolSupervisionGPE',
                   'stateId',
                   currentUser?.stateId ,
                 ),

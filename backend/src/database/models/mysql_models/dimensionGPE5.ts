@@ -315,6 +315,9 @@ export default function (sequelize) {
           ]],
         }
       },
+      dimension5Rate: {
+        type: DataTypes.TEXT,
+       },
       importHash: {
         type: DataTypes.STRING(255),
         allowNull: true,    

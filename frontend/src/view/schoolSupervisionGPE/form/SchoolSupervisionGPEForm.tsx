@@ -2665,7 +2665,7 @@ const SSASurveyForm = (props) => {
           {i18n('entities.sSASurvey.new.sectiona')}
           </Title>
           <Text>
-          {parse(i18n('entities.sSASurvey.new.introduction'))}
+          {parse(i18n('entities.schoolSupervisionGPE.new.introduction'))}
           </Text>
         </Col>
         </Row>

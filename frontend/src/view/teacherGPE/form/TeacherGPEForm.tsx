@@ -52,7 +52,8 @@ const schema = yup.object().shape({
   subjectName: yupFormSchemas.enumerator(
     i18n('entities.teacherGPE.fields.subjectName'),
     {
-      "options": teacherGPEEnumerators.subjectName
+      "options": teacherGPEEnumerators.subjectName,
+      "required": true
     },
   ),
   teachingLevel: yupFormSchemas.enumerator(
@@ -139,98 +140,113 @@ const schema = yup.object().shape({
     indicator58: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator58'),
       {
-        "options": dimensionGPE5Enumerators.indicator58
+        "options": dimensionGPE5Enumerators.indicator58,
+        "required": true
       },
     ),
     indicator59: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator59'),
       {
-        "options": dimensionGPE5Enumerators.indicator59
+        "options": dimensionGPE5Enumerators.indicator59,
+        "required": true
       },
     ),
     indicator510: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator510'),
       {
-        "options": dimensionGPE5Enumerators.indicator510
+        "options": dimensionGPE5Enumerators.indicator510,
+        "required": true
       },
     ),
     indicator511: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator511'),
       {
-        "options": dimensionGPE5Enumerators.indicator511
+        "options": dimensionGPE5Enumerators.indicator511,
+        "required": true
       },
     ),
     indicator512: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator512'),
       {
-        "options": dimensionGPE5Enumerators.indicator512
+        "options": dimensionGPE5Enumerators.indicator512,
+        "required": true
       },
     ),
     indicator513: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator513'),
       {
-        "options": dimensionGPE5Enumerators.indicator513
+        "options": dimensionGPE5Enumerators.indicator513,
+        "required": true
       },
     ),
     indicator514: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator514'),
       {
-        "options": dimensionGPE5Enumerators.indicator514
+        "options": dimensionGPE5Enumerators.indicator514,
+        "required": true
       },
     ),
     indicator515: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator515'),
       {
-        "options": dimensionGPE5Enumerators.indicator515
+        "options": dimensionGPE5Enumerators.indicator515,
+        "required": true
       },
     ),
     indicator516: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator516'),
       {
-        "options": dimensionGPE5Enumerators.indicator516
+        "options": dimensionGPE5Enumerators.indicator516,
+        "required": true
       },
     ),
     indicator517: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator517'),
       {
-        "options": dimensionGPE5Enumerators.indicator517
+        "options": dimensionGPE5Enumerators.indicator517,
+        "required": true
       },
     ),
     indicator518: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator518'),
       {
-        "options": dimensionGPE5Enumerators.indicator518
+        "options": dimensionGPE5Enumerators.indicator518,
+        "required": true
       },
     ),
     indicator519: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator519'),
       {
-        "options": dimensionGPE5Enumerators.indicator519
+        "options": dimensionGPE5Enumerators.indicator519,
+        "required": true
       },
     ),
     indicator520: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator520'),
       {
-        "options": dimensionGPE5Enumerators.indicator520
+        "options": dimensionGPE5Enumerators.indicator520,
+        "required": true
       },
     ),
     indicator521: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator521'),
       {
-        "options": dimensionGPE5Enumerators.indicator521
+        "options": dimensionGPE5Enumerators.indicator521,
+        "required": true
       },
     ),
     indicator522: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator522'),
       {
-        "options": dimensionGPE5Enumerators.indicator522
+        "options": dimensionGPE5Enumerators.indicator522,
+        "required": true
       },
     ),
     indicator523: yupFormSchemas.enumerator(
       i18n('entities.dimensionGPE5.fields.indicator523'),
       {
         "required": true,
-        "options": dimensionGPE5Enumerators.indicator523
+        "options": dimensionGPE5Enumerators.indicator523,
       },
     ),
     indicator524: yupFormSchemas.enumerator(
@@ -299,7 +315,14 @@ const TeacherGPEForm = (props) => {
   };
 
   const onSubmit = (values) => {
-    props.onSubmit(props?.record?.id, values);
+    const dimensionRateEachIndicator = 100/24
+  const dimensionRateEachRate = dimensionRateEachIndicator/5
+  const totaldimension = ((form.watch('indicator51')*dimensionRateEachRate)+(form.watch('indicator52')*dimensionRateEachRate)+(form.watch('indicator53')*dimensionRateEachRate)+(form.watch('indicator54')*dimensionRateEachRate)+(form.watch('indicator55')*dimensionRateEachRate)+(form.watch('indicator56')*dimensionRateEachRate)+(form.watch('indicator57')*dimensionRateEachRate)+(form.watch('indicator58')*dimensionRateEachRate)+(form.watch('indicator59')*dimensionRateEachRate)+(form.watch('indicator510')*dimensionRateEachRate)+(form.watch('indicator511')*dimensionRateEachRate)+(form.watch('indicator512')*dimensionRateEachRate)+(form.watch('indicator513')*dimensionRateEachRate)+(form.watch('indicator514')*dimensionRateEachRate)+(form.watch('indicator515')*dimensionRateEachRate)+(form.watch('indicator516')*dimensionRateEachRate)+(form.watch('indicator517')*dimensionRateEachRate)+(form.watch('indicator518')*dimensionRateEachRate)+(form.watch('indicator519')*dimensionRateEachRate)+(form.watch('indicator520')*dimensionRateEachRate)+(form.watch('indicator521')*dimensionRateEachRate)+(form.watch('indicator522')*dimensionRateEachRate)+(form.watch('indicator523')*dimensionRateEachRate)+(form.watch('indicator524')*dimensionRateEachRate))    
+  const fullData = {
+    ...values,
+    dimensionRate:totaldimension,
+  }
+  props.onSubmit(props?.record?.id, fullData);
   };
         const dimension5 =[
           {
