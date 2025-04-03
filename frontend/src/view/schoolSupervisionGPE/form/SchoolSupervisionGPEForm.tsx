@@ -808,7 +808,7 @@ const SSASurveyForm = (props) => {
       no:'4',
       DIMENSIONS:i18n('entities.sSASurvey.fields.dimension_4'),
       indicators:'4',
-      value:'15%'
+      value:'10%'
     },
   ]
 
@@ -2556,7 +2556,7 @@ const SSASurveyForm = (props) => {
   const dimension3RateEachRate1 = dimension3RateEachIndicator/5
   const totaldimension3 = ((form.watch('indicator31')*dimension3RateEachRate1)+(form.watch('indicator32')*dimension3RateEachRate1)+(form.watch('indicator33')*dimension3RateEachRate1)+(form.watch('indicator34')*dimension3RateEachRate1)+(form.watch('indicator35')*dimension3RateEachRate1)+(form.watch('indicator36')*dimension3RateEachRate1)+(form.watch('indicator37')*dimension3RateEachRate1)+(form.watch('indicator38')*dimension3RateEachRate1)+(form.watch('indicator39')*dimension3RateEachRate1)+(form.watch('indicator310')*dimension3RateEachRate1)+(form.watch('indicator311')*dimension3RateEachRate1)+(form.watch('indicator312')*dimension3RateEachRate1)+(form.watch('indicator313')*dimension3RateEachRate1)+(form.watch('indicator314')*dimension3RateEachRate1)+(form.watch('indicator315')*dimension3RateEachRate1))    
 
-  const dimension4RateEachIndicator =15/4
+  const dimension4RateEachIndicator =10/4
   const dimension4RateEachRate = dimension4RateEachIndicator/5
   const totaldimension4 = ((form.watch('indicator41')*dimension4RateEachRate)+(form.watch('indicator42')*dimension4RateEachRate)+(form.watch('indicator43')*dimension4RateEachRate)+(form.watch('indicator44')*dimension4RateEachRate))
  
