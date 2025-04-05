@@ -30,7 +30,7 @@ export default class UserRepository {
         email: data.email,
         username:data.email,
         type: data.type,
-        groupId:data.type,
+        groupId:data.group,
         stateId:data.state,
         districtId:data.district,
         password:data.password,

@@ -10,7 +10,6 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'src/modules/hook';
 import { Link } from 'react-router-dom';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
-import SchoolListItem from 'src/view/school/list/SchoolListItem';
 import RegionListItem from 'src/view/region/list/RegionListItem';
 import DistrictListItem from 'src/view/district/list/DistrictListItem';
 import StateListItem from 'src/view/state/list/StateListItem';
@@ -79,7 +78,11 @@ const TeacherGPEListTable = (props) => {
         title: i18n('entities.teacherGPE.fields.school'),
         sorter: false,
         dataIndex: 'school',
-        render: (value) => <SchoolListItem value={value} />,
+      },
+      {
+        title: i18n('entities.teacherGPE.fields.schoolEMISNo'),
+        sorter: false,
+        dataIndex: 'schoolEMISNo',
       },
       {
         title: i18n('entities.teacherGPE.fields.state'),

@@ -16,6 +16,20 @@ export default function (sequelize) {
           notEmpty: true,
         }
       },
+      school: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+        }
+      },
+      schoolEMISNo: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+        }
+      },
       gender: {
         type: DataTypes.TEXT,
         allowNull: false,
@@ -127,13 +141,6 @@ export default function (sequelize) {
   );
 
   teacherGPE.associate = (models) => {
-    models.teacherGPE.belongsTo(models.school, {
-      as: 'school',
-      constraints: false,
-      foreignKey: {
-        allowNull: false,
-      },
-    });
     models.teacherGPE.belongsTo(models.state, {
       as: 'state',
       constraints: false,

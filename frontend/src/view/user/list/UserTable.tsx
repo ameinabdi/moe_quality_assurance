@@ -1,4 +1,4 @@
-import { Avatar, Popconfirm, Table,Button } from 'antd';
+import { Avatar, Popconfirm, Table,Button, Tooltip } from 'antd';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'src/modules/hook';
@@ -15,6 +15,8 @@ import {
   EditOutlined,
   EyeOutlined
 } from '@ant-design/icons';
+import Roles from 'src/security/roles';
+
 import StateListItem from 'src/view/state/list/StateListItem';
 const UserTable = (props) => {
   const dispatch = useAppDispatch();
@@ -98,6 +100,19 @@ const UserTable = (props) => {
       sorter: true,
       dataIndex: 'status',
       render: (status) => <UserStatusView value={status} />,
+    },
+    {
+      title: i18n('user.fields.roles'),
+      sorter: false,
+      dataIndex: 'roles',
+      render: (roles) =>
+        roles?.map((roleId) => (
+          <div key={roleId}>
+            <Tooltip title={Roles.descriptionOf(roleId)}>
+              <span>{Roles.labelOf(roleId)}</span>
+            </Tooltip>
+          </div>
+        )),
     },
     {
       title: '',

@@ -790,6 +790,7 @@ const so = {
       fields: {
         id: 'Id',
         'school': 'Dugsi',
+        'schoolEMISNo':'Dugsiga EMISNo',
         'state': 'M.Goboleed',
         'region': 'Gobol',
         'district': 'Degmo',
@@ -3183,6 +3184,7 @@ const so = {
       firstName: 'First Name',
       lastName: 'Last Name',
       status: 'Status',
+      district:'Degmo',
       phoneNumber: 'Phone Number',
       role: 'Role',
       createdAt: 'Created at',

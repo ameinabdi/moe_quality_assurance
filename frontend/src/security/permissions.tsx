@@ -81,7 +81,7 @@ class Permissions {
       },
       schoolSupervisionGPECreate: {
         id: 'schoolSupervisionGPECreate',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
           storage.schoolSupervisionGPESignatureofprincipal,
@@ -90,7 +90,7 @@ class Permissions {
       },
       schoolSupervisionGPEEdit: {
         id: 'schoolSupervisionGPEEdit',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
           storage.schoolSupervisionGPESignatureofprincipal,
@@ -99,7 +99,7 @@ class Permissions {
       },
       schoolSupervisionGPEDestroy: {
         id: 'schoolSupervisionGPEDestroy',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
           storage.schoolSupervisionGPESignatureofprincipal,
@@ -108,23 +108,23 @@ class Permissions {
       },
       schoolSupervisionGPERead: {
         id: 'schoolSupervisionGPERead',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       schoolSupervisionGPEAutocomplete: {
         id: 'schoolSupervisionGPEAutocomplete',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
       dimensionGPE1Import: {
         id: 'dimensionGPE1Import',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionGPE1Create: {
         id: 'dimensionGPE1Create',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -132,7 +132,7 @@ class Permissions {
       },
       dimensionGPE1Edit: {
         id: 'dimensionGPE1Edit',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -140,7 +140,7 @@ class Permissions {
       },
       dimensionGPE1Destroy: {
         id: 'dimensionGPE1Destroy',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -148,23 +148,23 @@ class Permissions {
       },
       dimensionGPE1Read: {
         id: 'dimensionGPE1Read',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionGPE1Autocomplete: {
         id: 'dimensionGPE1Autocomplete',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
       dimensionGPE2Import: {
         id: 'dimensionGPE2Import',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionGPE2Create: {
         id: 'dimensionGPE2Create',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -172,7 +172,7 @@ class Permissions {
       },
       dimensionGPE2Edit: {
         id: 'dimensionGPE2Edit',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -180,7 +180,7 @@ class Permissions {
       },
       dimensionGPE2Destroy: {
         id: 'dimensionGPE2Destroy',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -188,23 +188,23 @@ class Permissions {
       },
       dimensionGPE2Read: {
         id: 'dimensionGPE2Read',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionGPE2Autocomplete: {
         id: 'dimensionGPE2Autocomplete',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
       dimensionGPE3Import: {
         id: 'dimensionGPE3Import',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionGPE3Create: {
         id: 'dimensionGPE3Create',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -212,7 +212,7 @@ class Permissions {
       },
       dimensionGPE3Edit: {
         id: 'dimensionGPE3Edit',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -220,7 +220,7 @@ class Permissions {
       },
       dimensionGPE3Destroy: {
         id: 'dimensionGPE3Destroy',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -228,23 +228,23 @@ class Permissions {
       },
       dimensionGPE3Read: {
         id: 'dimensionGPE3Read',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionGPE3Autocomplete: {
         id: 'dimensionGPE3Autocomplete',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
       dimensionGPE4Import: {
         id: 'dimensionGPE4Import',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionGPE4Create: {
         id: 'dimensionGPE4Create',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -252,7 +252,7 @@ class Permissions {
       },
       dimensionGPE4Edit: {
         id: 'dimensionGPE4Edit',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -260,7 +260,7 @@ class Permissions {
       },
       dimensionGPE4Destroy: {
         id: 'dimensionGPE4Destroy',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -268,23 +268,23 @@ class Permissions {
       },
       dimensionGPE4Read: {
         id: 'dimensionGPE4Read',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionGPE4Autocomplete: {
         id: 'dimensionGPE4Autocomplete',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
       teacherGPEImport: {
         id: 'teacherGPEImport',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       teacherGPECreate: {
         id: 'teacherGPECreate',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -292,7 +292,7 @@ class Permissions {
       },
       teacherGPEEdit: {
         id: 'teacherGPEEdit',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -300,7 +300,7 @@ class Permissions {
       },
       teacherGPEDestroy: {
         id: 'teacherGPEDestroy',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -308,12 +308,12 @@ class Permissions {
       },
       teacherGPERead: {
         id: 'teacherGPERead',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       teacherGPEAutocomplete: {
         id: 'teacherGPEAutocomplete',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -324,7 +324,7 @@ class Permissions {
       },
       dimensionGPE5Create: {
         id: 'dimensionGPE5Create',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -332,7 +332,7 @@ class Permissions {
       },
       dimensionGPE5Edit: {
         id: 'dimensionGPE5Edit',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -340,7 +340,7 @@ class Permissions {
       },
       dimensionGPE5Destroy: {
         id: 'dimensionGPE5Destroy',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -348,12 +348,12 @@ class Permissions {
       },
       dimensionGPE5Read: {
         id: 'dimensionGPE5Read',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionGPE5Autocomplete: {
         id: 'dimensionGPE5Autocomplete',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.school],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },      
 
@@ -1005,12 +1005,12 @@ class Permissions {
       },
       schoolSupervisionImport: {
         id: 'schoolSupervisionImport',
-        allowedRoles: [roles.admin, roles.federal, roles.state,  roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state,  roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       schoolSupervisionCreate: {
         id: 'schoolSupervisionCreate',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
           storage.schoolSupervisionSignatureofprincipal,
@@ -1019,7 +1019,7 @@ class Permissions {
       },
       schoolSupervisionEdit: {
         id: 'schoolSupervisionEdit',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
           storage.schoolSupervisionSignatureofprincipal,
@@ -1028,7 +1028,7 @@ class Permissions {
       },
       schoolSupervisionDestroy: {
         id: 'schoolSupervisionDestroy',
-        allowedRoles: [roles.admin, roles.federal, roles.state,],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
           storage.schoolSupervisionSignatureofprincipal,
@@ -1037,12 +1037,12 @@ class Permissions {
       },
       schoolSupervisionRead: {
         id: 'schoolSupervisionRead',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       schoolSupervisionAutocomplete: {
         id: 'schoolSupervisionAutocomplete',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -1053,7 +1053,7 @@ class Permissions {
       },
       dimensionSsv1Create: {
         id: 'dimensionSsv1Create',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -1061,7 +1061,7 @@ class Permissions {
       },
       dimensionSsv1Edit: {
         id: 'dimensionSsv1Edit',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -1077,23 +1077,23 @@ class Permissions {
       },
       dimensionSsv1Read: {
         id: 'dimensionSsv1Read',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionSsv1Autocomplete: {
         id: 'dimensionSsv1Autocomplete',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
       dimensionSsv2Import: {
         id: 'dimensionSsv2Import',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionSsv2Create: {
         id: 'dimensionSsv2Create',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -1101,7 +1101,7 @@ class Permissions {
       },
       dimensionSsv2Edit: {
         id: 'dimensionSsv2Edit',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -1117,23 +1117,23 @@ class Permissions {
       },
       dimensionSsv2Read: {
         id: 'dimensionSsv2Read',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionSsv2Autocomplete: {
         id: 'dimensionSsv2Autocomplete',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
       dimensionSsv3Import: {
         id: 'dimensionSsv3Import',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionSsv3Create: {
         id: 'dimensionSsv3Create',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -1141,7 +1141,7 @@ class Permissions {
       },
       dimensionSsv3Edit: {
         id: 'dimensionSsv3Edit',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
 
@@ -1157,12 +1157,12 @@ class Permissions {
       },
       dimensionSsv3Read: {
         id: 'dimensionSsv3Read',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       dimensionSsv3Autocomplete: {
         id: 'dimensionSsv3Autocomplete',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
@@ -1173,7 +1173,7 @@ class Permissions {
       },
       governmentTeacherInformationCreate: {
         id: 'governmentTeacherInformationCreate',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
           storage.governmentTeacherInformationTeacherPhoto,
@@ -1182,7 +1182,7 @@ class Permissions {
       },
       governmentTeacherInformationEdit: {
         id: 'governmentTeacherInformationEdit',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
         allowedStorage: [
           storage.governmentTeacherInformationTeacherPhoto,
@@ -1200,12 +1200,12 @@ class Permissions {
       },
       governmentTeacherInformationRead: {
         id: 'governmentTeacherInformationRead',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       governmentTeacherInformationAutocomplete: {
         id: 'governmentTeacherInformationAutocomplete',
-        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school],
+        allowedRoles: [roles.admin, roles.federal, roles.state, roles.district, roles.school,  roles.districtRCF, roles.districtTeacherRCF],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 

@@ -17,15 +17,20 @@ import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import InputNumberFormItem from 'src/view/shared/form/items/InputNumberFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import teacherGPEEnumerators from 'src/modules/teacherGPE/teacherGPEEnumerators';
-import SchoolAutocompleteFormItem from 'src/view/school/autocomplete/SchoolAutocompleteFormItem';
 import DistrictAutocompleteFormItem from 'src/view/district/autocomplete/DistrictAutocompleteFormItem';
 import dimensionGPE5Enumerators from 'src/modules/dimensionGPE5/dimensionGPE5Enumerators';
 import CustomCheckboxFormItem from 'src/view/shared/form/items/CustomCheckboxFormItem';
 const {  Title } = Typography;
 
 const schema = yup.object().shape({
-  school: yupFormSchemas.relationToOne(
+  school: yupFormSchemas.string(
     i18n('entities.teacherGPE.fields.school'),
+    {
+      "required": true
+    },
+  ),
+  schoolEMISNo: yupFormSchemas.string(
+    i18n('entities.teacherGPE.fields.schoolEMISNo'),
     {
       "required": true
     },
@@ -264,6 +269,7 @@ const TeacherGPEForm = (props) => {
 
     return {
       school: record.school,
+      schoolEMISNo: record.schoolEMISNo,
       state: record.state,
       region: record.region,
       district: record.district,
@@ -1376,9 +1382,17 @@ const TeacherGPEForm = (props) => {
           />
         </Col>
         <Col {...fourColumnsResponsiveProps}>
-        <SchoolAutocompleteFormItem  
+           <InputFormItem
             name="school"
-            label={i18n('entities.teacherGPE.fields.school')}
+            label={i18n('entities.teacherGPE.fields.school')}  
+            required={true}
+            layout={formItemLayout}
+          />
+        </Col>
+        <Col {...fourColumnsResponsiveProps}>
+           <InputFormItem
+            name="schoolEMISNo"
+            label={i18n('entities.teacherGPE.fields.schoolEMISNo')}  
             required={true}
             layout={formItemLayout}
           />

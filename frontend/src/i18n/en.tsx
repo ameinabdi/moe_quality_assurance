@@ -789,6 +789,7 @@ const en = {
       fields: {
         id: 'Id',
         'school': 'School',
+        'schoolEMISNo':'School EMISNo',
         'state': 'State',
         'region': 'Region',
         'district': 'District',
@@ -3732,6 +3733,7 @@ const en = {
       avatars: 'Avatar',
       email: 'Email',
       emails: 'Email(s)',
+      district:'District',
       fullName: 'Name',
       firstName: 'First Name',
       lastName: 'Last Name',

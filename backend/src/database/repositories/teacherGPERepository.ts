@@ -35,6 +35,8 @@ class TeacherGPERepository {
       {
         ...lodash.pick(data, [
           'fullName',
+          'school',
+          'schoolEMISNo',
           'gender',
           'subjectName',
           'teachingLevel',
@@ -44,7 +46,6 @@ class TeacherGPERepository {
           'femaleStudent',          
           'importHash',
         ]),
-        schoolId: data.school || null,
         stateId:district?.stateId || currentUser?.stateId,
         regionId: district?.regionId || null,
         districtId: data.district || null,
@@ -168,6 +169,8 @@ const dimenion = await options.database.dimensionGPE5.create(
       {
         ...lodash.pick(data, [
           'fullName',
+          'school',
+          'schoolEMISNo',
           'gender',
           'subjectName',
           'teachingLevel',
@@ -177,7 +180,6 @@ const dimenion = await options.database.dimensionGPE5.create(
           'femaleStudent',          
           'importHash',
         ]),
-        schoolId: data.school || null,
         districtId: data.district || null,
         stateId:district?.stateId || currentUser?.stateId,
         regionId: district?.regionId || null,
@@ -273,10 +275,6 @@ const dimenion = await options.database.dimensionGPE5.create(
     );
 
     const include = [
-      {
-        model: options.database.school,
-        as: 'school',
-      },
       {
         model: options.database.state,
         as: 'state',
@@ -387,10 +385,6 @@ const dimenion = await options.database.dimensionGPE5.create(
 
     let whereAnd: Array<any> = [];
     let include = [
-      {
-        model: options.database.school,
-        as: 'school',
-      },
       {
         model: options.database.state,
         as: 'state',

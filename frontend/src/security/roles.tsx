@@ -7,6 +7,8 @@ class Roles {
       federal:'Federal',
       state:'State',
       district:'District',
+      districtRCF:'districtRCF',
+      districtTeacherRCF:'districtTeacherRCF',
       school:'School'
     };
   }

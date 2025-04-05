@@ -62,7 +62,7 @@ const AppMenu = (props) => {
     dispatch(authActions.doSignout());
   };
   const doNavigateToProfile = () => {
-    getHistory().push('/account-center');
+    getHistory().push('/user');
   };
 
   const doNavigateToPasswordChange = () => {
@@ -216,7 +216,7 @@ const AppMenu = (props) => {
        key="userCenter"
      >
        <UserOutlined rev={undefined} style={{ marginRight: 8 }} />
-       {i18n('auth.profile.title')}
+       {i18n('user.title')}
      </Menu.Item>
      )} 
       <Menu.Item
@@ -271,7 +271,7 @@ const AppMenu = (props) => {
          
         </div>
         <div className='center'>
-        { permissionChecker.isState ? 
+        {permissionChecker.isState ? 
          <Menu
          theme="dark"
          mode="horizontal"
