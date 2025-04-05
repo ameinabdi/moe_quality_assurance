@@ -39,6 +39,7 @@ export default class PermissionChecker {
     if (!arg) {
       return false;
     }
+    console.log('111', this.currentUser?.email,arg, this.currentUser?.groupid )
     return arg.includes(this.currentUser?.groupid);
   }
 

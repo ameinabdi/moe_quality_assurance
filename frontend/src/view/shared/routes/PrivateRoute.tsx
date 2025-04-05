@@ -30,7 +30,10 @@ function PrivateRoute({
     }
 
     if (!permissionChecker.match(permissionRequired)) {
-      return <Navigate to="/school-supervision" />;
+      if(currentUser?.groupid === "districtRCF"){
+        return <Navigate to="/school-supervision" />;
+      }
+      return <Navigate to="/school-supervision-g-p-e" />;
     }
 
     return (
