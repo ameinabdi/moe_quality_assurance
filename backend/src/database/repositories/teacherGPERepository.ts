@@ -57,7 +57,7 @@ class TeacherGPERepository {
         transaction,
       },
     );
-const dimenion = await options.database.dimensionGPE5.create(
+    const dimenion = await options.database.dimensionGPE5.create(
       {
         ...lodash.pick(data, [
           'indicator51',
@@ -98,12 +98,6 @@ const dimenion = await options.database.dimensionGPE5.create(
       },
     );
 
-    
-  
-    
-  
-
-  
     await this._createAuditLog(
       AuditLogRepository.CREATE,
       record,
