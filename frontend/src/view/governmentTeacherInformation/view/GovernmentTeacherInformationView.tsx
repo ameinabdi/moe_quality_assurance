@@ -8,6 +8,7 @@ import { Row, Col, Form } from 'antd';
 import ImagesViewer from 'src/view/shared/ImagesViewer';
 import SchoolViewItem from 'src/view/school/view/SchoolViewItem';
 import DistrictViewItem from 'src/view/district/view/DistrictViewItem';
+import dayjs from 'dayjs';
 
 const GovernmentTeacherInformationView = (props) => {
   const { record, loading } = props;
@@ -133,7 +134,7 @@ const GovernmentTeacherInformationView = (props) => {
             labelAlign='left'
             label={i18n('entities.governmentTeacherInformation.fields.graduationYear')}
           >
-            {record.graduationYear}
+            {dayjs(record.graduationYear).format('YYYY-MM-DD')}
           </Form.Item>
         )}
         </Col>
@@ -265,7 +266,7 @@ const GovernmentTeacherInformationView = (props) => {
               labelAlign='left'
               label={i18n('entities.governmentTeacherInformation.fields.joinedYear')}
             >
-              {record.joinedYear}
+              {dayjs(record.joinedYear).format('YYYY-MM-DD')}
             </Form.Item>
           )}
         </Col>
