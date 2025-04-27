@@ -754,6 +754,12 @@ class SchoolSupervisionGPERepository {
         );
       }
 
+      if (filter.district) {
+        whereAnd.push({
+          ['districtId']: filter.district,
+        });
+      }
+
       if (filter.guidelines) {
         whereAnd.push(
           SequelizeFilterUtils.ilikeIncludes(
