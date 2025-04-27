@@ -59,6 +59,45 @@ export default class ExamcenterService {
     return response.data;
   }
 
+  static async supervisionReportGPE(filter, orderBy, limit, offset) {
+    const params = {
+      filter,
+      orderBy,
+      limit,
+      offset,
+    };
+
+
+    const response = await authAxios.get(
+      `/supervision-report-gpe`,
+      {
+        params,
+      },
+    );
+
+    return response.data;
+  }
+
+
+  static async teacherReportGPE(filter, orderBy, limit, offset) {
+    const params = {
+      filter,
+      orderBy,
+      limit,
+      offset,
+    };
+
+
+    const response = await authAxios.get(
+      `/teacher-report-gpe`,
+      {
+        params,
+      },
+    );
+
+    return response.data;
+  }
+
   static async stateReport(filter, orderBy, limit, offset) {
     const params = {
       filter,

@@ -6,4 +6,6 @@ export default (app) => {
 
   app.get(`/activities`, require('./activities').default);
 
+  app.get(`/supervision-report-gpe`, require('./supervisionReportGPE').default);
+  app.get(`/teacher-report-gpe`, require('./teacherReportGPE').default);
 };

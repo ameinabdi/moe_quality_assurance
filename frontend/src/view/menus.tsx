@@ -101,6 +101,24 @@ const mainMenu =  [
         key: 'teacherReport',
         
       },
+
+      {
+        path: '/supervision-report-gpe',
+        exact: true,
+        icon: <BarChartOutlined rev={undefined}  />,
+        label: i18n('supervisionReportGPE.menu'),
+        permissionRequired: permissions.reportRead,
+        key: 'supervisionReport',
+      },
+      {
+        path: '/teacher-report-gpe',
+        exact: true,
+        icon: <BarChartOutlined rev={undefined}  />,
+        label: i18n('teacherReportGPE.menu'),
+        permissionRequired: permissions.reportRead,
+        key: 'teacherReport',
+        
+      },
     ]
   },
   {

@@ -4,6 +4,7 @@ import { i18n } from 'src/i18n';
 import exporterFields from 'src/modules/schoolSupervisionGPE/list/schoolSupervisionGPEListExporterFields';
 import Errors from 'src/modules/shared/error/errors';
 import Exporter from 'src/modules/shared/exporter/exporter';
+import _  from 'lodash';
 
 const prefix = 'SCHOOLSUPERVISIONGPE_LIST';
 
@@ -55,10 +56,65 @@ const schoolSupervisionGPEListActions = {
         null,
       );
 
+ // Find the row with the largest dimension3s array
+      const sampleDimension3s = response.rows.reduce((largest, row) => {
+        return Array.isArray(row.dimension3s) && row.dimension3s.length > (largest.length || 0)
+          ? row.dimension3s
+          : largest;
+      }, []);
+  
+      // Dynamically generate dimension3s fields based on the largest array
+      const dimension3sFields:any = [];
+      sampleDimension3s.forEach((_, index) => {
+        const fieldIndex = index + 1;
+        dimension3sFields.push(
+          ...[
+            'indicator51',
+            'indicator52',
+            'indicator53',
+            'indicator54',
+            'indicator55',
+            'indicator56',
+            'indicator57',
+            'indicator58',
+            'indicator59',
+            'indicator510',
+            'indicator511',
+            'indicator512',
+            'indicator513',
+            'indicator514',
+            'indicator515',
+            'indicator516',
+            'indicator517',
+            'indicator518',
+            'indicator519',
+            'indicator520',
+          ].map((indicator) => ({
+            name: `dimension3_${fieldIndex}_${indicator}`,
+            label: `${i18n(`entities.dimension5.fields.${indicator}`)}_${fieldIndex}`,
+          }))
+        );
+      });
+  
+      const NewExportFields = [...exporterFields, ...dimension3sFields];
+  
+      // Prepare export data
+      const exportData = _.map(response.rows, (item) => {
+        return {
+          ...item,
+          ...item?.school,
+          ...item?.dimension1,
+          ...item?.dimension2,
+          ...item?.dimension3,
+          ...item?.dimension4,
+        };
+      });
+  
+
       new Exporter(
-        exporterFields,
+        NewExportFields,
         i18n('entities.schoolSupervisionGPE.exporterFileName'),
-      ).transformAndExportAsExcelFile(response.rows);
+      ).transformAndExportAsExcelFile(exportData);
 
       dispatch({
         type: schoolSupervisionGPEListActions.EXPORT_SUCCESS,

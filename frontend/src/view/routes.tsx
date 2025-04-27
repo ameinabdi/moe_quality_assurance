@@ -35,6 +35,21 @@ const privateRoutes = [
   },
 
   {
+    path: '/supervision-report-gpe',
+    loader: () =>
+      import('src/view/report/SupervisionReportPageGPE'),
+    permissionRequired: permissions.reportRead,
+    exact: true,
+  },
+  {
+    path: '/teacher-report-gpe',
+    loader: () =>
+      import('src/view/report/TeacherReportPageGPE'),
+    permissionRequired: permissions.reportRead,
+    exact: true,
+  },
+
+  {
     path: '/state-report',
     loader: () =>
       import('src/view/report/StateReportPage'),

@@ -45,6 +45,13 @@ const en = {
     menu: 'Supervision Report 2024/2025',
   },
 
+  teacherReportGPE: {
+    menu: 'Teacher Report GPE',
+  },
+  supervisionReportGPE: {
+    menu: 'Supervision Report GPE',
+  },
+
   stateReport: {
     menu: 'State Report',
   },

@@ -336,6 +336,267 @@ ORDER BY totalSupervisions DESC;
         `, { type: QueryTypes.SELECT });
       return { teacherBydistrict, teacherByState, teacherByDisability,teacherByExperience,teacherByPresent,teacherByNumberTraining,teacherByTraining,teacherBySubject, teacherByGrades, teacherByShift, teacherByToughtLevel, teacherByEdacutionLevel, teacherByGender};
   }
+
+  static async supervisionReportGPE(
+    { filter, limit = 0, offset = 0, orderBy = '' },
+    options: IRepositoryOptions,
+  ) {
+    const tenant = SequelizeRepository.getCurrentTenant(options);
+    const transaction = SequelizeRepository.getTransaction(options);
+  
+    const supervisionByState = await options.database.sequelize.query(`
+      SELECT 
+        state.id AS stateId,
+        state.name AS stateName,
+        COUNT(schoolSupervisionGPE.id) AS totalSupervisions
+      FROM 
+        schoolSupervisionGPEs AS schoolSupervisionGPE
+      LEFT JOIN states AS state ON schoolSupervisionGPE.stateId = state.id
+      WHERE 
+        schoolSupervisionGPE.deletedAt IS NULL 
+        AND (state.deletedAt IS NULL OR state.id IS NULL)
+      GROUP BY 
+        state.id, state.name
+      ORDER BY 
+        totalSupervisions DESC;
+    `, { type: QueryTypes.SELECT });
+  
+    const supervisionByDistrict = await options.database.sequelize.query(`
+      SELECT 
+        district.id AS districtId,
+        district.name AS districtName,
+        COUNT(schoolSupervisionGPE.id) AS totalSupervisions
+      FROM 
+        schoolSupervisionGPEs AS schoolSupervisionGPE
+      LEFT JOIN districts AS district ON schoolSupervisionGPE.districtId = district.id
+      WHERE 
+        schoolSupervisionGPE.deletedAt IS NULL
+        AND (district.deletedAt IS NULL OR district.id IS NULL)
+      GROUP BY 
+        district.id, district.name
+      ORDER BY 
+        totalSupervisions DESC;
+    `, { type: QueryTypes.SELECT });
+  
+    const supervisionByOwnership = await options.database.sequelize.query(`
+      SELECT 
+        school.schoolType,
+        COUNT(schoolSupervisionGPE.id) AS totalSupervisions
+      FROM 
+        schoolSupervisionGPEs AS schoolSupervisionGPE
+      LEFT JOIN schools AS school ON schoolSupervisionGPE.schoolId = school.id
+      WHERE 
+        schoolSupervisionGPE.deletedAt IS NULL
+        AND (school.deletedAt IS NULL OR school.id IS NULL)
+      GROUP BY 
+        school.schoolType
+      ORDER BY 
+        totalSupervisions DESC;
+    `, { type: QueryTypes.SELECT });
+  
+    const supervisionByLevel = await options.database.sequelize.query(`
+      SELECT 
+        CASE 
+          WHEN REPLACE(REPLACE(REPLACE(school.schoolLevel, '"', ''), '[', ''), ']', '') IN ('Primary', 'Intermediate') THEN 'Primary'
+          WHEN REPLACE(REPLACE(REPLACE(school.schoolLevel, '"', ''), '[', ''), ']', '') IN ('Secondary') THEN 'Secondary'
+          WHEN REPLACE(REPLACE(REPLACE(school.schoolLevel, '"', ''), '[', ''), ']', '') IN ('Primary, Secondary', 'Primary, Intermediate, Secondary', 'Intermediate, Secondary') THEN 'Primary & Secondary'
+          ELSE 'Primary'
+        END AS schoolLevelGroup,
+        COUNT(schoolSupervisionGPE.id) AS totalSupervisions
+      FROM 
+        schoolSupervisionGPEs AS schoolSupervisionGPE
+      LEFT JOIN schools AS school ON schoolSupervisionGPE.schoolId = school.id
+      WHERE 
+        schoolSupervisionGPE.deletedAt IS NULL
+        AND (school.deletedAt IS NULL OR school.id IS NULL)
+      GROUP BY 
+        schoolLevelGroup
+      ORDER BY 
+        totalSupervisions DESC;
+    `, { type: QueryTypes.SELECT });
+  
+    const supervisionByUser = await options.database.sequelize.query(`
+      SELECT 
+        users.id AS userId,
+        users.fullName AS userName,
+        states.id AS stateId,
+        states.name AS stateName,
+        districts.id AS districtId,
+        districts.name AS districtName,
+        COUNT(schoolSupervisionGPEs.id) AS totalSupervisions
+      FROM 
+        schoolSupervisionGPEs
+      LEFT JOIN users ON schoolSupervisionGPEs.createdById = users.id
+      LEFT JOIN states ON users.stateId = states.id
+      LEFT JOIN districts ON users.districtId = districts.id
+      WHERE 
+        schoolSupervisionGPEs.deletedAt IS NULL
+        AND (states.deletedAt IS NULL OR states.id IS NULL)
+        AND (districts.deletedAt IS NULL OR districts.id IS NULL)
+      GROUP BY 
+        users.id, users.fullName, states.id, states.name, districts.id, districts.name
+      ORDER BY 
+        totalSupervisions DESC;
+    `, { type: QueryTypes.SELECT });
+  
+    const supervisionByMostDimensionState = await options.database.sequelize.query(`
+      SELECT 
+        states.id AS stateId,
+        states.name AS stateName,
+        COUNT(DISTINCT dimensionGPE1s.id) AS totalDimension1Added,
+        COUNT(DISTINCT dimensionGPE2s.id) AS totalDimension2Added,
+        COUNT(DISTINCT dimensionGPE3s.id) AS totalDimension3Added,
+        COUNT(DISTINCT dimensionGPE4s.id) AS totalDimension4Added
+      FROM 
+        schoolSupervisionGPEs
+      LEFT JOIN states ON schoolSupervisionGPEs.stateId = states.id
+      LEFT JOIN dimensionGPE1s ON schoolSupervisionGPEs.dimension1Id = dimensionGPE1s.id
+      LEFT JOIN dimensionGPE2s ON schoolSupervisionGPEs.dimension2Id = dimensionGPE2s.id
+      LEFT JOIN dimensionGPE3s ON schoolSupervisionGPEs.dimension3Id = dimensionGPE3s.id
+      LEFT JOIN dimensionGPE4s ON schoolSupervisionGPEs.dimension4Id = dimensionGPE4s.id
+      WHERE 
+        schoolSupervisionGPEs.deletedAt IS NULL
+        AND (states.deletedAt IS NULL OR states.id IS NULL)
+      GROUP BY 
+        states.id, states.name
+      ORDER BY 
+        totalDimension1Added DESC, totalDimension2Added DESC, totalDimension3Added DESC, totalDimension4Added DESC;
+    `, { type: QueryTypes.SELECT });
+  
+    const supervisionByMostDimensionDistrict = await options.database.sequelize.query(`
+      SELECT 
+        districts.id AS districtId,
+        districts.name AS districtName,
+        COUNT(DISTINCT dimensionGPE1s.id) AS totalDimension1Added,
+        COUNT(DISTINCT dimensionGPE2s.id) AS totalDimension2Added,
+        COUNT(DISTINCT dimensionGPE3s.id) AS totalDimension3Added,
+        COUNT(DISTINCT dimensionGPE4s.id) AS totalDimension4Added
+      FROM 
+        schoolSupervisionGPEs
+      LEFT JOIN districts ON schoolSupervisionGPEs.districtId = districts.id
+      LEFT JOIN dimensionGPE1s ON schoolSupervisionGPEs.dimension1Id = dimensionGPE1s.id
+      LEFT JOIN dimensionGPE2s ON schoolSupervisionGPEs.dimension2Id = dimensionGPE2s.id
+      LEFT JOIN dimensionGPE3s ON schoolSupervisionGPEs.dimension3Id = dimensionGPE3s.id
+      LEFT JOIN dimensionGPE4s ON schoolSupervisionGPEs.dimension4Id = dimensionGPE4s.id
+      WHERE 
+        schoolSupervisionGPEs.deletedAt IS NULL
+        AND (districts.deletedAt IS NULL OR districts.id IS NULL)
+      GROUP BY 
+        districts.id, districts.name
+      ORDER BY 
+        totalDimension1Added DESC, totalDimension2Added DESC, totalDimension3Added DESC, totalDimension4Added DESC;
+    `, { type: QueryTypes.SELECT });
+  
+    return {
+      supervisionByState,
+      supervisionByLevel,
+      supervisionByDistrict,
+      supervisionByOwnership,
+      supervisionByUser,
+      supervisionByMostDimensionState,
+      supervisionByMostDimensionDistrict,
+    };
+  }
+  static async teacherReportGPE(
+    { filter, limit = 0, offset = 0, orderBy = '' },
+      options: IRepositoryOptions,
+    ) {
+      const tenant = SequelizeRepository.getCurrentTenant(
+        options,
+      );
+      const transaction = SequelizeRepository.getTransaction(
+        options,
+      );
+  
+      const teacherByGender = await  options.database.sequelize.query(`
+          SELECT 
+              gender,
+              COUNT(*) AS totalTeachers
+          FROM 
+              teacherGPEs
+          WHERE 
+              deletedAt IS NULL
+          GROUP BY 
+              gender
+          ORDER BY 
+          totalTeachers DESC; 
+       `, { type: QueryTypes.SELECT });
+      
+      const teacherByToughtLevel = await  options.database.sequelize.query(`
+       SELECT 
+        teachingLevel,
+        COUNT(*) AS totalTeachers
+        FROM 
+            teacherGPEs
+        WHERE 
+            deletedAt IS NULL
+        GROUP BY 
+            teachingLevel
+        ORDER BY 
+        totalTeachers DESC;
+        `, { type: QueryTypes.SELECT });
+  
+      const teacherByGrades = await  options.database.sequelize.query(`
+       SELECT 
+        grade,
+        COUNT(*) AS totalTeachers
+        FROM 
+            teacherGPEs
+        WHERE 
+            deletedAt IS NULL
+        GROUP BY 
+            grade
+        ORDER BY 
+        totalTeachers DESC;
+       `, { type: QueryTypes.SELECT });
+      const teacherBySubject = await  options.database.sequelize.query(`
+      SELECT 
+      subjectName,
+      COUNT(*) AS totalTeachers
+      FROM 
+          teacherGPEs
+      WHERE 
+          deletedAt IS NULL
+      GROUP BY 
+          subjectName
+      ORDER BY 
+      totalTeachers DESC;
+      `, { type: QueryTypes.SELECT });
+ 
+      const teacherByState = await  options.database.sequelize.query(`
+        SELECT 
+            states.id AS stateId,
+            states.name AS stateName,
+            COUNT(teacherGPEs.id) AS totalTeachers
+        FROM 
+            teacherGPEs
+        LEFT JOIN 
+            states ON teacherGPEs.stateId = states.id AND states.deletedAt IS NULL
+        WHERE 
+            teacherGPEs.deletedAt IS NULL
+        GROUP BY 
+            states.id, states.name
+        ORDER BY 
+        totalTeachers DESC;
+      `, { type: QueryTypes.SELECT });
+      const teacherBydistrict = await  options.database.sequelize.query(`
+        SELECT 
+        districts.id AS districtId,
+        districts.name AS districtName,
+        COUNT(teacherGPEs.id) AS totalTeachers
+        FROM 
+            teacherGPEs
+        LEFT JOIN 
+            districts ON teacherGPEs.districtId = districts.id AND districts.deletedAt IS NULL
+        WHERE 
+            teacherGPEs.deletedAt IS NULL
+        GROUP BY 
+            districts.id, districts.name
+        ORDER BY 
+        totalTeachers DESC;
+        `, { type: QueryTypes.SELECT });
+      return { teacherBydistrict, teacherByState,teacherBySubject, teacherByGrades, teacherByToughtLevel, teacherByGender};
+  }
   static async stateReport(
     { filter, limit = 0, offset = 0, orderBy = '' },
     options: IRepositoryOptions,
@@ -458,7 +719,7 @@ ORDER BY totalSupervisions DESC;
     }
 
     return;
-}
+    }
 
   static async activities(
     { filter, limit = 0, offset = 0, orderBy = '' },

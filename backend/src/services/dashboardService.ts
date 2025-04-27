@@ -30,6 +30,20 @@ export default class InvigilatorService {
     );
   }
 
+  async supervisionReportGPE(args) {
+    return DashboardRepository.supervisionReportGPE(
+      args,
+      this.options,
+    );
+  }
+
+  async teacherReportGPE(args) {
+    return DashboardRepository.teacherReportGPE(
+      args,
+      this.options,
+    );
+  }
+
   async stateReport(args) {
     return DashboardRepository.stateReport(
       args,
