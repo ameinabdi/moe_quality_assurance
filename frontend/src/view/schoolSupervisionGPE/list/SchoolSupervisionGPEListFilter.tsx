@@ -19,91 +19,34 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import filterRenders from 'src/modules/shared/filter/filterRenders';
 import { Collapse } from 'antd';
-import InputFormItem from 'src/view/shared/form/items/InputFormItem';
-import DatePickerRangeFormItem from 'src/view/shared/form/items/DatePickerRangeFormItem';
 import SchoolAutocompleteFormItem from 'src/view/school/autocomplete/SchoolAutocompleteFormItem';
-import DimensionGPE1AutocompleteFormItem from 'src/view/dimensionGPE1/autocomplete/DimensionGPE1AutocompleteFormItem';
-import DimensionGPE2AutocompleteFormItem from 'src/view/dimensionGPE2/autocomplete/DimensionGPE2AutocompleteFormItem';
-import DimensionGPE3AutocompleteFormItem from 'src/view/dimensionGPE3/autocomplete/DimensionGPE3AutocompleteFormItem';
-import DimensionGPE4AutocompleteFormItem from 'src/view/dimensionGPE4/autocomplete/DimensionGPE4AutocompleteFormItem';
+import DistrictAutocompleteFormItem from 'src/view/district/autocomplete/DistrictAutocompleteFormItem';
 
 const schema = yup.object().shape({
-  introduction: yupFilterSchemas.string(
-    i18n('entities.schoolSupervisionGPE.fields.introduction'),
-  ),
-  guidelines: yupFilterSchemas.string(
-    i18n('entities.schoolSupervisionGPE.fields.guidelines'),
-  ),
-  finalizedDateRange: yupFilterSchemas.dateRange(
-    i18n('entities.schoolSupervisionGPE.fields.finalizedDateRange'),
-  ),
-  principal: yupFilterSchemas.string(
-    i18n('entities.schoolSupervisionGPE.fields.principal'),
-  ),
+  
   school: yupFilterSchemas.relationToOne(
     i18n('entities.schoolSupervisionGPE.fields.school'),
   ),
-  dimension1: yupFilterSchemas.relationToOne(
-    i18n('entities.schoolSupervisionGPE.fields.dimension1'),
+  district: yupFilterSchemas.relationToOne(
+    i18n('entities.schoolSupervision.fields.district'),
   ),
-  dimension2: yupFilterSchemas.relationToOne(
-    i18n('entities.schoolSupervisionGPE.fields.dimension2'),
-  ),
-  dimension3: yupFilterSchemas.relationToOne(
-    i18n('entities.schoolSupervisionGPE.fields.dimension3'),
-  ),
-  dimension4: yupFilterSchemas.relationToOne(
-    i18n('entities.schoolSupervisionGPE.fields.dimension4'),
-  ),
+  
 });
 
 const emptyValues = {
-  introduction: null,
-  guidelines: null,
-  finalizedDateRange: [],
-  principal: null,
+ 
   school: null,
-  dimension1: null,
-  dimension2: null,
-  dimension3: null,
-  dimension4: null,
+  district: null,
+
 }
 
 const previewRenders = {
-  introduction: {
-    label: i18n('entities.schoolSupervisionGPE.fields.introduction'),
-    render: filterRenders.generic(),
-  },
-  guidelines: {
-    label: i18n('entities.schoolSupervisionGPE.fields.guidelines'),
-    render: filterRenders.generic(),
-  },
-  finalizedDateRange: {
-    label: i18n('entities.schoolSupervisionGPE.fields.finalizedDateRange'),
-    render: filterRenders.dateRange(),
-  },
-  principal: {
-    label: i18n('entities.schoolSupervisionGPE.fields.principal'),
-    render: filterRenders.generic(),
-  },
   school: {
       label: i18n('entities.schoolSupervisionGPE.fields.school'),
       render: filterRenders.relationToOne(),
     },
-  dimension1: {
-      label: i18n('entities.schoolSupervisionGPE.fields.dimension1'),
-      render: filterRenders.relationToOne(),
-    },
-  dimension2: {
-      label: i18n('entities.schoolSupervisionGPE.fields.dimension2'),
-      render: filterRenders.relationToOne(),
-    },
-  dimension3: {
-      label: i18n('entities.schoolSupervisionGPE.fields.dimension3'),
-      render: filterRenders.relationToOne(),
-    },
-  dimension4: {
-      label: i18n('entities.schoolSupervisionGPE.fields.dimension4'),
+  district: {
+      label: i18n('entities.schoolSupervision.fields.district'),
       render: filterRenders.relationToOne(),
     },
 }
@@ -175,34 +118,7 @@ const SchoolSupervisionGPEListFilter = (props) => {
           <FormProvider {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
               <Row gutter={24}>
-                <Col xs={24} md={24} lg={12}>
-                  <InputFormItem
-                    name="introduction"
-                    label={i18n('entities.schoolSupervisionGPE.fields.introduction')}      
-                    layout={filterItemLayout}
-                  />
-                </Col>
-                <Col xs={24} md={24} lg={12}>
-                  <InputFormItem
-                    name="guidelines"
-                    label={i18n('entities.schoolSupervisionGPE.fields.guidelines')}      
-                    layout={filterItemLayout}
-                  />
-                </Col>
-                <Col xs={24} md={24} lg={12}>
-                  <DatePickerRangeFormItem
-                    name="finalizedDateRange"
-                    label={i18n('entities.schoolSupervisionGPE.fields.finalizedDateRange')}    
-                    layout={filterItemLayout}
-                  />
-                </Col>
-                <Col xs={24} md={24} lg={12}>
-                  <InputFormItem
-                    name="principal"
-                    label={i18n('entities.schoolSupervisionGPE.fields.principal')}      
-                    layout={filterItemLayout}
-                  />
-                </Col>
+               
                 <Col xs={24} md={24} lg={12}>
                   <SchoolAutocompleteFormItem  
                     name="school"
@@ -211,30 +127,9 @@ const SchoolSupervisionGPEListFilter = (props) => {
                   />
                 </Col>
                 <Col xs={24} md={24} lg={12}>
-                  <DimensionGPE1AutocompleteFormItem  
-                    name="dimension1"
-                    label={i18n('entities.schoolSupervisionGPE.fields.dimension1')}        
-                    layout={filterItemLayout}
-                  />
-                </Col>
-                <Col xs={24} md={24} lg={12}>
-                  <DimensionGPE2AutocompleteFormItem  
-                    name="dimension2"
-                    label={i18n('entities.schoolSupervisionGPE.fields.dimension2')}        
-                    layout={filterItemLayout}
-                  />
-                </Col>
-                <Col xs={24} md={24} lg={12}>
-                  <DimensionGPE3AutocompleteFormItem  
-                    name="dimension3"
-                    label={i18n('entities.schoolSupervisionGPE.fields.dimension3')}        
-                    layout={filterItemLayout}
-                  />
-                </Col>
-                <Col xs={24} md={24} lg={12}>
-                  <DimensionGPE4AutocompleteFormItem  
-                    name="dimension4"
-                    label={i18n('entities.schoolSupervisionGPE.fields.dimension4')}        
+                  <DistrictAutocompleteFormItem
+                    name="district"
+                    label={i18n('entities.schoolSupervision.fields.district')}        
                     layout={filterItemLayout}
                   />
                 </Col>

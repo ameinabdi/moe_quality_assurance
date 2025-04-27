@@ -26,6 +26,8 @@ const TeacherGPEListTable = (props) => {
   const loading = findLoading || destroyLoading;
 
   const rows = useSelector(selectors.selectRows);
+  const count = useSelector(selectors.selectCount);
+
   const pagination = useSelector(
     selectors.selectPagination,
   );
@@ -237,9 +239,17 @@ const TeacherGPEListTable = (props) => {
         loading={loading}
         columns={columns as any}
         dataSource={rows}
-        pagination={pagination}
         onChange={handleTableChange}
         rowSelection={rowSelection()}
+        pagination={{
+          ...pagination,
+          total: count,
+          showSizeChanger: true,
+          showTotal:total => `Total ${total} Records`,
+          pageSizeOptions:[
+            10, 20, 50, 100,500, count > 500 ? count : 1000 
+          ],
+        }}  
         scroll={{
           x: true,
         }}
