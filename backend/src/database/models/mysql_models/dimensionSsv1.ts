@@ -186,6 +186,41 @@ export default function (sequelize) {
        dimension1Solution: {
         type: DataTypes.TEXT,
        },
+       dimension1Percentage: {
+        type: DataTypes.VIRTUAL,
+        get(this: any) {
+          const indicators = [
+            this.getDataValue('indicator11'),
+            this.getDataValue('indicator12'),
+            this.getDataValue('indicator13'),
+            this.getDataValue('indicator14'),
+            this.getDataValue('indicator15'),
+            this.getDataValue('indicator16'),
+            this.getDataValue('indicator17'),
+            this.getDataValue('indicator18'),
+            this.getDataValue('indicator19'),
+            this.getDataValue('indicator110'),
+            this.getDataValue('indicator111'),
+            this.getDataValue('indicator112'),
+            this.getDataValue('indicator113'),
+            this.getDataValue('indicator114'),
+          ];
+      
+          const validIndicators = indicators
+            .map(i => parseFloat(i))
+            .filter(i => !isNaN(i));
+      
+          const dimension1RateEachIndicator = 20 / 14;
+          const dimension1RateEachRate = dimension1RateEachIndicator / 5;
+      
+          const total = validIndicators.reduce(
+            (sum, val) => sum + (val * dimension1RateEachRate),
+            0
+          );
+      
+          return total.toFixed(2);
+        },
+      },
       importHash: {
         type: DataTypes.STRING(255),
         allowNull: true,    

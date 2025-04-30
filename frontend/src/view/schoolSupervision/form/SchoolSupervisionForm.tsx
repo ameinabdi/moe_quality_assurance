@@ -1853,7 +1853,7 @@ const SchoolSupervisionForm = (props) => {
 
 
 
-  const dimension1RateEachIndicator =40/14
+  const dimension1RateEachIndicator =20/14
   const dimension1RateEachRate = dimension1RateEachIndicator/5
   const totaldimension1 = ((form.watch('indicator11')*dimension1RateEachRate)+(form.watch('indicator12')*dimension1RateEachRate)+(form.watch('indicator13')*dimension1RateEachRate)+(form.watch('indicator14')*dimension1RateEachRate)+(form.watch('indicator15')*dimension1RateEachRate)+(form.watch('indicator16')*dimension1RateEachRate)+(form.watch('indicator17')*dimension1RateEachRate)+(form.watch('indicator18')*dimension1RateEachRate)+(form.watch('indicator19')*dimension1RateEachRate)+(form.watch('indicator110')*dimension1RateEachRate)+(form.watch('indicator111')*dimension1RateEachRate)+(form.watch('indicator112')*dimension1RateEachRate)+(form.watch('indicator113')*dimension1RateEachRate)+(form.watch('indicator114')*dimension1RateEachRate))
 

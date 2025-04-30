@@ -14,6 +14,7 @@ import ButtonLink from 'src/view/shared/styles/ButtonLink';
 import ImagesListView from 'src/view/shared/list/ImagesListView';
 import StateListItem from 'src/view/state/list/StateListItem';
 import DistrictListItem from 'src/view/district/list/DistrictListItem';
+import moment from 'moment';
 
 const SchoolSupervisionListTable = (props) => {
   const dispatch = useAppDispatch();
@@ -25,6 +26,8 @@ const SchoolSupervisionListTable = (props) => {
   const loading = findLoading || destroyLoading;
 
   const rows = useSelector(selectors.selectRows);
+  const count = useSelector(selectors.selectCount);
+
   const pagination = useSelector(
     selectors.selectPagination,
   );
@@ -88,11 +91,6 @@ const SchoolSupervisionListTable = (props) => {
           },
           
           {
-            title: i18n('entities.school.fields.schoolPhone'),
-            sorter: true,
-            dataIndex: 'school',
-          },
-          {
             title: 'state',
             sorter: true,
             dataIndex: 'state',
@@ -108,7 +106,7 @@ const SchoolSupervisionListTable = (props) => {
         title: i18n('entities.schoolSupervision.fields.dimension1'),
         sorter: false,
         dataIndex: 'dimension1',
-        render: (value) =>(parseFloat(value?.dimension1Rate || 0).toFixed(0)+" %")
+        render: (value) =>(parseFloat(value?.dimension1Percentage || 0).toFixed(2)+" %")
       },
       {
         title: i18n('entities.schoolSupervision.fields.dimension2'),
@@ -128,6 +126,12 @@ const SchoolSupervisionListTable = (props) => {
         sorter: false,
         dataIndex: 'schoolStamp',
         render: (value) => <ImagesListView value={value} />,
+      },
+      {
+        title: i18n('entities.schoolSupervision.fields.createdAt'),
+        sorter: false,
+        dataIndex: 'createdAt',
+        render: (value) => moment(value).fromNow(),
       },
     {
       title: '',
@@ -177,7 +181,15 @@ const SchoolSupervisionListTable = (props) => {
         loading={loading}
         columns={columns as any}
         dataSource={rows}
-        pagination={pagination}
+        pagination={{
+          ...pagination,
+          total: count,
+          showSizeChanger: true,
+          showTotal:total => `Total ${total} Records`,
+          pageSizeOptions:[
+            10, 20, 50, 100,500, count > 500 ? count : 1000 
+          ],
+        }}  
         onChange={handleTableChange}
         rowSelection={rowSelection()}
         scroll={{

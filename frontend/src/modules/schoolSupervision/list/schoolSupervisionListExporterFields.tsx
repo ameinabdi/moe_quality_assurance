@@ -224,7 +224,7 @@ export default [
     label: i18n('entities.sSASurvey.fields.dimension1Challenge'),
   },
   {
-    name: 'dimension1Rate',
+    name: 'dimension1Percentage',
     label: i18n('entities.sSASurvey.fields.dimension1Rate'),
   },
   {
