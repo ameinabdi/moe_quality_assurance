@@ -10,6 +10,9 @@ export default function (sequelize, DataTypes) {
       type: {
         type: DataTypes.TEXT,
       },
+      status: {
+        type: DataTypes.TEXT,
+      },
       fullName: {
         type: DataTypes.STRING(255),
         allowNull: true,

@@ -483,6 +483,9 @@ export default class UserRepository {
             email,
           ),
         ],
+        [Op.and]:{
+          status:null
+        }
         },
         transaction,
     });
@@ -758,7 +761,7 @@ export default class UserRepository {
       transaction,
     });
 
-    if (!record) {
+    if (!record || record?.status != null) {
       throw new Error404();
     }
 
