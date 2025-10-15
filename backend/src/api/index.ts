@@ -117,13 +117,15 @@ const frontendDir = path.join(
 );
 
 if (fs.existsSync(frontendDir)) {
+  console.log('Serving static files from', frontendDir);
   app.use('/', express.static(frontendDir));
 
   app.get('*', function(request, response) {
-    response.sendFile(
-      path.resolve(frontendDir, 'index.html'),
-    );
+    console.log('Request for:', request.url);
+    response.sendFile(path.resolve(frontendDir, 'index.html'));
   });
-}
+} else {
+  console.error('Frontend build directory not found:', frontendDir);
 
+}
 export default app;
