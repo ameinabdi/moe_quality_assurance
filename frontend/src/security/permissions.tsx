@@ -515,7 +515,7 @@ class Permissions {
       },
       sSASurveyRead: {
         id: 'sSASurveyRead',
-        allowedRoles: [roles.admin, ],
+        allowedRoles: [roles.admin,roles.school, roles.federal, ],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       sSASurveyAutocomplete: {
