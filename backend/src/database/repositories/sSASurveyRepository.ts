@@ -845,6 +845,16 @@ class SSASurveyRepository {
         ),
       );
     }
+    else if(currentUser?.groupid == 'SchoolSSA'){
+
+      whereAnd.push(
+        SequelizeFilterUtils.ilikeIncludes(
+          'sSASurvey',
+          'createdbyId',
+          currentUser?.id ,
+        ),
+      );
+    }
     if (filter) {
       if (filter.id) {
         whereAnd.push({

@@ -3768,7 +3768,8 @@ const en = {
         'Federal':'Federal',
         'State':'State',
         'District':'District',
-        'School':'School'
+        'School':'School',
+        'schoolSSA':'schoolSSA'
       }
     },
     disable: 'Disable',

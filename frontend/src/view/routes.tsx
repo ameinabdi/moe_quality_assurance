@@ -720,7 +720,7 @@ const privateRoutes = [
     path: '/s-s-a-survey',
     loader: () =>
       import('src/view/sSASurvey/list/SSASurveyListPage'),
-    permissionRequired: permissions.schoolRead,
+    permissionRequired: permissions.sSASurveyRead,
     exact: true,
   },
   {

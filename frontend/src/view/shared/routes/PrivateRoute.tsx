@@ -33,8 +33,12 @@ function PrivateRoute({
       if(currentUser?.groupid === "districtRCF"){
         return <Navigate to="/school-supervision" />;
       }
+      if(currentUser?.type === "schoolSSA"){
+        return <Navigate to="/s-s-a-survey" />;
+      }
       return <Navigate to="/school-supervision-g-p-e" />;
     }
+     
 
     return (
       <Layout {...props}>

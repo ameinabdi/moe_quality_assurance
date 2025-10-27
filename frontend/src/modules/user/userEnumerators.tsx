@@ -12,7 +12,8 @@ const userEnumerators = {
    'Federal',
    'State',
    'District',
-   'School'
+   'School',
+   'schoolSSA'
   ],
 };
 

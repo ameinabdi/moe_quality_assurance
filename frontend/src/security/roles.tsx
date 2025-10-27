@@ -9,7 +9,8 @@ class Roles {
       district:'District',
       districtRCF:'districtRCF',
       districtTeacherRCF:'districtTeacherRCF',
-      school:'School'
+      school:'School',
+      SchoolSSA:'SchoolSSA'
     };
   }
 
