@@ -51,6 +51,12 @@ const SSASurveyListTable = (props) => {
   };
 
   const columns = [
+     {
+      title: i18n('entities.sSASurvey.fields.tooltype'),
+      sorter: true,
+      dataIndex: 'tooltype',
+      render: (value) =>(value)
+    },
     {
       title: i18n('entities.school.fields.schoolEMISNumber'),
       sorter: true,

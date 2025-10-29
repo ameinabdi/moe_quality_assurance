@@ -712,7 +712,7 @@ class SchoolSupervisionGPERepository {
               whereAnd.push(
                 SequelizeFilterUtils.ilikeIncludes(
                   'schoolSupervisionGPE',
-                  'schoolEMISNumber',
+                  'schoolEMISNo',
                   currentUser?.school?.RegNo,
                 ),
               );

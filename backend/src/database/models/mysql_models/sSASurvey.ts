@@ -21,6 +21,13 @@ export default function (sequelize) {
             : null;
         },
       },
+      tooltype: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+        }
+      },
       principal: {
         type: DataTypes.TEXT,
         allowNull: false,

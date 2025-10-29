@@ -21,6 +21,8 @@ import { Collapse } from 'antd';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import DatePickerRangeFormItem from 'src/view/shared/form/items/DatePickerRangeFormItem';
 import SchoolAutocompleteFormItem from 'src/view/school/autocomplete/SchoolAutocompleteFormItem';
+import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
+import sSASurveyEnumerators from 'src/modules/sSASurvey/sSASurveyEnumerators';
 
 const schema = yup.object().shape({
   finalizedDateRange: yupFilterSchemas.dateRange(
@@ -32,13 +34,17 @@ const schema = yup.object().shape({
   school: yupFilterSchemas.relationToOne(
     i18n('entities.sSASurvey.fields.school'),
   ),
-  
+  tooltype: yupFilterSchemas.enumerator(
+    i18n('entities.sSASurvey.fields.tooltype'),
+  ),
 });
 
 const emptyValues = {
   finalizedDateRange: [],
   principal: null,
   school: null,
+  tooltype: null,
+
 }
 
 const previewRenders = {
@@ -54,6 +60,10 @@ const previewRenders = {
       label: i18n('entities.sSASurvey.fields.school'),
       render: filterRenders.relationToOne(),
     },
+ tooltype: {
+    label: i18n('entities.sSASurvey.fields.tooltype'),
+    render: filterRenders.enumerator('entities.sSASurvey.enumerators.tooltype'),
+  },
 }
 
 const SSASurveyListFilter = (props) => {
@@ -123,6 +133,21 @@ const SSASurveyListFilter = (props) => {
           <FormProvider {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
               <Row gutter={24}>
+                 <Col xs={24} md={24} lg={12}>
+                  <SelectFormItem
+                    name="tooltype"
+                    label={i18n('entities.sSASurvey.fields.tooltype')}
+                    options={sSASurveyEnumerators.tooltype.map(
+                      (value) => ({
+                        value,
+                        label: i18n(
+                          `entities.sSASurvey.enumerators.tooltype.${value}`,
+                        ),
+                      }),
+                    )}
+                    layout={filterItemLayout}
+                  />
+                </Col>
                 <Col xs={24} md={24} lg={12}>
                   <DatePickerRangeFormItem
                     name="finalizedDateRange"

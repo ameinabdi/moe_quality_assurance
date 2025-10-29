@@ -212,6 +212,7 @@ class SSASurveyRepository {
           'principal',          
           'importHash',
         ]),
+        'tooltype':'Face 1',
         'district':currentUser?.school?.District || null,
         'region':currentUser?.school?.Region || null,
         'state':currentUser?.school?.State || null,
@@ -891,6 +892,15 @@ class SSASurveyRepository {
           ),
         );
       }
+        if (filter.tooltype) {
+        whereAnd.push(
+          SequelizeFilterUtils.ilikeIncludes(
+            'sSASurvey',
+            'tooltype',
+            filter.tooltype,
+          ),
+        );
+      }
 
       if (filter.introduction) {
         whereAnd.push(
@@ -987,6 +997,10 @@ class SSASurveyRepository {
           });
         }
       }
+    }else{
+       whereAnd.push({
+        tooltype:'face 1'
+    });
     }
 
     const where = { [Op.and]: whereAnd };

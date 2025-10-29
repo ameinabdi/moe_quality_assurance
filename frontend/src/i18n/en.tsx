@@ -1403,12 +1403,16 @@ const en = {
         'looking_5':'Is there innovation ?',
         'evidence_5':'It is available, appropriate, implemented and effective. All the aspects are implemented, comply with legislation and add value to school operations, with clear evidence of innovative practice.',
         'interpretation_5':'1. Exceptional, very best practice that inspires other schools, exceptional effective implementation, exceptional quality of learning and teaching, learners’ experiences and achievements are of very high quality as a result of innovative practices.',
+        'tooltype':'Tool Type',
         createdAt: 'Created at',
         updatedAt: 'Updated at',
         createdAtRange: 'Created at',
       },
       enumerators: {
-
+        'tooltype':{
+           'Piloting': 'Piloting',
+        'Face 1':'Face 1',
+        }
       },
       placeholders: {
 
